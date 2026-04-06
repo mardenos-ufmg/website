@@ -1,0 +1,21 @@
+{
+  "hash": "ceedbea08462c82bc98b9aed58e64e76",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Sobre o Projeto\"\nsubtitle: \"Motivação, objetivos e equipe\"\ntoc: true\ntoc-title: \"Nesta página\"\n---\n\n## Visão Geral\n\nEste projeto nasceu da necessidade de criar uma plataforma centralizada para **análise de dados reproduzível**, com publicação transparente de métodos, resultados e visualizações interativas.\n\nUtilizando o ecossistema **Quarto**, combinamos código (R e Python), texto e visualizações em documentos dinâmicos que podem ser facilmente atualizados, versionados e compartilhados.\n\n---\n\n## Objetivos\n\n::: {.callout-note}\n### Missão\nDemocratizar o acesso a análises de dados de qualidade, promovendo transparência e reprodutibilidade científica.\n:::\n\n1. **Transparência** — todo código e dado bruto são disponibilizados publicamente\n2. **Reprodutibilidade** — qualquer pessoa pode replicar as análises localmente\n3. **Educação** — tutoriais e posts explicam os métodos utilizados\n4. **Colaboração** — contribuições são bem-vindas via GitHub\n\n---\n\n## Metodologia\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n\n```\nColeta → Limpeza → Análise → Visualização → Publicação\n```\n\n\n:::\n:::\n\n\nO fluxo de trabalho segue as etapas clássicas de ciência de dados:\n\n| Etapa | Ferramentas | Descrição |\n|-------|------------|-----------|\n| Coleta | R (`httr2`), Python (`requests`) | APIs, scraping, arquivos |\n| Limpeza | `tidyverse`, `pandas` | Tratamento e validação |\n| Análise | `tidymodels`, `scikit-learn` | Modelagem e estatística |\n| Visualização | `ggplot2`, `plotly`, OJS | Gráficos e dashboards |\n| Publicação | Quarto | Relatórios e site |\n\n---\n\n## Equipe\n\n::: {.grid}\n\n::: {.g-col-12 .g-col-md-4}\n::: {.card .text-center .p-3}\n**Ana Silva**  \n*Cientista de Dados Sênior*  \nEspecialista em modelagem preditiva e R.  \n[<i class=\"bi bi-github\"></i> @anasilva](https://github.com)\n:::\n:::\n\n::: {.g-col-12 .g-col-md-4}\n::: {.card .text-center .p-3}\n**Carlos Mendes**  \n*Engenheiro de Dados*  \nPipelines, infraestrutura e Python.  \n[<i class=\"bi bi-github\"></i> @cmendes](https://github.com)\n:::\n:::\n\n::: {.g-col-12 .g-col-md-4}\n::: {.card .text-center .p-3}\n**Juliana Costa**  \n*Analista de Visualização*  \nDashboards, Observable JS e comunicação.  \n[<i class=\"bi bi-github\"></i> @jucosta](https://github.com)\n:::\n:::\n\n:::\n\n---\n\n## Como Contribuir\n\n::: {.callout-tip}\n### Contribuições são bem-vindas!\nVeja nosso [guia de contribuição no GitHub](https://github.com) para começar.\n:::\n\n```bash\n# Clone o repositório\ngit clone https://github.com/seu-usuario/meu-projeto.git\ncd meu-projeto\n\n# Instale as dependências R\nRscript -e \"renv::restore()\"\n\n# Renderize o site localmente\nquarto preview\n```\n\n---\n\n## Licença\n\nEste projeto é distribuído sob a licença **MIT**. O conteúdo textual está sob **CC BY 4.0**.  \nSinta-se livre para usar, adaptar e redistribuir com atribuição adequada.\n",
+    "supporting": [
+      "sobre_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<link href=\"site_libs/pagedtable-1.1/css/pagedtable.css\" rel=\"stylesheet\" />\n<script src=\"site_libs/pagedtable-1.1/js/pagedtable.js\"></script>\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

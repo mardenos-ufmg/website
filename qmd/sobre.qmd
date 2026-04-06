@@ -1,0 +1,69 @@
+---
+title: "Sobre o Projeto"
+subtitle: "Motivação, objetivos e equipe"
+toc: false
+---
+
+Financiamento (agradecimentos):
+
+Este projeto nasceu da necessidade de criar uma plataforma centralizada para **análise de dados reproduzível**, com publicação transparente de métodos, resultados e visualizações interativas.
+
+Utilizando o ecossistema **Quarto**, combinamos código (R e Python), texto e visualizações em documentos dinâmicos que podem ser facilmente atualizados, versionados e compartilhados.
+
+
+
+## Objetivos e metodologia
+
+Democratizar o acesso a análises de dados de qualidade, promovendo transparência e reprodutibilidade científica.
+
+1. **Transparência** — todo código e dado bruto são disponibilizados publicamente
+2. **Reprodutibilidade** — qualquer pessoa pode replicar as análises localmente
+3. **Educação** — tutoriais e posts explicam os métodos utilizados
+4. **Colaboração** — contribuições são bem-vindas via GitHub
+
+
+
+## Equipe
+
+::: {.grid}
+
+:::: {.g-col-12 .g-col-md-4}
+::: {.card .text-center .p-3}
+<img src="/stuff/pessoas/Izabel.png" class="img-fluid rounded-circle mb-2" alt="Izabel Matos" style="width:120px; height:120px;">
+
+**Izabel Matos**  
+*Doutora em Saneamento, meio ambiente e recursos hídricos pela UFMG*
+
+[<i class="bi bi-link-45deg"></i> Lattes](http://lattes.cnpq.br/7993784230340296)
+:::
+::::
+
+:::: {.g-col-12 .g-col-md-4}
+::: {.card .text-center .p-3}
+<img src="/stuff/pessoas/Sonaly.png" class="img-fluid rounded-circle mb-2" alt="Sonaly Rezende" style="width:120px; height:120px;">
+
+**Sonaly Rezende**  
+*Professora titular em Engenharia Sanitária e Ambiental, UFMG*  
+
+[<i class="bi bi-link-45deg"></i> Lattes](http://lattes.cnpq.br/2117243174600970)
+:::
+::::
+
+:::: {.g-col-12 .g-col-md-4}
+::: {.card .text-center .p-3}
+<img src="/stuff/pessoas/Marcos.png" class="img-fluid rounded-circle mb-2" alt="Marcos Prates" style="width:120px; height:120px;">
+
+**Marcos Prates**  
+*Professor associado do Depto. de Estatística, UFMG*  
+
+[<i class="bi bi-link-45deg"></i> Página pessoal](https://www.est.ufmg.br/~marcosop/)
+:::
+::::
+
+:::
+
+
+## Licença
+
+Este projeto é distribuído sob a licença **MIT**. O conteúdo textual está sob **CC BY 4.0**.  
+Sinta-se livre para usar, adaptar e redistribuir com atribuição adequada.

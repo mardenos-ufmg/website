@@ -1,0 +1,269 @@
+---
+title: "Bibliografia"
+subtitle: "Explore uma curadoria de conteúdos relevantes sobre saneamento básico no Brasil, incluindo livros, artigos acadêmicos, legislação, relatórios institucionais e materiais audiovisuais"
+toc: true
+toc-location: body
+page-layout: full
+---
+
+
+
+## Legislação <i class="bi bi-bank fs-2 text-warning"></i>
+
+::: {.grid}
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .p-3}
+
+Lei nº 11.445/2007 – Marco Legal do Saneamento
+
+**Autor:** Presidência da República  
+
+**Fonte:** Planalto  
+
+Estabelece diretrizes nacionais para o saneamento básico.
+
+
+[Acessar material](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/l11445.htm)
+:::
+:::
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .p-3}
+
+Lei nº 14.026/2020 – Novo Marco Legal do Saneamento
+
+**Autor:** Presidência da República  
+
+**Fonte:** Planalto  
+
+Atualiza o marco legal do saneamento e amplia metas de universalização.
+
+
+[Acessar material](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/lei/l14026.htm)
+:::
+:::
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .p-3}
+
+Decreto nº 7.217/2010 – Regulamenta a Lei 11.445
+
+**Autor:** Presidência da República  
+
+**Fonte:** Planalto  
+
+Regulamentação da política nacional de saneamento básico.
+
+
+[Acessar material](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/decreto/d7217.htm)
+:::
+:::
+:::
+## Livro <i class="bi bi-book fs-2 text-primary"></i>
+
+::: {.grid}
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .p-3}
+
+Lei Nacional de Saneamento Básico – Coletânea
+
+**Autor:** Ministério das Cidades  
+
+**Fonte:** Ministério das Cidades / PMSS  
+
+Coletânea com análises técnicas e institucionais sobre políticas públicas de saneamento.
+
+
+[Acessar material](https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/saneamento/pmss/biblioteca-virtual/coletanea-201clei-nacional-de-saneamento-basico)
+:::
+:::
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .p-3}
+
+Saneamento Básico no Brasil
+
+**Autor:** Edison Carlos Fernandes et al.  
+
+
+
+Obra recente que discute o marco legal e os desafios regulatórios do setor.
+
+
+:::
+:::
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .p-3}
+
+Saneamento e Saúde – Uma abordagem integrada
+
+**Autor:** Léo Heller; Valter Lúcio de Pádua (Orgs.)  
+
+**Fonte:** Fiocruz  
+
+Aborda a relação entre saneamento e saúde pública com foco em políticas públicas.
+
+
+:::
+:::
+:::
+## Artigo <i class="bi bi-journal-text fs-2 text-success"></i>
+
+::: {.grid}
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .p-3}
+
+Saneamento básico e regulação no Brasil
+
+**Autor:** Autores diversos  
+
+**Fonte:** Revista de Direito da Cidade – USP  
+
+Revisão histórica da regulação do saneamento no país e perspectivas futuras.
+
+
+[Acessar material](https://revistas.usp.br/rdda/article/view/195980)
+:::
+:::
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .p-3}
+
+Evolução do acesso a serviços de saneamento (1970–2004)
+
+**Autor:** Autores diversos  
+
+**Fonte:** Economia e Sociedade – UNICAMP  
+
+Análise da expansão do acesso considerando desigualdades regionais.
+
+
+[Acessar material](https://periodicos.sbu.unicamp.br/ojs/index.php/ecos/article/view/8642728)
+:::
+:::
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .p-3}
+
+Evolução do saneamento básico no Brasil
+
+**Autor:** Autores diversos  
+
+**Fonte:** Revista CEC – UCP  
+
+Discussão sobre indicadores e universalização dos serviços.
+
+
+[Acessar material](https://seer.ucp.br/seer/index.php/REVCEC/article/view/2040)
+:::
+:::
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .p-3}
+
+Gestão do saneamento em cidades brasileiras
+
+**Autor:** Autores diversos  
+
+**Fonte:** Revista RBCTI – UFTM  
+
+Análise da gestão do saneamento em cidades de médio porte.
+
+
+[Acessar material](https://seer.uftm.edu.br/revistaeletronica/index.php/rbcti/article/view/3310)
+:::
+:::
+:::
+## Relatório <i class="bi bi-file-earmark-text fs-2 text-danger"></i>
+
+::: {.grid}
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .p-3}
+
+Educação ambiental e saneamento básico
+
+**Autor:** Autores diversos  
+
+**Fonte:** CAPES – educapes  
+
+Estudo sobre a presença do tema saneamento em materiais didáticos.
+
+
+[Acessar material](http://educapes.capes.gov.br/handle/1884/96223)
+:::
+:::
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .p-3}
+
+Panorama do Saneamento Básico no Brasil – Vol. 1–7
+
+**Autor:** MCIDADES / IPEA / IBGE  
+
+**Fonte:** Ministério das Cidades  
+
+Diagnóstico multivolumar do setor de saneamento com dados nacionais.
+
+
+:::
+:::
+:::
+## Portal / Blog <i class="bi bi-globe fs-2 text-info"></i>
+
+::: {.grid}
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .p-3}
+
+Instituto Trata Brasil – Lista de livros
+
+**Autor:** Instituto Trata Brasil  
+
+**Fonte:** Instituto Trata Brasil  
+
+Curadoria com recomendações de leitura sobre saneamento básico.
+
+
+[Acessar material](https://bkp-trata.aideia.com/tratabrasil.org.br/en/institucional-blog/livros-sobre-saneamento-ler.html)
+:::
+:::
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .p-3}
+
+SNIS – Sistema Nacional de Informações sobre Saneamento
+
+**Autor:** Ministério das Cidades  
+
+**Fonte:** SNIS / Gov.br  
+
+Portal com dados e indicadores anuais do setor de saneamento.
+
+
+[Acessar material](http://www.snis.gov.br)
+:::
+:::
+:::
+## Documentário <i class="bi bi-camera-video fs-2 text-secondary"></i>
+
+::: {.grid}
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .p-3}
+
+Ilha das Flores
+
+**Autor:** Jorge Furtado  
+
+**Fonte:** Produção nacional  
+
+Curta-metragem que aborda, entre outros temas, saneamento e desigualdade social no Brasil.
+
+
+:::
+:::
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .p-3}
+
+Lixo Extraordinário
+
+**Autor:** Lucy Walker; João Jardim; Karen Harley  
+
+**Fonte:** Produção nacional/internacional  
+
+Documentário sobre o aterro de Jardim Gramacho e catadores de material reciclável.
+
+
+:::
+:::
+:::

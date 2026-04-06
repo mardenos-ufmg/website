@@ -1,0 +1,19 @@
+{
+  "hash": "cdfa9c8e6781acd672fdda4dfb9e075b",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Visualizações Interativas com Observable JS no Quarto\"\nsubtitle: \"Como usar OJS para criar gráficos reativos diretamente em documentos Quarto\"\nauthor: \"Juliana Costa\"\ndate: \"2025-03-15\"\ncategories: [Observable JS, visualização, Quarto, interativo]\n#image: \"thumbnail.png\"\ndraft: false\ntoc: true\n---\n\n## Por que Observable JS?\n\nO **Observable JS** (OJS) é uma linguagem reativa baseada em JavaScript que se integra nativamente ao Quarto, permitindo criar visualizações interativas sem precisar de um servidor Shiny.\n\n## Exemplo: Gráfico Interativo com D3\n\nO código abaixo cria um gráfico de dispersão interativo onde você pode filtrar os dados:\n\n```{ojs}\n//| label: slider-n\nviewof n_pontos = Inputs.range([10, 200], {\n  label: \"Número de pontos\",\n  step: 10,\n  value: 100\n})\n```\n\n```{ojs}\n//| label: scatter-plot\n// Gerando dados aleatórios\ndados = Array.from({length: n_pontos}, (_, i) => ({\n  x: Math.random() * 10,\n  y: Math.random() * 10 + Math.random() * 2,\n  grupo: Math.random() > 0.5 ? \"A\" : \"B\"\n}))\n\nPlot.plot({\n  marks: [\n    Plot.dot(dados, {\n      x: \"x\",\n      y: \"y\",\n      fill: \"grupo\",\n      r: 5,\n      opacity: 0.7\n    }),\n    Plot.frame()\n  ],\n  color: {legend: true},\n  grid: true,\n  style: {fontSize: 13}\n})\n```\n\n## Passando dados do R para OJS\n\nUma das grandes vantagens é poder processar dados no R e enviá-los para OJS:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\n\nresumo_carros <- mtcars |>\n  group_by(cyl) |>\n  summarise(\n    mpg_medio = mean(mpg),\n    n = n(),\n    .groups = \"drop\"\n  )\n\nojs_define(carros_ojs = resumo_carros)\n```\n:::\n\n\n```{ojs}\n//| label: bar-chart-ojs\nPlot.plot({\n  marks: [\n    Plot.barY(transpose(carros_ojs), {\n      x: \"cyl\",\n      y: \"mpg_medio\",\n      fill: \"steelblue\",\n      tip: true\n    }),\n    Plot.ruleY([0])\n  ],\n  x: {label: \"Cilindros\"},\n  y: {label: \"MPG Médio\"},\n  style: {fontSize: 13}\n})\n```\n\n## Conclusão\n\nO Observable JS é uma ferramenta poderosa para criar visualizações interativas em documentos Quarto, sem a necessidade de infraestrutura adicional. No próximo post, veremos como criar dashboards completos com Quarto e OJS.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<link href=\"../../../../site_libs/pagedtable-1.1/css/pagedtable.css\" rel=\"stylesheet\" />\n<script src=\"../../../../site_libs/pagedtable-1.1/js/pagedtable.js\"></script>\n<script type=\"ojs-define\">\n{\"contents\":[{\"name\":\"carros_ojs\",\"value\":{\"cyl\":[4,6,8],\"mpg_medio\":[26.6636,19.7429,15.1],\"n\":[11,7,14]}}]}\n</script>\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

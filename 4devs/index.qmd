@@ -1,0 +1,25 @@
+---
+title: "4devs"
+subtitle: "Informações úteis para ~~nerds~~ desenvolvedores"
+listing:
+  contents: artigos
+  type: default
+  image-height: 200px
+  # categories: true
+  # sort-ui: true
+  # filter-ui: true
+  fields: [image, date, title, subtitle, author]
+  feed: true
+page-layout: full
+toc: false
+---
+
+## 🌲 [Árvore do site](/4devs/arvore/arvore.html)
+
+Uma árvore de site é a representação hierárquica de todas as páginas e seções de um site, mostrando como os conteúdos estão organizados e relacionados entre si. Ela funciona como um mapa do site, facilitando navegação e visualização da estrutura.
+
+## 📦 Documentação de códigos
+
+- [Pacote SNIS](/4devs/docs/snis/index.html)
+
+## 📝 Artigos para devs

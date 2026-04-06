@@ -1,0 +1,36 @@
+---
+title: "Repositório de dados"
+subtitle: "Explore o repositório de dados que consideramos relevantes para o projeto."
+toc: false
+page-layout: full
+---
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+::: {.card .h-100 .p-3}
+<i class="bi bi-bar-chart-line-fill fs-2 text-primary"></i>
+
+### [SNIS](https://drive.google.com)
+Indicadores-chave de desempenho atualizados diariamente. Acompanhe métricas essenciais do projeto em tempo real.
+
+**Atualização:** Anual  
+**Fonte:** SNIS - Min. das cidades
+
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+::: {.card .h-100 .p-3}
+<i class="bi bi-globe fs-2 text-success"></i>
+
+### [Dados do censo](https://drive.google.com)
+Visualização de dados em mapas interativos. Explore distribuições geográficas e padrões regionais.
+
+**Atualização:** Quadrienal  
+**Fonte:** IBGE
+
+:::
+:::
+
+:::

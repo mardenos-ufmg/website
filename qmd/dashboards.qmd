@@ -1,0 +1,51 @@
+---
+title: "Dashboards"
+subtitle: "Explore nossos painéis interativos de análise de dados. Cada dashboard é atualizado automaticamente e permite filtragem e exploração dos dados."
+toc: false
+page-layout: full
+---
+
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+::: {.card .h-100 .p-3}
+<i class="bi bi-bar-chart-line-fill fs-2 text-primary"></i>
+
+### [Painel do SNIS](https://www.shinyapps.io/)
+Dados e funções para a leitura e análise de dados do SNIS (Sistema Nacional de Informações sobre Saneamento).
+
+**Atualização:** Anual  
+**Fonte:** SNIS - Min. das Cidades
+
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+::: {.card .h-100 .p-3}
+<i class="bi bi-globe fs-2 text-success"></i>
+
+### [Censo do IBGE](https://www.shinyapps.io/)
+Visualização de dados em mapas interativos. Explore distribuições geográficas e padrões regionais.
+
+**Atualização:** Quadrienal  
+**Fonte:** IBGE
+
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+::: {.card .h-100 .p-3}
+<i class="bi bi-graph-up-arrow fs-2 text-warning"></i>
+
+### [Séries Temporais](https://www.shinyapps.io/)
+Dados longitudinais sobre o lago da represa de Furnas.
+
+**Atualização:** Mensal
+
+**Fonte:** Bancos de dados diversos
+:::
+:::
+
+
+:::

@@ -1,0 +1,171 @@
+/* ============================================
+   Estilos Customizados — Projeto Quarto
+   ============================================ */
+
+/* Importar fonte do Google */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono&display=swap');
+
+/* Variáveis globais */
+:root {
+  --cor-primaria: #2c7bb6;
+  --cor-secundaria: #1a4f7a;
+  --cor-acento: #fd7e14;
+  --raio-borda: 8px;
+}
+
+/* === HERO SECTION === */
+.hero-section {
+  background: linear-gradient(135deg, #1a4f7a 0%, #2c7bb6 50%, #17a2b8 100%);
+  color: white;
+  padding: 5rem 2rem;
+  margin: -1rem -1rem 2rem -1rem;
+  text-align: center;
+  border-radius: 0 0 var(--raio-borda) var(--raio-borda);
+}
+
+.hero-title {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: white !important;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* === CARDS === */
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--raio-borda);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #fff;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode cards */
+[data-bs-theme="dark"] .card {
+  background: #2d3748;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* === NAVBAR === */
+.navbar {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.navbar-nav .nav-item {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* === TIPOGRAFIA === */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+/* === CALLOUTS === */
+.callout {
+  border-radius: var(--raio-borda);
+}
+
+/* === CÓDIGO === */
+code {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.875em;
+}
+
+/* === FOOTER === */
+.nav-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+}
+
+/* === BLOG LISTING === */
+.listing-item {
+  border-radius: var(--raio-borda);
+  transition: transform 0.15s ease;
+}
+
+.listing-item:hover {
+  transform: translateY(-2px);
+}
+
+/* === BADGES === */
+.badge-categoria {
+  background: var(--cor-primaria);
+  color: white;
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* === TABELAS === */
+.table {
+  font-size: 0.9rem;
+}
+
+.table thead th {
+  font-weight: 600;
+  border-bottom: 2px solid var(--cor-primaria);
+}
+
+/* === BOTÕES === */
+.btn-primary {
+  background-color: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+}
+
+.btn-primary:hover {
+  background-color: var(--cor-secundaria);
+  border-color: var(--cor-secundaria);
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cor-primaria);
+  border-radius: 3px;
+}
+

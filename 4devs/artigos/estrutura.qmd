@@ -1,0 +1,95 @@
+---
+title: "Visualizações Interativas com Observable JS no Quarto"
+subtitle: "Como usar OJS para criar gráficos reativos diretamente em documentos Quarto"
+author: "Juliana Costa"
+date: "2025-03-15"
+categories: [Observable JS, visualização, Quarto, interativo]
+#image: "thumbnail.png"
+draft: false
+toc: true
+---
+
+## Por que Observable JS?
+
+O **Observable JS** (OJS) é uma linguagem reativa baseada em JavaScript que se integra nativamente ao Quarto, permitindo criar visualizações interativas sem precisar de um servidor Shiny.
+
+## Exemplo: Gráfico Interativo com D3
+
+O código abaixo cria um gráfico de dispersão interativo onde você pode filtrar os dados:
+
+```{ojs}
+//| label: slider-n
+viewof n_pontos = Inputs.range([10, 200], {
+  label: "Número de pontos",
+  step: 10,
+  value: 100
+})
+```
+
+```{ojs}
+//| label: scatter-plot
+// Gerando dados aleatórios
+dados = Array.from({length: n_pontos}, (_, i) => ({
+  x: Math.random() * 10,
+  y: Math.random() * 10 + Math.random() * 2,
+  grupo: Math.random() > 0.5 ? "A" : "B"
+}))
+
+Plot.plot({
+  marks: [
+    Plot.dot(dados, {
+      x: "x",
+      y: "y",
+      fill: "grupo",
+      r: 5,
+      opacity: 0.7
+    }),
+    Plot.frame()
+  ],
+  color: {legend: true},
+  grid: true,
+  style: {fontSize: 13}
+})
+```
+
+## Passando dados do R para OJS
+
+Uma das grandes vantagens é poder processar dados no R e enviá-los para OJS:
+
+```{r}
+#| label: r-para-ojs
+
+library(tidyverse)
+
+resumo_carros <- mtcars |>
+  group_by(cyl) |>
+  summarise(
+    mpg_medio = mean(mpg),
+    n = n(),
+    .groups = "drop"
+  )
+
+ojs_define(carros_ojs = resumo_carros)
+```
+
+```{ojs}
+//| label: bar-chart-ojs
+Plot.plot({
+  marks: [
+    Plot.barY(transpose(carros_ojs), {
+      x: "cyl",
+      y: "mpg_medio",
+      fill: "steelblue",
+      tip: true
+    }),
+    Plot.ruleY([0])
+  ],
+  x: {label: "Cilindros"},
+  y: {label: "MPG Médio"},
+  style: {fontSize: 13}
+})
+```
+
+## Conclusão
+
+O Observable JS é uma ferramenta poderosa para criar visualizações interativas em documentos Quarto, sem a necessidade de infraestrutura adicional. No próximo post, veremos como criar dashboards completos com Quarto e OJS.

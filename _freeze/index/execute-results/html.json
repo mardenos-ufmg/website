@@ -1,0 +1,19 @@
+{
+  "hash": "ab96f25ab40065a65a9a25e3fca3aba6",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Bem-vindo ao Mar de Nós\"\npage-layout: full\ntoc: false\n---\n\n<!--\n```{=html}\n<div class=\"hero-section\">\n  <div class=\"hero-content\">\n    <div class=\"hero-buttons\">\n      <a href=\"sobre.qmd\" class=\"btn btn-primary btn-lg\">Saiba Mais</a>\n      <a href=\"blog/index.qmd\" class=\"btn btn-outline-secondary btn-lg ms-2\">Ver Blog</a>\n    </div>\n  </div>\n</div>\n```\n-->\n\n## Sobre este site\n\nLorem ipsum.\n\n\n## O que você encontra aqui\n\n::::::::::: grid\n:::: {.g-col-12 .g-col-md-3}\n::: {.card .h-100 .text-center .p-3}\n<i class=\"bi bi-house-fill fs-1 text-primary\"></i>\n<a href=\"index.qmd\" class=\"text-decoration-none\">Home</a><br>\nVisão geral do projeto, destaques e novidades mais recentes.\n:::\n::::\n\n:::: {.g-col-12 .g-col-md-3}\n::: {.card .h-100 .text-center .p-3}\n<i class=\"bi bi-info-circle-fill fs-1 text-success\"></i>\n<a href=\"qmd/sobre.qmd\" class=\"text-decoration-none\">Sobre o projeto</a><br>\nConheça a motivação, objetivos, metodologia e equipe por trás deste trabalho.\n:::\n::::\n\n:::: {.g-col-12 .g-col-md-3}\n::: {.card .h-100 .text-center .p-3}\n<i class=\"bi bi-journal-text fs-1 text-warning\"></i>\n<a href=\"blog/index.qmd\" class=\"text-decoration-none\"> Blog </a><br>\nArtigos, tutoriais e insights sobre análise de dados e o projeto.\n:::\n::::\n\n:::: {.g-col-12 .g-col-md-3}\n::: {.card .h-100 .text-center .p-3}\n<i class=\"bi bi-bar-chart-fill fs-1 text-danger\"></i>\n<a href=\"dashboards/index.qmd\" class=\"text-decoration-none\"> Dashboards </a><br>\nPainéis interativos com análises e indicadores em tempo real.\n:::\n::::\n:::::::::::\n\n------------------------------------------------------------------------\n\n## Destaques Recentes\n\n::::: grid\n::: {.g-col-12 .g-col-md-6}\n### Último Post do Blog\n\n> [**Análise Exploratória com R**](blog/index.qmd)\\\n> *30 de Março, 2025*\\\n> Aprenda como realizar uma EDA completa usando tidyverse e ggplot2.\n\n<!--\n[Ler artigo](blog/index.qmd)\n-->\n:::\n\n::: {.g-col-12 .g-col-md-6}\n### Dashboard em Destaque\n\n> [**Painel de Indicadores**](dashboards/index.qmd)\\\n> *Atualizado diariamente*\\\n> Acompanhe os principais KPIs do projeto com visualizações interativas.\n\n<!--\n[Ver dashboard](dashboards/index.qmd)\n-->\n:::\n:::::\n\n<!--\n------------------------------------------------------------------------\n## Tecnologias Utilizadas\n\n\n::: {.cell}\n::: {.cell-output-display}\n\n\n|Tecnologia    |Uso                                       | Versao |\n|:-------------|:-----------------------------------------|:------:|\n|R             |Análise estatística e visualização        | ≥ 4.3  |\n|Python        |Machine learning e processamento de dados | ≥ 3.11 |\n|Quarto        |Publicação e documentação reproduzível    | ≥ 1.4  |\n|Observable JS |Visualizações interativas no browser      | Latest |\n|Shiny         |Aplicativos web e dashboards reativos     | ≥ 1.8  |\n\n\n:::\n:::\n\n-->",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<link href=\"site_libs/pagedtable-1.1/css/pagedtable.css\" rel=\"stylesheet\" />\n<script src=\"site_libs/pagedtable-1.1/js/pagedtable.js\"></script>\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

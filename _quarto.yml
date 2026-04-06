@@ -1,0 +1,87 @@
+project:
+  type: website
+  output-dir: _site
+  pre-render: Rscript stuff/prerender.R
+  post-render: Rscript stuff/postrender.R
+  render:
+    - "*.qmd"
+    - "!raw/snis/**"
+    - "!**/vignettes/**"
+  resources:
+    - "raw/"
+
+website:
+  #site-url: "https://google.com"
+  title: "Mar de Nós"
+  description: "Site do projeto Mar de Nós - UFMG"
+  favicon: stuff/favicon.ico
+
+  navbar:
+    left:
+      - href: qmd/sobre.qmd
+        text: Sobre nós
+      - href: blog/index.qmd
+        text: Blog
+      - href: qmd/dashboards.qmd
+        text: Dashboards
+      - href: qmd/repositorio.qmd
+        text: Repositório de dados
+      - href: qmd/bibliografia.qmd
+        text: Bibliografia
+      - href: 4devs/index.qmd
+        text: 4devs
+    right:
+      - icon: github
+        href: https://github.com/mardenos-ufmg
+        aria-label: GitHub
+      - icon: instagram
+        href: https://instagram.com/mar.de.nos_ufmg
+        aria-label: Instagram
+      - icon: envelope
+        href: mardenos.ufmg@gmail.com
+        aria-label: E-mail
+    logo: stuff/favicon.png
+    logo-alt: "Logo do Projeto"
+    pinned: true
+
+  sidebar: false
+
+  page-footer:
+    left: "Mar de Nós - UFMG"
+    # right:
+    #   - icon: github
+    #     href: https://github.com/mardenos-ufmg
+    #   - icon: envelope
+    #     href: mardenos.ufmg@gmail.com
+
+  search: true
+
+  # open-graph: true
+  # twitter-card: true
+  # 
+  # google-analytics: "G-XXXXXXXXXX"
+
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    css: stuff/styles.css
+    toc: true
+    toc-depth: 3
+    toc-title: "Nesta página"
+    code-fold: true
+    code-summary: "Ver código"
+    #code-tools: true
+    highlight-style: github
+    fig-align: center
+    df-print: paged
+    self-contained: false
+    smooth-scroll: true
+    anchor-sections: true
+
+execute:
+  freeze: auto
+  echo: true
+  warning: false
+  message: false
