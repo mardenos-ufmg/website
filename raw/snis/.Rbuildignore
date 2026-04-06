@@ -1,0 +1,10 @@
+^snis\.Rproj$
+^\.Rproj\.user$
+^LICENSE\.md$
+more/
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$
+^data-raw$
+^main\.R$
