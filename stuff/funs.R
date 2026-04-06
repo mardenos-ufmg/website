@@ -99,6 +99,8 @@ gerar_arvore = function() {
     "|",
     "(^|/)_site(/|$)",       # _site
     "|",
+    "(^|/)docs(/|$)",       # docs
+    "|",
     "(^|/)_freeze(/|$)",     # _freeze
     "|",
     "(^|/)\\.ipynb_checkpoints(/|$)",     # .ipynb_checkpoints
