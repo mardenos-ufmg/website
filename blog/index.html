@@ -136,7 +136,7 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../stuff/styles.css">
-</head>
+<link rel="alternate" type="application/rss+xml" title="Mar de Nós" href="index.xml" data-external="1"></head>
 
 <body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
@@ -594,7 +594,7 @@ Juliana Costa
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/mardenos-ufmg\.github\.io\/website\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
