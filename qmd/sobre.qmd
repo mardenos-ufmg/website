@@ -54,7 +54,7 @@ Democratizar o acesso a análises de dados de qualidade, promovendo transparênc
 <img src="/stuff/pessoas/Marcos.png" class="img-fluid rounded-circle mb-2" alt="Marcos Prates" style="width:120px; height:120px;">
 
 **Marcos Prates**  
-*Professor associado do Depto. de Estatística, UFMG*  
+*PhD in Statistics (U Connecticut), Professor associado do Depto. de Estatística, UFMG*  
 
 [<i class="bi bi-link-45deg"></i> Página pessoal](https://www.est.ufmg.br/~marcosop/)
 :::

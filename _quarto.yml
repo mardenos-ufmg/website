@@ -38,7 +38,7 @@ website:
         href: https://instagram.com/mar.de.nos_ufmg
         aria-label: Instagram
       - icon: envelope
-        href: mardenos.ufmg@gmail.com
+        href: mailto:mardenos.ufmg@gmail.com
         aria-label: E-mail
     logo: stuff/favicon.png
     logo-alt: "Logo do Projeto"
