@@ -27,7 +27,7 @@ navbar:
       href: articles/index.html
     4devs:
       text: "4devs"
-      href: website/4devs/index.html
+      href: https://mardenos-ufmg.github.io/website/4devs/
 
 footer:
   structure:
