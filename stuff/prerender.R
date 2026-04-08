@@ -12,7 +12,7 @@ precisa_build_site =
 
 if (precisa_build_site) {
   cat("\niniciando pkgdown\n")
-  suppressMessages(suppressWarnings(pkgdown::build_site("raw/snis")))
+  suppressMessages(suppressWarnings(invisible(pkgdown::build_site("raw/snis"))))
   cat(as.character(Sys.time()), "\n", file = "stuff/timestamp_snis_docs.txt")
   cat("pkgdown OK\n")
 }
