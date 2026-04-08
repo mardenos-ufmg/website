@@ -12,7 +12,7 @@ page-layout: full
 ::: {.card .h-100 .p-3}
 <i class="bi bi-bar-chart-line-fill fs-2 text-primary"></i>
 
-### [Painel do SNIS](https://www.shinyapps.io/)
+### [Painel do SNIS](https://dh3kih-carlos-de0moura.shinyapps.io/snis/)
 Dados e funções para a leitura e análise de dados do SNIS (Sistema Nacional de Informações sobre Saneamento).
 
 **Atualização:** Anual  

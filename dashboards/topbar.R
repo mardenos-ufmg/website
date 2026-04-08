@@ -39,13 +39,13 @@ topbar_style =
 topbar_ui =
 div(class = "topbar",
     div(class = "left",
-        a("Mar de Nós", class = "logo", href = "website/index.html"),
-        a("Sobre nós", href = "website/qmd/dashboards.html"),
-        a("Blog", href = "website/blog/index.html"),
-        a("Dashboards", href = "website/qmd/dashboards.html"),
-        a("Repositório de dados", href = "website/qmd/repositorio.html"),
-        a("Bibliografia", href = "website/qmd/bibliografia.html"),
-        a("4devs", href = "website/4devs/index.html")
+        a(class = "logo", href = "https://mardenos-ufmg.github.io/website/index.html", img(src = "https://mardenos-ufmg.github.io/website/stuff/favicon.png", height = "20px", style = "margin-right: 10px;"), "Mar de Nós"),
+        a("Sobre nós", href = "https://mardenos-ufmg.github.io/website/qmd/dashboards.html"),
+        a("Blog", href = "https://mardenos-ufmg.github.io/website/blog/index.html"),
+        a("Dashboards", href = "https://mardenos-ufmg.github.io/website/qmd/dashboards.html"),
+        a("Repositório de dados", href = "https://mardenos-ufmg.github.io/website/qmd/repositorio.html"),
+        a("Bibliografia", href = "https://mardenos-ufmg.github.io/website/qmd/bibliografia.html"),
+        a("4devs", href = "https://mardenos-ufmg.github.io/website/4devs/index.html")
     ),
     
     div(class = "right",

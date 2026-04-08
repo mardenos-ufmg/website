@@ -99,7 +99,8 @@ arvore_io = function(tipo) {
     tipo = 1
   }
   
-  df_guardado = readxl::read_xlsx("dashboards/arvore/arvore.xlsx")[,1:8]
+  df_guardado = readxl::read_xlsx("arvore.xlsx")[,1:8]
+  #df_guardado = readxl::read_xlsx("dashboards/arvore/arvore.xlsx")[,1:8]
   df_gerado   = arvore_gerar_df()
   
   if (!setequal(colnames(df_gerado), c("path", "type", "color", "size_kb", "depth", "status", "descricao", "palavras_chave"))) {

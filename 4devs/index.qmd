@@ -14,7 +14,10 @@ page-layout: full
 toc: false
 ---
 
+## 🌲 [Árvore do site](https://dh3kih-carlos-de0moura.shinyapps.io/arvore/)
+<!--
 ## 🌲 [Árvore do site](/4devs/arvore/arvore.html)
+-->
 
 Uma árvore de site é a representação hierárquica de todas as páginas e seções de um site, mostrando como os conteúdos estão organizados e relacionados entre si. Ela funciona como um mapa do site, facilitando navegação e visualização da estrutura.
 

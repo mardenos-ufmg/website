@@ -1,6 +1,6 @@
 library(shiny)
-source("dashboards/arvore/funs.R")
-source("dashboards/topbar.R")
+source("funs.R")
+source("topbar.R")
 
 ui = tagList(
   tags$style(HTML("
