@@ -7,13 +7,13 @@ ultima_alteracao_snis =
   as.POSIXct()
 
 precisa_build_site =
-  ( ultima_alteracao_snis > as.POSIXct(readLines("stuff/snis_docs_timestamp.txt")) ) |>
+  ( ultima_alteracao_snis > as.POSIXct(readLines("stuff/timestamp_snis_docs.txt")) ) |>
   {\(.) ifelse(is.na(.), T, .)}()
 
 if (precisa_build_site) {
   cat("\niniciando pkgdown\n")
   suppressMessages(suppressWarnings(pkgdown::build_site("raw/snis")))
-  cat(as.character(Sys.time()), "\n", file = "stuff/snis_docs_timestamp.txt")
+  cat(as.character(Sys.time()), "\n", file = "stuff/timestamp_snis_docs.txt")
   cat("pkgdown OK\n")
 }
 
