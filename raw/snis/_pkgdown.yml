@@ -8,7 +8,7 @@ home:
   description: "Documentação do pacote SNIS"
   links:
     - text: "Site Mar de Nós"
-      href: "website/index.html"
+      href: "https://mardenos-ufmg.github.io/website/index.html"
     - text: "Repositório no GitHub"
       href: "https://github.com/mardenos-ufmg/snis"
 
