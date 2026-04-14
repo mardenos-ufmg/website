@@ -1,16 +1,16 @@
 [
   {
-    "listing": "/4devs/index.html",
-    "items": [
-      "/4devs/artigos/avisos.html",
-      "/4devs/artigos/estrutura.html"
-    ]
-  },
-  {
     "listing": "/blog/index.html",
     "items": [
       "/blog/posts/post01.html",
       "/blog/posts/post02.html"
+    ]
+  },
+  {
+    "listing": "/4devs/index.html",
+    "items": [
+      "/4devs/artigos/avisos.html",
+      "/4devs/artigos/estrutura.html"
     ]
   }
 ]
