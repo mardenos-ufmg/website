@@ -12,25 +12,24 @@ precisa_build_site =
 
 if (precisa_build_site) {
   cat("\niniciando pkgdown\n")
-  suppressMessages(suppressWarnings(invisible(pkgdown::build_site("raw/snis"))))
+  pkgdown::build_site("raw/snis", install = TRUE)
   cat(as.character(Sys.time()), "\n", file = "stuff/timestamp_snis_docs.txt")
   cat("pkgdown OK\n")
 }
 
 
-timestamp_blog_github =
-  "https://raw.githubusercontent.com/mardenos-ufmg/website-blog/refs/heads/main/timestamp.txt" |>
-  readLines() |>
-  as.POSIXct()
-
 # timestamp_blog_github =
-#   httr::GET("https://api.github.com/repos/mardenos-ufmg/website-blog") |>
-#   httr::content(as = "text") |>
-#   jsonlite::fromJSON() |>
-#   purrr::pluck("pushed_at") |>
-#   {\(.) substr(., 1, nchar(.)-1)}() |>
+#   "https://raw.githubusercontent.com/mardenos-ufmg/website-blog/refs/heads/main/timestamp.txt" |>
+#   readLines() |>
 #   as.POSIXct()
 
+timestamp_blog_github =
+  httr::GET("https://api.github.com/repos/mardenos-ufmg/website-blog") |>
+  httr::content(as = "text") |>
+  jsonlite::fromJSON() |>
+  purrr::pluck("pushed_at") |>
+  {\(.) substr(., 1, nchar(.)-1)}() |>
+  as.POSIXct()
 
 timestamp_blog_local = as.POSIXct(readLines("stuff/timestamp_blog.txt"))
 

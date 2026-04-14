@@ -18,15 +18,15 @@ website:
 
   navbar:
     left:
-      - href: qmd/sobre.qmd
+      - href: sobre/index.qmd
         text: Sobre nós
       - href: blog/index.qmd
         text: Blog
-      - href: qmd/dashboards.qmd
+      - href: dashboards/index.qmd
         text: Dashboards
-      - href: qmd/repositorio.qmd
+      - href: repositorio.qmd
         text: Repositório de dados
-      - href: qmd/bibliografia.qmd
+      - href: bibliografia.qmd
         text: Bibliografia
       - href: 4devs/index.qmd
         text: 4devs
