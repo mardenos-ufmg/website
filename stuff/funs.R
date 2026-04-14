@@ -81,7 +81,7 @@ page-layout: full
 .
 )}()
 
-  writeLines(qmd_content, "qmd/bibliografia.qmd", useBytes = FALSE)
+  writeLines(qmd_content, "bibliografia.qmd", useBytes = FALSE)
 }
 
 
