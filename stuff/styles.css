@@ -220,9 +220,12 @@ code {
 body.home-page #title-block-header {
   display: none;
 }
+/* garante que não há espaçamento do main */
 body.home-page main#quarto-document-content {
-  padding-top: 0;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
 }
+
 
 
 /* fixar as alturas dos grid tiles */

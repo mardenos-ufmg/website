@@ -17,7 +17,9 @@ instalar_pacotes = function() {
     unique() |>
     setdiff(pacotes_instalados) |>
     setdiff("snis")
-    
+  
+  if (length(pacotes_necessarios) == 0) return("pacotes OK")
+  
   res = try(pak::pak(pacotes_necessarios), silent = TRUE)
   
   pacotes_faltando = pacotes_necessarios[!pacotes_necessarios %in% pacotes_instalados]

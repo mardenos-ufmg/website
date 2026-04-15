@@ -26,13 +26,27 @@ if (precisa_build_site) {
 #   readLines() |>
 #   as.POSIXct()
 
-timestamp_blog_github =
-  httr::GET("https://api.github.com/repos/mardenos-ufmg/website-blog") |>
-  httr::content(as = "text") |>
-  jsonlite::fromJSON() |>
-  purrr::pluck("pushed_at") |>
-  {\(.) substr(., 1, nchar(.)-1)}() |>
-  as.POSIXct()
+# timestamp_blog_github =
+#   httr::GET("https://api.github.com/repos/mardenos-ufmg/website-blog") |>
+#   httr::content(as = "text") |>
+#   jsonlite::fromJSON() |>
+#   purrr::pluck("pushed_at") |>
+#   {\(.) substr(., 1, nchar(.)-1)}() |>
+#   as.POSIXct()
+
+timestamp_blog_github = tryCatch({
+  res = httr::GET("https://api.github.com/repos/mardenos-ufmg/website-blog") |>
+    httr::content(as = "text") |>
+    jsonlite::fromJSON() |>
+    purrr::pluck("pushed_at")
+  
+  if (is.null(res) || is.na(res)) stop("Sem data")
+  
+  substr(res, 1, nchar(res) - 1) |>
+    as.POSIXct()
+}, error = function(e) {
+  as.POSIXct("1900-01-01", tz = "UTC")
+})
 
 timestamp_blog_local = as.POSIXct(readLines("stuff/timestamp_blog.txt"))
 
