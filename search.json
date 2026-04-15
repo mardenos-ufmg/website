@@ -109,7 +109,7 @@
     "href": "4devs/index.html#documentação-de-códigos",
     "title": "4devs",
     "section": "📦 Documentação de códigos",
-    "text": "📦 Documentação de códigos\n\nPacote SNIS"
+    "text": "📦 Documentação de códigos\nNessa documentação você encontra uma descrição estruturada dos códigos usados no projeto. No ecossistema do R, o pkgdown e o roxygen2 transformam essa documentação em um site organizado, com páginas individuais para cada função (com seções como descrição, parâmetros, e exemplos)."
   },
   {
     "objectID": "4devs/index.html#artigos-para-devs",
