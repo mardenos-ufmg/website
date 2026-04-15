@@ -21,8 +21,9 @@ toc: false
 
 Uma árvore de site é a representação hierárquica de todas as páginas e seções de um site, mostrando como os conteúdos estão organizados e relacionados entre si. Ela funciona como um mapa do site, facilitando navegação e visualização da estrutura.
 
-## 📦 Documentação de códigos
+## 📦 [Documentação de códigos](/4devs/docs/snis/index.html)
 
-- [Pacote SNIS](/4devs/docs/snis/index.html)
+Nessa documentação você encontra uma descrição estruturada dos códigos usados no projeto. No ecossistema do R, o **pkgdown** e o **roxygen2** transformam essa documentação em um site organizado, com páginas individuais para cada função (com seções como descrição, parâmetros, e exemplos).
+
 
 ## 📝 Artigos para devs
