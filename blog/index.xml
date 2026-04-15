@@ -9,7 +9,7 @@
 <link>https://mardenos-ufmg.github.io/website/blog/</link>
 <atom:link href="https://mardenos-ufmg.github.io/website/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>Site do projeto Mar de Nós - UFMG</description>
-<generator>quarto-1.9.36</generator>
+<generator>quarto-1.8.26</generator>
 <lastBuildDate>Sun, 30 Mar 2025 03:00:00 GMT</lastBuildDate>
 <item>
   <title>Análise Exploratória com R e tidyverse</title>
