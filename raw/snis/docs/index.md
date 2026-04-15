@@ -1,4 +1,8 @@
+<div id="main" class="col-md-9" role="main">
+
 # SNIS
+
+<div class="section level1">
 
 Esse pacote tem por objetivo formalizar e disponibilizar funções para a
 leitura e análise de dados do SNIS (Sistema Nacional de Informações
@@ -13,15 +17,25 @@ Para utilizar o pacote, siga alguma das opções abaixo. Em ambos os casos
 uma alteração no pacote será necessário repetir o procedimento para
 usufruir das atualizações.
 
+<div class="section level2">
+
 ## Via `pak`
 
 Instale o `pak` em seu ambiente R e, em seguida, instale o `snis` via
 `pak`.
 
+<div id="cb1" class="sourceCode">
+
 ``` r
 if (!{"pak" %in% rownames(installed.packages())}) install.packages("pak")
 pak::pak("mardenos-ufmg/snis")
 ```
+
+</div>
+
+</div>
+
+<div class="section level2">
 
 ## Via `devtools`
 
@@ -31,19 +45,33 @@ GitHub](https://github.com/mardenos-ufmg/snis) e clicando no botão verde
 escrito `code` e em seguida `Download Zip`. Em seguida faça a
 descompressão (unzip) da pasta e instale o `devtools` via R no seu PC.
 
+<div id="cb2" class="sourceCode">
+
 ``` r
 install.packages("devtools")
 ```
 
+</div>
+
 ou, preferencialmente
+
+<div id="cb3" class="sourceCode">
 
 ``` r
 if (!{"pak" %in% rownames(installed.packages())}) install.packages("pak")
 if (!{"devtools" %in% rownames(installed.packages())}) pak::pak("devtools")
 ```
 
+</div>
+
 Em seguida abra o repositório `snis` descompactado em seu PC e clique em
 `snis.Rproj`. Isso iniciará uma sessão do RStudio com o projeto já
 aberto. Finalmente, rode no console do RStudio o comando
-[`devtools::load_all()`](https://devtools.r-lib.org/reference/load_all.html)
-e você poderá usar todas as funções do nosso pacote!
+`devtools::load_all()` e você poderá usar todas as funções do nosso
+pacote!
+
+</div>
+
+</div>
+
+</div>

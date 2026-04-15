@@ -11,7 +11,7 @@
     "href": "sobre/index.html#objetivos-e-metodologia",
     "title": "Sobre o Projeto",
     "section": "Objetivos e metodologia",
-    "text": "Objetivos e metodologia\nDemocratizar o acesso a análises de dados de qualidade, promovendo transparência e reprodutibilidade científica.\n\nTransparência — todo código e dado bruto são disponibilizados publicamente\nReprodutibilidade — qualquer pessoa pode replicar as análises localmente\nEducação — tutoriais e posts explicam os métodos utilizados\nColaboração — contribuições são bem-vindas via GitHub"
+    "text": "Objetivos e metodologia\nDemocratizar o acesso a análises de dados de qualidade, promovendo transparência e reprodutibilidade científica.\n\nTransparência — todo o código e os dados são disponibilizados publicamente\nReprodutibilidade — qualquer pessoa pode replicar as análises localmente\nEducação — tutoriais e posts explicam os métodos utilizados\nColaboração — contribuições são bem-vindas via GitHub"
   },
   {
     "objectID": "sobre/index.html#equipe",
@@ -19,6 +19,13 @@
     "title": "Sobre o Projeto",
     "section": "Equipe",
     "text": "Equipe\n\n\n\n\nIzabel Matos\nDoutora em Saneamento, meio ambiente e recursos hídricos pela UFMG\n Currículo Lattes\n\n\n\n\n\nSonaly Rezende\nProfessora titular em Engenharia Sanitária e Ambiental, UFMG\n Currículo Lattes\n\n\n\n\n\nMarcos Prates\nPhD in Statistics (U Connecticut), Professor associado do Depto. de Estatística, UFMG\n Página pessoal\n\n\n\n\n\nNathalia Roland\nProfessora do Departamento de Engenharia Sanitária e Ambiental da UFJF\n Currículo Lattes\n\n\n\n\n\nCarlos de Moura\nMestrando em Estatística pela UFMG\n Currículo Lattes"
+  },
+  {
+    "objectID": "sobre/index.html#links-úteis",
+    "href": "sobre/index.html#links-úteis",
+    "title": "Sobre o Projeto",
+    "section": "Links úteis",
+    "text": "Links úteis\n\nInstagram\n\nAlago (Associação dos Municípios do Lago de Furnas)\nProjeto Mar de Nós - UFMG\nUnelagos – Empreendores Mar de Minas\nCircuito Turístico do Lago de Furnas\nComunidade Viva Furnas\nFecitur - Federação dos Circuitos Turísticos de Minas Gerais\nPPGSMARH\n\n\n\nSites institucionais\n\nFederação dos Circuitos Turísticos de Minas Gerais\nMar de minas\nOperador Nacional do Sistema Elétrico\nMinas Gerais\nPrograma de Pós Graduação em Saneamento, meio ambiente e recursos hídricos - UFMG\nDepartamento de Engenharia Sanitária e Ambiental - UFMG\nDepartamento de Estatística - UFMG\nDepartamento de Hidráulica e Recursos Hídricos - UFMG"
   },
   {
     "objectID": "index.html",
@@ -39,7 +46,7 @@
     "href": "index.html#destaques",
     "title": "Bem-vindo ao Mar de Nós",
     "section": "Destaques",
-    "text": "Destaques\n\n\n\n\nAcompanhe nosso projeto no Instagram!\n\n\n\n \n\n\n\n\nÚltimo Post do Blog\n\nAnálise Exploratória com R\n30 de Março, 2025\nAprenda como realizar uma EDA completa usando tidyverse e ggplot2.\n\n\n\nDashboard em Destaque\n\nPainel SNIS\nAnálise fatorial com dados do SNIS\nAcompanhe os principais KPIs do projeto com visualizações interativas.\n\n\n\nInformações para desenvolvedores\n\n4devs\nAcompanhe os principais KPIs do projeto com visualizações interativas."
+    "text": "Destaques\n\n\n\n\nAcompanhe nosso projeto no Instagram!\n\n\n\n \n\n\n\n\nÚltimo Post do Blog\n\nAnálise Exploratória com R e tidyverse\nAna Silva, 30/03/2025\nUm guia prático para EDA usando as melhores ferramentas do ecossistema R.\n\n\n\nDashboard em Destaque\n\nPainel SNIS\nAnálise fatorial com dados do SNIS\nVeja a construção e análise de indicadores sobre o saneamento em Minas Gerais.\n\n\n\nInformações para desenvolvedores\n\n4devs\nAcesse informações úteis sobre a parte de programação e códigos do projeto."
   },
   {
     "objectID": "blog/posts/post02.html",
@@ -200,14 +207,14 @@
     "href": "bibliografia.html",
     "title": "Bibliografia",
     "section": "",
-    "text": "Lei nº 11.445/2007 – Marco Legal do Saneamento\nAutor: Presidência da República\nFonte: Planalto\nEstabelece diretrizes nacionais para o saneamento básico.\nAcessar material\n\n\n\n\nLei nº 14.026/2020 – Novo Marco Legal do Saneamento\nAutor: Presidência da República\nFonte: Planalto\nAtualiza o marco legal do saneamento e amplia metas de universalização.\nAcessar material\n\n\n\n\nDecreto nº 7.217/2010 – Regulamenta a Lei 11.445\nAutor: Presidência da República\nFonte: Planalto\nRegulamentação da política nacional de saneamento básico.\nAcessar material"
+    "text": "Lei nº 11.445/2007 – Marco Legal do Saneamento\nAutor: Presidência da República\nEstabelece diretrizes nacionais para o saneamento básico.\nAcessar material\n\n\n\n\nLei nº 14.026/2020 – Novo Marco Legal do Saneamento\nAutor: Presidência da República\nAtualiza o marco legal do saneamento e amplia metas de universalização.\nAcessar material\n\n\n\n\nDecreto nº 7.217/2010 – Regulamenta a Lei 11.445\nAutor: Presidência da República\nRegulamentação da política nacional de saneamento básico.\nAcessar material\n\n\n\n\nPrograma Nacional de Saneamento Rural\nAutor: Funasa\nAcessar material\n\n\n\n\nPlano Nacional de Saneamento Básico (PLANSAB)\nAutor: Ministério das Cidades\nInstrumento público de planejamento integrado do saneamento básico\nAcessar material"
   },
   {
     "objectID": "bibliografia.html#legislação",
     "href": "bibliografia.html#legislação",
     "title": "Bibliografia",
     "section": "",
-    "text": "Lei nº 11.445/2007 – Marco Legal do Saneamento\nAutor: Presidência da República\nFonte: Planalto\nEstabelece diretrizes nacionais para o saneamento básico.\nAcessar material\n\n\n\n\nLei nº 14.026/2020 – Novo Marco Legal do Saneamento\nAutor: Presidência da República\nFonte: Planalto\nAtualiza o marco legal do saneamento e amplia metas de universalização.\nAcessar material\n\n\n\n\nDecreto nº 7.217/2010 – Regulamenta a Lei 11.445\nAutor: Presidência da República\nFonte: Planalto\nRegulamentação da política nacional de saneamento básico.\nAcessar material"
+    "text": "Lei nº 11.445/2007 – Marco Legal do Saneamento\nAutor: Presidência da República\nEstabelece diretrizes nacionais para o saneamento básico.\nAcessar material\n\n\n\n\nLei nº 14.026/2020 – Novo Marco Legal do Saneamento\nAutor: Presidência da República\nAtualiza o marco legal do saneamento e amplia metas de universalização.\nAcessar material\n\n\n\n\nDecreto nº 7.217/2010 – Regulamenta a Lei 11.445\nAutor: Presidência da República\nRegulamentação da política nacional de saneamento básico.\nAcessar material\n\n\n\n\nPrograma Nacional de Saneamento Rural\nAutor: Funasa\nAcessar material\n\n\n\n\nPlano Nacional de Saneamento Básico (PLANSAB)\nAutor: Ministério das Cidades\nInstrumento público de planejamento integrado do saneamento básico\nAcessar material"
   },
   {
     "objectID": "bibliografia.html#livro",
@@ -235,14 +242,14 @@
     "href": "bibliografia.html#portal-blog",
     "title": "Bibliografia",
     "section": "Portal / Blog ",
-    "text": "Portal / Blog \n\n\n\nInstituto Trata Brasil – Lista de livros\nAutor: Instituto Trata Brasil\nFonte: Instituto Trata Brasil\nCuradoria com recomendações de leitura sobre saneamento básico.\nAcessar material\n\n\n\n\nSNIS – Sistema Nacional de Informações sobre Saneamento\nAutor: Ministério das Cidades\nFonte: SNIS / Gov.br\nPortal com dados e indicadores anuais do setor de saneamento.\nAcessar material"
+    "text": "Portal / Blog \n\n\n\nSigaÁguas\nAutor: AGEVAP\nPlataforma interativa que integra e disponibiliza dados hidrológicos, ambientais e territoriais para apoiar o monitoramento e a gestão dos recursos hídricos em bacias hidrográficas.\nAcessar material\n\n\n\n\nSNIS – Sistema Nacional de Informações sobre Saneamento\nAutor: Ministério das Cidades\nFonte: SNIS / Gov.br\nPortal com dados e indicadores anuais do setor de saneamento.\nAcessar material"
   },
   {
     "objectID": "bibliografia.html#documentário",
     "href": "bibliografia.html#documentário",
     "title": "Bibliografia",
     "section": "Documentário ",
-    "text": "Documentário \n\n\n\nIlha das Flores\nAutor: Jorge Furtado\nFonte: Produção nacional\nCurta-metragem que aborda, entre outros temas, saneamento e desigualdade social no Brasil.\n\n\n\n\nLixo Extraordinário\nAutor: Lucy Walker; João Jardim; Karen Harley\nFonte: Produção nacional/internacional\nDocumentário sobre o aterro de Jardim Gramacho e catadores de material reciclável."
+    "text": "Documentário \n\n\n\nReposrtagem do Jornal da EPTV\nFonte: Globoplay\nRepresa de Furnas, em Minas Gerais, é uma joia da engenharia\nAcessar material\n\n\n\n\nReportagem do Globo Repórter\nFonte: Globoplay\nBarragem da Usina Hidrelétrica de Furnas marca o início do lago\nAcessar material\n\n\n\n\nMatéria do G1\nFonte: G1\nFurnas: lago criado para ser ‘caixa d’água do Brasil’ tem 11 vezes o volume da Baía de Guanabara e ‘cidades submersas’\nAcessar material\n\n\n\n\nMatéria do UAI\nFonte: uai.com.br\nO Mar de Minas com cânions de até 20 metros e lago 4 vezes maior que a Baía de Guanabara que faz desse paraíso mineiro o destino do verão\nAcessar material"
   },
   {
     "objectID": "blog/posts/post01.html",

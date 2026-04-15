@@ -227,11 +227,11 @@ body.home-page main#quarto-document-content {
 
 /* fixar as alturas dos grid tiles */
 /* faz as colunas se comportarem como flex */
-.grid > [class*="g-col"] {
+body.sobre-page .grid > [class*="g-col"] {
   display: flex;
 }
 /* faz o card ocupar toda a altura disponível */
-.grid .card {
+body.sobre-page .grid .card {
   width: 100%;
   display: flex;
   flex-direction: column;
