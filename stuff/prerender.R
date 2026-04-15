@@ -1,3 +1,6 @@
+source("stuff/pacotes.R")
+instalar_pacotes()
+
 ultima_alteracao_snis =
   list.files("raw/snis", full.names = TRUE) |>
   file.info() |>
