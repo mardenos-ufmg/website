@@ -40,6 +40,9 @@ precisa_baixar_blog =
 if (precisa_baixar_blog) {
   root_dir = file.path(tempdir(), "blog")
   
+  df_posts =
+    c("title", "subtitle", "author", "date") |>
+    {\(.) matrix(nrow=0, ncol=length(.)) |> as.data.frame() |> `colnames<-`(.) }()
   for (folder in c("posts", "img")) {
     dest_dir = file.path(root_dir, folder)
     url_api  = file.path("https://api.github.com/repos/mardenos-ufmg/website-blog/contents", folder)
@@ -53,11 +56,28 @@ if (precisa_baixar_blog) {
       download_url = files$download_url[files$name == f]
       dest_file = file.path(dest_dir, f)
       download.file(download_url, dest_file, quiet = TRUE)
+      if (folder == "posts") {
+        df_posts[nrow(df_posts)+1,] = 
+          readLines(dest_file) |>
+          {\(.) .[2:max(which(.=="---")-1)]}() |>
+          yaml::yaml.load() |>
+          {\(.) .[c("title", "subtitle", "author", "date")]}() |>
+          as.data.frame.list()
+      }
     }
     
     fs::dir_copy(dest_dir, file.path("blog", folder), overwrite = TRUE)
   }
+  
   cat(as.character(Sys.time()), "\n", file = "stuff/timestamp_blog.txt")
+  
+  df_posts |>
+    dplyr::mutate(date = format(as.Date(.data$date), "%d/%m/%Y")) |>
+    dplyr::arrange(.data$date) |>
+    {\(.) .[nrow(.),]}() |>
+    as.list.data.frame() |>
+    saveRDS("stuff/data_last_post.rds")
+  
   unlink(root_dir, recursive = TRUE)
   cat("\nblog OK\n")
 }

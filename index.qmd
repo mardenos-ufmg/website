@@ -90,19 +90,25 @@ Painéis interativos com análises e indicadores em tempo real.
 
 #### Último Post do Blog
 
-> [**Análise Exploratória com R**](/blog/index.qmd)  
-> *30 de Março, 2025*  
-> Aprenda como realizar uma EDA completa usando tidyverse e ggplot2.
+```{r}
+#| include: false
+last_post = readRDS("stuff/data_last_post.rds")
+```
+
+
+> [**`r last_post$title`**](/blog/index.qmd)  
+> *`r last_post$author`, `r last_post$date`*  
+> `r last_post$subtitle`.
 
 #### Dashboard em Destaque
 
 > [**Painel SNIS**](https://dh3kih-carlos-de0moura.shinyapps.io/snis/)  
 > *Análise fatorial com dados do SNIS*  
-> Acompanhe os principais KPIs do projeto com visualizações interativas.
+> Veja a construção e análise de indicadores sobre o saneamento em Minas Gerais.
 
 #### Informações para desenvolvedores
 
 > [**4devs**](/4devs/index.qmd)  
-> Acompanhe os principais KPIs do projeto com visualizações interativas.
+> Acesse informações úteis sobre a parte de programação e códigos do projeto.
 :::
 :::::

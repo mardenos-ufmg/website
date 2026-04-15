@@ -2,6 +2,9 @@
 title: "Sobre o Projeto"
 subtitle: "Motivação, objetivos e equipe"
 toc: false
+format:
+  html:
+    body-classes: sobre-page
 ---
 
 Entendemos que é necessária uma governança dos usos múltiplos da água do Lago de Furnas, o que requer a superação da carência de informações socioeconômicas, demográficas, de saneamento básico, hidrológicas e de qualidade da água da represa.
