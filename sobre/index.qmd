@@ -4,11 +4,11 @@ subtitle: "Motivação, objetivos e equipe"
 toc: false
 ---
 
-Financiamento (agradecimentos):
+Entendemos que é necessária uma governança dos usos múltiplos da água do Lago de Furnas, o que requer a superação da carência de informações socioeconômicas, demográficas, de saneamento básico, hidrológicas e de qualidade da água da represa.
 
-Este projeto nasceu da necessidade de criar uma plataforma centralizada para **análise de dados reproduzível**, com publicação transparente de métodos, resultados e visualizações interativas.
+Assim, nossa atuação envolve a criação fontes de informações consistidas e de espaços de discussão para a construção colaborativa e o debate equilibrado entre os múltiplos usuários do Lago de Furnas e os gestores públicos locais, estaduais e federais.
 
-Utilizando o ecossistema **Quarto**, combinamos código (R e Python), texto e visualizações em documentos dinâmicos que podem ser facilmente atualizados, versionados e compartilhados.
+Este site nasceu da necessidade de criar uma plataforma centralizada para análise e compartilhamento de dados e divulgação de publicações e fontes de forma transparente e interativa. Utilizando os ecossistemas [Quarto](https://quarto.org/) e [R](https://www.r-project.org/), geramos textos e visualizações em documentos dinâmicos que podem ser facilmente atualizados e compartilhados.
 
 
 
@@ -86,8 +86,9 @@ Democratizar o acesso a análises de dados de qualidade, promovendo transparênc
 
 :::
 
-
+<!--
 ## Licença
 
 Este projeto é distribuído sob a licença **MIT**. O conteúdo textual está sob **CC BY 4.0**.  
 Sinta-se livre para usar, adaptar e redistribuir com atribuição adequada.
+-->

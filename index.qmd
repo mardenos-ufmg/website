@@ -2,6 +2,9 @@
 title: "Bem-vindo ao Mar de Nós"
 page-layout: full
 toc: false
+format:
+  html:
+    body-classes: home-page
 ---
 
 <!--
@@ -17,7 +20,16 @@ toc: false
  /_/   \_\____/   /_/   \_\____/ |_| |_| \_\/_/   \_\
 -->
 
-Lorem ipsum.
+::: {.parallax}
+<div class="title-box">
+Bem-vindo ao Mar de Nós
+</div>
+:::
+
+Este projeto é fruto de uma parceria entre a UFMG ([DESA](https://www.desa.ufmg.br/), [DERH](https://www.eng.ufmg.br/portal/dehr/), [DEST](https://www.est.ufmg.br/)), e atores engajados no Movimento Pró-Furnas 762, em especial: [ALAGO](https://www.instagram.com/alago.furnas/), -  [Unelagos](https://www.instagram.com/unelagos/), e [FECITUR](https://www.fecitur.com.br/). 
+A parceria foi iniciada em 2021 e se aprofundou em 2025, mediante financiamento ao Projeto de Pesquisa *“Saneamento básico em municípios da área de influência da represa de Furnas – MG: situação existente e relação com a participação e o controle social”*, por meio de emenda parlamentar obtida pelos Deputados [Odair Cunha](https://www.camara.leg.br/deputados/74159) e [Professor Cleiton](https://www.almg.gov.br/deputados/professor-cleiton/26119).
+
+Nosso foco é na caracterização dos usos múltiplos da água e mecanismos de participação social como instrumentos para o engajamento voltado à construção de uma agenda comum entre os municípios que compõem a bacia e às ações coletivas de longo prazo e amplo alcance.
 
 
 ## O que você encontra aqui
@@ -34,7 +46,7 @@ Visão geral do projeto, destaques e novidades mais recentes.
 :::: {.g-col-12 .g-col-md-3}
 ::: {.card .h-100 .text-center .p-3}
 <i class="bi bi-info-circle-fill fs-1 text-success"></i>
-<a href="qmd/sobre.qmd" class="text-decoration-none">Sobre o projeto</a><br>
+<a href="/sobre/index.qmd" class="text-decoration-none">Sobre o projeto</a><br>
 Conheça a motivação, objetivos, metodologia e equipe por trás deste trabalho.
 :::
 ::::
@@ -42,7 +54,7 @@ Conheça a motivação, objetivos, metodologia e equipe por trás deste trabalho
 :::: {.g-col-12 .g-col-md-3}
 ::: {.card .h-100 .text-center .p-3}
 <i class="bi bi-journal-text fs-1 text-warning"></i>
-<a href="blog/index.qmd" class="text-decoration-none"> Blog </a><br>
+<a href="/blog/index.qmd" class="text-decoration-none"> Blog </a><br>
 Artigos, tutoriais e insights sobre análise de dados e o projeto.
 :::
 ::::
@@ -50,35 +62,48 @@ Artigos, tutoriais e insights sobre análise de dados e o projeto.
 :::: {.g-col-12 .g-col-md-3}
 ::: {.card .h-100 .text-center .p-3}
 <i class="bi bi-bar-chart-fill fs-1 text-danger"></i>
-<a href="qmd/dashboards.qmd" class="text-decoration-none"> Dashboards </a><br>
+<a href="/dashboards/index.qmd" class="text-decoration-none"> Dashboards </a><br>
 Painéis interativos com análises e indicadores em tempo real.
 :::
 ::::
 :::::::::::
 
-------------------------------------------------------------------------
 
-## Destaques Recentes
-
+## Destaques
 ::::: grid
 ::: {.g-col-12 .g-col-md-6}
-### Último Post do Blog
 
-> [**Análise Exploratória com R**](blog/index.qmd)\
-> *30 de Março, 2025*\
-> Aprenda como realizar uma EDA completa usando tidyverse e ggplot2.
 
-<!--
-[Ler artigo](blog/index.qmd)
--->
+<div style="text-align:center; margin-bottom:10px;">
+  <p><strong>Acompanhe nosso projeto no Instagram!</strong></p>
+</div>
+
+<div style="height:500px; display:flex; justify-content:center;">
+  <iframe 
+    src="https://www.instagram.com/p/DP2HlqCgeRj/embed"
+    style="width:450px; height:610px; border:none;">
+  </iframe>
+</div>
+
 :::
 
 ::: {.g-col-12 .g-col-md-6}
-### Dashboard em Destaque
 
-> [**Painel de Indicadores**](qmd/dashboards.qmd)\
-> *Atualizado diariamente*\
+#### Último Post do Blog
+
+> [**Análise Exploratória com R**](/blog/index.qmd)  
+> *30 de Março, 2025*  
+> Aprenda como realizar uma EDA completa usando tidyverse e ggplot2.
+
+#### Dashboard em Destaque
+
+> [**Painel SNIS**](https://dh3kih-carlos-de0moura.shinyapps.io/snis/)  
+> *Análise fatorial com dados do SNIS*  
 > Acompanhe os principais KPIs do projeto com visualizações interativas.
 
+#### Informações para desenvolvedores
+
+> [**4devs**](/4devs/index.qmd)  
+> Acompanhe os principais KPIs do projeto com visualizações interativas.
 :::
 :::::
