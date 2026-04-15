@@ -16,7 +16,7 @@ Este site nasceu da necessidade de criar uma plataforma centralizada para análi
 
 Democratizar o acesso a análises de dados de qualidade, promovendo transparência e reprodutibilidade científica.
 
-1. **Transparência** — todo código e dado bruto são disponibilizados publicamente
+1. **Transparência** — todo o código e os dados são disponibilizados publicamente
 2. **Reprodutibilidade** — qualquer pessoa pode replicar as análises localmente
 3. **Educação** — tutoriais e posts explicam os métodos utilizados
 4. **Colaboração** — contribuições são bem-vindas via GitHub
@@ -85,6 +85,30 @@ Democratizar o acesso a análises de dados de qualidade, promovendo transparênc
 ::::
 
 :::
+
+
+## Links úteis
+
+### Instagram
+- [Alago (Associação dos Municípios do Lago de Furnas)](https://www.instagram.com/alago.furnas)
+- [Projeto Mar de Nós -  UFMG](https://www.instagram.com/mar.de.nos_ufmg)
+- [Unelagos – Empreendores Mar de Minas](https://www.instagram.com/unelagos)
+- [Circuito Turístico do Lago de Furnas](https://www.instagram.com/furnas.circuito)
+- [Comunidade Viva Furnas](https://www.instagram.com/comunidadevivafurnas)
+- [Fecitur - Federação dos Circuitos Turísticos de Minas Gerais](https://www.instagram.com/feciturmg)
+- [PPGSMARH](https://www.instagram.com/ppgsmarh.ufmg)
+
+### Sites institucionais
+
+- [Federação dos Circuitos Turísticos de Minas Gerais](https://www.fecitur.com.br)
+- [Mar de minas](https://mardeminas.com.br/furnas/pagina.php?pg=1&tag=Sobre)
+- [Operador Nacional do Sistema Elétrico](https://www.ons.org.br/paginas/energia-agora/reservatorios)
+- [Minas Gerais](https://www.minasgerais.com.br/pt/atracoes/cristais/lago-de-furnas-3)
+- [Programa de Pós Graduação em Saneamento, meio ambiente e recursos hídricos - UFMG](https://www.smarh.eng.ufmg.br)
+- [Departamento de Engenharia Sanitária e Ambiental - UFMG](https://www.desa.ufmg.br)
+- [Departamento de Estatística - UFMG](https://www.est.ufmg.br)
+- [Departamento de Hidráulica e Recursos Hídricos - UFMG](http://www.ehr.ufmg.br)
+
 
 <!--
 ## Licença
