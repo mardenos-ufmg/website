@@ -1,6 +1,8 @@
-/* ============================================
+/*
+============================================
    Estilos Customizados — Projeto Quarto
-   ============================================ */
+============================================
+*/
 
 /* Importar fonte do Google */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono&display=swap');
@@ -169,3 +171,55 @@ code {
   border-radius: 3px;
 }
 
+
+
+/* home */
+/* Rolagem de imagem ancorada */
+.parallax {
+  background-image: url(https://imgmd.net/images/v1/guia/1617219/lago-da-represa-de-furnas.jpg);
+  min-height: 400px;
+  
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-bottom: 40px;
+
+  /* efeito parallax */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* conteúdo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+
+/* home */
+/* caixa central */
+.title-box {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+
+  padding: 30px 40px;
+  border-radius: 12px;
+
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+
+  max-width: 90%;
+}
+
+
+/* home */
+/* retirar título e padding */
+body.home-page #title-block-header {
+  display: none;
+}
+body.home-page main#quarto-document-content {
+  padding-top: 0;
+}

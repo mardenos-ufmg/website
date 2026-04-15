@@ -4,7 +4,7 @@
     "href": "sobre/index.html",
     "title": "Sobre o Projeto",
     "section": "",
-    "text": "Financiamento (agradecimentos):\nEste projeto nasceu da necessidade de criar uma plataforma centralizada para análise de dados reproduzível, com publicação transparente de métodos, resultados e visualizações interativas.\nUtilizando o ecossistema Quarto, combinamos código (R e Python), texto e visualizações em documentos dinâmicos que podem ser facilmente atualizados, versionados e compartilhados."
+    "text": "Entendemos que é necessária uma governança dos usos múltiplos da água do Lago de Furnas, o que requer a superação da carência de informações socioeconômicas, demográficas, de saneamento básico, hidrológicas e de qualidade da água da represa.\nAssim, nossa atuação envolve a criação fontes de informações consistidas e de espaços de discussão para a construção colaborativa e o debate equilibrado entre os múltiplos usuários do Lago de Furnas e os gestores públicos locais, estaduais e federais.\nEste site nasceu da necessidade de criar uma plataforma centralizada para análise e compartilhamento de dados e divulgação de publicações e fontes de forma transparente e interativa. Utilizando os ecossistemas Quarto e R, geramos textos e visualizações em documentos dinâmicos que podem ser facilmente atualizados e compartilhados."
   },
   {
     "objectID": "sobre/index.html#objetivos-e-metodologia",
@@ -21,18 +21,11 @@
     "text": "Equipe\n\n\n\n\nIzabel Matos\nDoutora em Saneamento, meio ambiente e recursos hídricos pela UFMG\n Currículo Lattes\n\n\n\n\n\nSonaly Rezende\nProfessora titular em Engenharia Sanitária e Ambiental, UFMG\n Currículo Lattes\n\n\n\n\n\nMarcos Prates\nPhD in Statistics (U Connecticut), Professor associado do Depto. de Estatística, UFMG\n Página pessoal\n\n\n\n\n\nNathalia Roland\nProfessora do Departamento de Engenharia Sanitária e Ambiental da UFJF\n Currículo Lattes\n\n\n\n\n\nCarlos de Moura\nMestrando em Estatística pela UFMG\n Currículo Lattes"
   },
   {
-    "objectID": "sobre/index.html#licença",
-    "href": "sobre/index.html#licença",
-    "title": "Sobre o Projeto",
-    "section": "Licença",
-    "text": "Licença\nEste projeto é distribuído sob a licença MIT. O conteúdo textual está sob CC BY 4.0.\nSinta-se livre para usar, adaptar e redistribuir com atribuição adequada."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Bem-vindo ao Mar de Nós",
     "section": "",
-    "text": "Lorem ipsum."
+    "text": "Bem-vindo ao Mar de Nós\nEste projeto é fruto de uma parceria entre a UFMG (DESA, DERH, DEST), e atores engajados no Movimento Pró-Furnas 762, em especial: ALAGO, - Unelagos, e FECITUR. A parceria foi iniciada em 2021 e se aprofundou em 2025, mediante financiamento ao Projeto de Pesquisa “Saneamento básico em municípios da área de influência da represa de Furnas – MG: situação existente e relação com a participação e o controle social”, por meio de emenda parlamentar obtida pelos Deputados Odair Cunha e Professor Cleiton.\nNosso foco é na caracterização dos usos múltiplos da água e mecanismos de participação social como instrumentos para o engajamento voltado à construção de uma agenda comum entre os municípios que compõem a bacia e às ações coletivas de longo prazo e amplo alcance."
   },
   {
     "objectID": "index.html#o-que-você-encontra-aqui",
@@ -42,11 +35,11 @@
     "text": "O que você encontra aqui\n\n\n\n Home Visão geral do projeto, destaques e novidades mais recentes.\n\n\n\n\n Sobre o projeto Conheça a motivação, objetivos, metodologia e equipe por trás deste trabalho.\n\n\n\n\n  Blog  Artigos, tutoriais e insights sobre análise de dados e o projeto.\n\n\n\n\n  Dashboards  Painéis interativos com análises e indicadores em tempo real."
   },
   {
-    "objectID": "index.html#destaques-recentes",
-    "href": "index.html#destaques-recentes",
+    "objectID": "index.html#destaques",
+    "href": "index.html#destaques",
     "title": "Bem-vindo ao Mar de Nós",
-    "section": "Destaques Recentes",
-    "text": "Destaques Recentes\n\n\nÚltimo Post do Blog\n\nAnálise Exploratória com R\n30 de Março, 2025\nAprenda como realizar uma EDA completa usando tidyverse e ggplot2.\n\n\n\n\nDashboard em Destaque\n\nPainel de Indicadores\nAtualizado diariamente\nAcompanhe os principais KPIs do projeto com visualizações interativas."
+    "section": "Destaques",
+    "text": "Destaques\n\n\n\n\nAcompanhe nosso projeto no Instagram!\n\n\n\n \n\n\n\n\nÚltimo Post do Blog\n\nAnálise Exploratória com R\n30 de Março, 2025\nAprenda como realizar uma EDA completa usando tidyverse e ggplot2.\n\n\n\nDashboard em Destaque\n\nPainel SNIS\nAnálise fatorial com dados do SNIS\nAcompanhe os principais KPIs do projeto com visualizações interativas.\n\n\n\nInformações para desenvolvedores\n\n4devs\nAcompanhe os principais KPIs do projeto com visualizações interativas."
   },
   {
     "objectID": "blog/posts/post02.html",
