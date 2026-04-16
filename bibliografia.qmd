@@ -271,7 +271,7 @@ Portal com dados e indicadores anuais do setor de saneamento.
 ::: {.g-col-12 .g-col-md-4}
 ::: {.card .h-100 .p-3}
 
-Reposrtagem do Jornal da EPTV
+Reportagem do Jornal da EPTV
 
 
 

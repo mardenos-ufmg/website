@@ -80,7 +80,8 @@ Painéis interativos com análises e indicadores em tempo real.
 <div style="height:500px; display:flex; justify-content:center;">
   <iframe 
     src="https://www.instagram.com/p/DP2HlqCgeRj/embed"
-    style="width:450px; height:610px; border:none;">
+    style="width:450px; height:610px; border:none;"
+    scrolling="no">
   </iframe>
 </div>
 
@@ -92,13 +93,13 @@ Painéis interativos com análises e indicadores em tempo real.
 
 ```{r}
 #| include: false
-last_post = readRDS("stuff/data_last_post.rds")
+df_ultimo_post = readRDS("stuff/df_ultimo_post.rds")
 ```
 
 
-> [**`r last_post$title`**](/blog/index.qmd)  
-> *`r last_post$author`, `r last_post$date`*  
-> `r last_post$subtitle`.
+> [**`r df_ultimo_post$title`**](/blog/index.qmd)  
+> *`r df_ultimo_post$author`, `r df_ultimo_post$date`*  
+> `r df_ultimo_post$subtitle`.
 
 #### Dashboard em Destaque
 

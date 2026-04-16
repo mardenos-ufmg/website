@@ -93,7 +93,7 @@ if (precisa_baixar_blog) {
     dplyr::arrange(.data$date) |>
     {\(.) .[nrow(.),]}() |>
     as.list.data.frame() |>
-    saveRDS("stuff/data_last_post.rds")
+    saveRDS("stuff/df_ultimo_post.rds")
   
   unlink(root_dir, recursive = TRUE)
   cat("\nblog OK\n")

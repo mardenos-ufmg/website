@@ -1,0 +1,88 @@
+# SNIS
+
+Esse pacote tem por objetivo formalizar e disponibilizar funções para a
+leitura e análise de dados do SNIS (Sistema Nacional de Informações
+sobre Saneamento). As funções estão documentadas e há algumas vinhetas
+que ajudam a entender o funcionamento do pacote. Isso está disponível no
+[site do pacote](https://mardenos-ufmg.github.io/snis/).
+
+Para utilizar o pacote, siga alguma das opções abaixo. Em ambos os casos
+é interessante instalar o pacote `pak` em seu ambiente R via
+`install.packages("pak")` e usar o
+[RStudio](https://posit.co/download/rstudio-desktop/). Sempre que houver
+uma alteração no pacote será necessário repetir o procedimento para
+usufruir das atualizações.
+
+## Via `pak`
+
+Instale o `pak` em seu ambiente R e, em seguida, instale o `snis` via
+`pak`.
+
+``` r
+if (!{"pak" %in% rownames(installed.packages())}) install.packages("pak")
+pak::pak("mardenos-ufmg/snis")
+```
+
+## Via `devtools`
+
+Primeiro é necessário baixar a pasta do nosso repositório no GitHub. O
+jeito mais fácil é acessando o [nosso repositório no
+GitHub](https://github.com/mardenos-ufmg/snis) e clicando no botão verde
+escrito `code` e em seguida `Download Zip`. Em seguida faça a
+descompressão (unzip) da pasta e instale o `devtools` via R no seu PC.
+
+``` r
+install.packages("devtools")
+```
+
+ou, preferencialmente
+
+``` r
+if (!{"pak" %in% rownames(installed.packages())}) install.packages("pak")
+if (!{"devtools" %in% rownames(installed.packages())}) pak::pak("devtools")
+```
+
+Em seguida abra o repositório `snis` descompactado em seu PC e clique em
+`snis.Rproj`. Isso iniciará uma sessão do RStudio com o projeto já
+aberto. Finalmente, rode no console do RStudio o comando
+[`devtools::load_all()`](https://devtools.r-lib.org/reference/load_all.html)
+e você poderá usar todas as funções do nosso pacote!
+
+# Package index
+
+## All functions
+
+- [`bartlett()`](https://mardenos-ufmg.github.io/snis/reference/bartlett.md)
+  : Teste de Barlett
+- [`dados_snis`](https://mardenos-ufmg.github.io/snis/reference/dados_snis.md)
+  : Dados
+- [`fa()`](https://mardenos-ufmg.github.io/snis/reference/fa.md) :
+  Análise Fatorial para dados do SNIS
+- [`mapa_MG`](https://mardenos-ufmg.github.io/snis/reference/mapa_MG.md)
+  : Mapa de Minas Gerais como json
+- [`mapa_interativo()`](https://mardenos-ufmg.github.io/snis/reference/mapa_interativo.md)
+  : Mapa interativo de Scores por Região
+- [`plot_boxplot()`](https://mardenos-ufmg.github.io/snis/reference/plot_boxplot.md)
+  : Boxplots Scores por Grupos
+- [`plot_hist()`](https://mardenos-ufmg.github.io/snis/reference/plot_hist.md)
+  : Histograma com curva de densidade
+- [`plot_loading()`](https://mardenos-ufmg.github.io/snis/reference/plot_loading.md)
+  : Heatmap das Cargas Fatoriais por Grupo
+- [`processar_dados()`](https://mardenos-ufmg.github.io/snis/reference/processar_dados.md)
+  : Processar dados para análise fatorial
+- [`quartis()`](https://mardenos-ufmg.github.io/snis/reference/quartis.md)
+  : Criar vetor de quartis
+- [`read()`](https://mardenos-ufmg.github.io/snis/reference/read.md) :
+  Ler CSV do SNIS
+- [`shiny()`](https://mardenos-ufmg.github.io/snis/reference/shiny.md) :
+  ShinyApp
+- [`table_top_bottom()`](https://mardenos-ufmg.github.io/snis/reference/table_top_bottom.md)
+  : Tabela dos Melhores e Piores municípios
+- [`update_df_fa()`](https://mardenos-ufmg.github.io/snis/reference/update_df_fa.md)
+  : Atualizar data frame com scores
+
+# Articles
+
+### All vignettes
+
+- [dados](https://mardenos-ufmg.github.io/snis/articles/dados.md):
