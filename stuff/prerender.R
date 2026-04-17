@@ -55,35 +55,29 @@ precisa_baixar_blog =
   {\(.) ifelse(is.na(.), T, .)}()
 
 if (precisa_baixar_blog) {
-  root_dir = file.path(tempdir(), "blog")
+  repo_github = "git@github.com:mardenos-ufmg/website-blog.git"
+  destino_temp = file.path(tempdir(), "github-blog")
+  
+  if (dir.exists(destino_temp)) unlink(destino_temp, recursive = T)
+  dir.create(destino_temp)
+  system(paste("git clone", repo_github, destino_temp))
+  
+  destino_website = "blog/posts"
+  if (dir.exists(destino_website)) unlink(destino_website, recursive = T)
+  fs::dir_copy(file.path(destino_temp, "posts"), destino_website)
+  unlink(destino_temp, recursive = T)
   
   df_posts =
     c("title", "subtitle", "author", "date") |>
     {\(.) matrix(nrow=0, ncol=length(.)) |> as.data.frame() |> `colnames<-`(.) }()
-  for (folder in c("posts", "img")) {
-    dest_dir = file.path(root_dir, folder)
-    url_api  = file.path("https://api.github.com/repos/mardenos-ufmg/website-blog/contents", folder)
-    dir.create(dest_dir, recursive = TRUE, showWarnings = FALSE)
-    
-    res = httr::GET(url_api)
-    httr::stop_for_status(res)
-    files = jsonlite::fromJSON(httr::content(res, as = "text"))
-    
-    for (f in files$name) {
-      download_url = files$download_url[files$name == f]
-      dest_file = file.path(dest_dir, f)
-      download.file(download_url, dest_file, quiet = TRUE)
-      if (folder == "posts") {
-        df_posts[nrow(df_posts)+1,] = 
-          readLines(dest_file) |>
-          {\(.) .[2:max(which(.=="---")-1)]}() |>
-          yaml::yaml.load() |>
-          {\(.) .[c("title", "subtitle", "author", "date")]}() |>
-          as.data.frame.list()
-      }
-    }
-    
-    fs::dir_copy(dest_dir, file.path("blog", folder), overwrite = TRUE)
+  files = list.files(destino_website, full.names = T) |> {\(.) .[!file.info(.)$isdir]}()
+  for (file in files) {
+    df_posts[nrow(df_posts)+1,] = 
+      readLines(file) |>
+      {\(.) .[2:max(which(.=="---")-1)]}() |>
+      yaml::yaml.load() |>
+      {\(.) .[c("title", "subtitle", "author", "date")]}() |>
+      as.data.frame.list()
   }
   
   cat(as.character(Sys.time()), "\n", file = "stuff/timestamp_blog.txt")
@@ -95,7 +89,6 @@ if (precisa_baixar_blog) {
     as.list.data.frame() |>
     saveRDS("stuff/df_ultimo_post.rds")
   
-  unlink(root_dir, recursive = TRUE)
   cat("\nblog OK\n")
 }
 

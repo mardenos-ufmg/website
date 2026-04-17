@@ -1,23 +1,47 @@
+<div id="main" class="col-md-9" role="main">
+
 # Processar dados para análise fatorial
+
+<div class="ref-description section level2">
 
 Rotina de processamento (e criação) de variáveis para a aplicação de
 análise fatorial
 
+</div>
+
+<div class="section level2">
+
 ## Usage
+
+<div class="sourceCode">
 
 ``` r
 processar_dados(ano)
 ```
 
+</div>
+
+</div>
+
+<div class="section level2">
+
 ## Arguments
 
-- ano:
+-   ano:
 
-  inteiro entre 2000 e 2022
+    inteiro entre 2000 e 2022
+
+</div>
+
+<div class="section level2">
 
 ## Value
 
 tibble
+
+</div>
+
+<div class="section level2">
 
 ## Inputação
 
@@ -35,16 +59,24 @@ sejam retornados em cada ano.
 Os valores de algumas variáveis foram imputadas por simples lógica, como
 as que se seguem:
 
-- `IN003`: ;
+-   `IN003`: ;
+
+</div>
+
+<div class="section level2">
 
 ## Variáveis criadas
 
 Algumas variáveis foram criadas com as seguintes fórmulas:
 
-- `tarifa`: ;
+-   `tarifa`: ;
 
-- `micromedida`: ;
+-   `micromedida`: ;
 
-- `urbanização`: ;
+-   `urbanização`: ;
 
-- `prestador2`: ;
+-   `prestador2`: ;
+
+</div>
+
+</div>
