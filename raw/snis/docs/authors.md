@@ -1,16 +1,8 @@
-<div id="main" class="col-md-9" role="main">
-
 # Authors and Citation
-
-<div class="section level2">
 
 ## Authors
 
--   **Carlos de Moura**. Author, maintainer.
-
-</div>
-
-<div class="section level2">
+- **Carlos de Moura**. Author, maintainer.
 
 ## Citation
 
@@ -24,7 +16,3 @@ version 0.0.0.9000, <https://mardenos-ufmg.github.io/snis/>.
       note = {R package version 0.0.0.9000},
       url = {https://mardenos-ufmg.github.io/snis/},
     }
-
-</div>
-
-</div>

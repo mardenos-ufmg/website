@@ -32,7 +32,7 @@ Democratizar o acesso a análises de dados de qualidade, promovendo transparênc
 
 :::: {.g-col-12 .g-col-md-4}
 ::: {.card .text-center .p-3}
-<img src="/sobre/pessoas/Izabel.png" class="img-fluid rounded-circle mb-2" alt="Izabel Matos" style="width:120px; height:120px;">
+<img src="/sobre/pessoas/IzabelMatos.png" class="img-fluid rounded-circle mb-2" alt="Izabel Matos" style="width:120px; height:120px;">
 
 **Izabel Matos**  
 *Doutora em Saneamento, meio ambiente e recursos hídricos pela UFMG*
@@ -43,7 +43,7 @@ Democratizar o acesso a análises de dados de qualidade, promovendo transparênc
 
 :::: {.g-col-12 .g-col-md-4}
 ::: {.card .text-center .p-3}
-<img src="/sobre/pessoas/Sonaly.png" class="img-fluid rounded-circle mb-2" alt="Sonaly Rezende" style="width:120px; height:120px;">
+<img src="/sobre/pessoas/SonalyRezende.png" class="img-fluid rounded-circle mb-2" alt="Sonaly Rezende" style="width:120px; height:120px;">
 
 **Sonaly Rezende**  
 *Professora titular em Engenharia Sanitária e Ambiental, UFMG*  
@@ -54,7 +54,7 @@ Democratizar o acesso a análises de dados de qualidade, promovendo transparênc
 
 :::: {.g-col-12 .g-col-md-4}
 ::: {.card .text-center .p-3}
-<img src="/sobre/pessoas/Marcos.png" class="img-fluid rounded-circle mb-2" alt="Marcos Prates" style="width:120px; height:120px;">
+<img src="/sobre/pessoas/MarcosPrates.png" class="img-fluid rounded-circle mb-2" alt="Marcos Prates" style="width:120px; height:120px;">
 
 **Marcos Prates**  
 *PhD in Statistics (U Connecticut), Professor associado do Depto. de Estatística, UFMG*  
@@ -66,7 +66,7 @@ Democratizar o acesso a análises de dados de qualidade, promovendo transparênc
 
 :::: {.g-col-12 .g-col-md-4}
 ::: {.card .text-center .p-3}
-<img src="/sobre/pessoas/Nathalia.png" class="img-fluid rounded-circle mb-2" alt="Nathalia Roland" style="width:120px; height:120px;">
+<img src="/sobre/pessoas/NathaliaRoland.png" class="img-fluid rounded-circle mb-2" alt="Nathalia Roland" style="width:120px; height:120px;">
 
 **Nathalia Roland**  
 *Professora do Departamento de Engenharia Sanitária e Ambiental da UFJF*
@@ -78,7 +78,7 @@ Democratizar o acesso a análises de dados de qualidade, promovendo transparênc
 
 :::: {.g-col-12 .g-col-md-4}
 ::: {.card .text-center .p-3}
-<img src="/sobre/pessoas/Carlos.png" class="img-fluid rounded-circle mb-2" alt="Carlos de Moura" style="width:120px; height:120px;">
+<img src="/sobre/pessoas/CarlosMoura.png" class="img-fluid rounded-circle mb-2" alt="Carlos de Moura" style="width:120px; height:120px;">
 
 **Carlos de Moura**  
 *Mestrando em Estatística pela UFMG*
@@ -86,6 +86,19 @@ Democratizar o acesso a análises de dados de qualidade, promovendo transparênc
 [<i class="bi bi-link-45deg"></i> Currículo Lattes](http://lattes.cnpq.br/4505300901569230)
 :::
 ::::
+
+:::: {.g-col-12 .g-col-md-4}
+::: {.card .text-center .p-3}
+<img src="/sobre/pessoas/DiegoCunha.png" class="img-fluid rounded-circle mb-2" alt="Diego Cunha" style="width:120px; height:120px;">
+
+**Diego Cunha**  
+*Engenheiro Ambiental e Sanitarista (UFJF) e mestrando em Saneamento, Meio Ambiente e Recursos Hídricos (UFMG)*
+
+[<i class="bi bi-link-45deg"></i> Currículo Lattes](http://lattes.cnpq.br/4505300901569230)
+:::
+::::
+
+
 
 :::
 

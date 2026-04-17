@@ -20,6 +20,8 @@ instalar_pacotes = function() {
   
   if (length(pacotes_necessarios) == 0) return("pacotes OK")
   
+  cat("\n\nTalvez seja necessário instalar os seguintes pacotes de sistema\n\n", pak::pkg_sysreqs(pacotes_necessarios)$install_scripts, "\n\n")
+  
   res = try(pak::pak(pacotes_necessarios), silent = TRUE)
   
   pacotes_faltando = pacotes_necessarios[!pacotes_necessarios %in% pacotes_instalados]

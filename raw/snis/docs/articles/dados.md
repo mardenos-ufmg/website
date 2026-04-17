@@ -1,8 +1,4 @@
-<div id="main" class="col-md-9" role="main">
-
 # dados
-
-<div id="cb1" class="sourceCode">
 
 ``` r
 library(snis)
@@ -10,10 +6,10 @@ library(snis)
 #> Loading required package: shiny
 #> Loading required package: tidyverse
 #> ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-#> ✔ dplyr     1.2.0     ✔ readr     2.2.0
-#> ✔ forcats   1.0.1     ✔ stringr   1.6.0
-#> ✔ lubridate 1.9.5     ✔ tibble    3.3.1
-#> ✔ purrr     1.2.1     ✔ tidyr     1.3.2
+#> ✔ dplyr     1.2.0     ✔ readr     2.1.5
+#> ✔ forcats   1.0.1     ✔ stringr   1.5.2
+#> ✔ lubridate 1.9.4     ✔ tibble    3.3.0
+#> ✔ purrr     1.1.0     ✔ tidyr     1.3.1
 #> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
@@ -62,15 +58,9 @@ codigos2 =
   filter( código %in% colnames(dados_snis[["2021"]]$df) )
 ```
 
-</div>
-
-<div id="cb2" class="sourceCode">
-
 ``` r
 kable(codigos2, caption = "Tabela com dados filtrados")
 ```
-
-</div>
 
 | código                         | descrição                                                                           | tipo      |
 |:-------------------------------|:------------------------------------------------------------------------------------|:----------|
@@ -123,13 +113,9 @@ kable(codigos2, caption = "Tabela com dados filtrados")
 
 Tabela com dados filtrados
 
-<div id="cb3" class="sourceCode">
-
 ``` r
 kable(codigos, caption = "Tabela com dados filtrados")
 ```
-
-</div>
 
 | código                         | descrição                                                                                                  | tipo      |
 |:-------------------------------|:-----------------------------------------------------------------------------------------------------------|:----------|
@@ -378,5 +364,3 @@ kable(codigos, caption = "Tabela com dados filtrados")
 | urbanização                    | urbanização                                                                                                | NULL      |
 
 Tabela com dados filtrados
-
-</div>
