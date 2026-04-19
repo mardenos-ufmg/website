@@ -19,6 +19,10 @@ arvore_gerar_df = function() {
     "|",
     "^raw/snis/docs",
     "|",
+    "^raw/snis/more/lab/.+",
+    "|",
+    "^raw/snis/man/.+",
+    "|",
     "\\.Rproj$",
     "|",
     "_quarto.yml$",
@@ -99,6 +103,7 @@ arvore_io = function(tipo) {
     tipo = 1
   }
   
+  #df_guardado = readxl::read_xlsx(here::here("dashboards/arvore/arvore.xlsx"))[,1:8]
   df_guardado = readxl::read_xlsx("arvore.xlsx")[,1:8]
   #df_guardado = readxl::read_xlsx("dashboards/arvore/arvore.xlsx")[,1:8]
   df_gerado   = arvore_gerar_df()
@@ -129,7 +134,7 @@ arvore_io = function(tipo) {
       df_novo =
         df_novo |>
         select(-c(descricao, palavras_chave)) |>
-        left_join(df_guardado_ativo)
+        left_join(df_guardado_ativo, by = "path")
     }
     if (nrow(df_guardado_inativo)) {
       df_novo =
