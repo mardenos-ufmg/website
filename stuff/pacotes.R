@@ -24,7 +24,7 @@ instalar_pacotes = function() {
   
   res = try(pak::pak(pacotes_necessarios), silent = TRUE)
   
-  pacotes_faltando = pacotes_necessarios[!pacotes_necessarios %in% pacotes_instalados]
+  pacotes_faltando = pacotes_necessarios[!pacotes_necessarios %in% installed.packages()[, "Package"]]
   
   if (length(pacotes_faltando) > 0) {
     message("Alguns pacotes não foram instalados com pak. Usando install.packages()...")
