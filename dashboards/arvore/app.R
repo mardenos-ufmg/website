@@ -1,6 +1,6 @@
 library(shiny)
-source("funs.R")
-source("topbar.R")
+source(here::here("stuff/shiny/topbar.R"))
+source(here::here("stuff/funs.R"))
 
 ui = tagList(
   tags$style(HTML("

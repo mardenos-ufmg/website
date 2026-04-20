@@ -85,92 +85,86 @@ page-layout: full
 }
 
 
-
-
-gerar_arvore = function() {
+arvore_gerar_df = function() {
   suppressMessages(library(dplyr))
-  
-  root_path = normalizePath(here::here())
-  root_name = basename(root_path)
   
   ignore_pattern = paste0(
     "(?:",
-    "(^|/)\\.",              # qualquer pasta/arquivo que começa com ponto (.git, .quarto, .Rproj.user, .github)
+    "(^|/)\\.",
     "|",
-    "(^|/)_site(/|$)",       # _site
+    "(^|/)_site(/|$)",
     "|",
-    "(^|/)docs(/|$)",       # docs
+    "(^|/)docs(/|$)",
     "|",
-    "(^|/)_freeze(/|$)",     # _freeze
+    "(^|/)rsconnect(/|$)",
     "|",
-    "(^|/)\\.ipynb_checkpoints(/|$)",     # .ipynb_checkpoints
+    "(^|/)_freeze(/|$)",
     "|",
-    "(^|/)__pycache__(/|$)",     # __pycache__
+    "(^|/)\\.ipynb_checkpoints(/|$)",
     "|",
-    "^raw/snis/docs",         # raw/snis/docs
+    "(^|/)__pycache__(/|$)",
     "|",
-    "\\.Rproj$",             # *.Rproj
+    "^raw/snis/docs",
     "|",
-    "_quarto.yml$",             # *.Rproj
+    "^raw/snis/more/lab/.+",
     "|",
-    "_pkgdown.yml$",             # *.Rproj
+    "^raw/snis/man/.+",
+    "|",
+    "\\.Rproj$",
+    "|",
+    "_quarto.yml$",
+    "|",
+    "_pkgdown.yml$",
     ")"
   )
   
-  all_entries =
+  df =
     list.files(
-      path       = root_path,
+      path       = here::here(),
       recursive  = TRUE,
       full.names = FALSE,
       all.files  = TRUE,
       include.dirs = TRUE
     ) |>
-    {\(.) .[!grepl(ignore_pattern, ., perl = TRUE)]}()
-  
-  
-  paths  = file.path(root_path, all_entries)
-  is_dir = file.info(paths)$isdir
-  
-  df = data.frame(
-    pathString = paste0(root_name, "/", all_entries),
-    type       = ifelse(is_dir, "pasta", "ficheiro"),
-    size_kb    = ifelse(
-      is_dir, NA,
-      round(file.info(paths)$size / 1024, 1)
-    ),
-    stringsAsFactors = FALSE
-  )
-  
-  df$depth <- sapply(strsplit(df$pathString, "/"), length)
-  df <- df[order(-df$depth), ]
-  
-  # iterar sobre cada pasta
-  for(i in which(df$type == "pasta")) {
-    path <- df$pathString[i]
-    # todos os filhos (arquivos ou pastas) que começam com "pasta/"
-    filhos <- grep(paste0("^", path, "/"), df$pathString)
-    # somar os tamanhos dos filhos
-    df$size_kb[i] <- sum(df$size_kb[filhos], na.rm = TRUE)
-  }
-  
-  # opcional: remover coluna depth e voltar para ordem original
-  df <- df[order(as.numeric(rownames(df))), ]
-  df$depth <- NULL
-  
-  df <- rbind(data.frame(pathString = root_name, type = "pasta", size_kb = NA, stringsAsFactors = FALSE), df)
-  
-  df =
-    df |>
+    {\(.) .[!grepl(ignore_pattern, ., perl = TRUE)]}() |>
+    data.frame() |>
+    `colnames<-`("path") |>
     mutate(
+      type = ifelse(file.info(path)$isdir, "pasta", "ficheiro"),
       color = case_when(
         type == "pasta" ~ "#178ADE",
         type == "ficheiro" ~ "#1D9E75",
         TRUE ~ "#888780"
-      )
+      ),
+      size_kb = ifelse(type == "pasta", NA, round(file.info(path)$size / 1024, 1))
+    ) |>
+    {\(.) {.$depth = sapply(strsplit(.$path, "/"), length); . = .[order(-.$depth), ]; .}}()
+  
+  for(i in which(df$type == "pasta")) {
+    path = df$path[i]
+    filhos = grep(paste0("^", path, "/"), df$path)
+    df$size_kb[i] = sum(df$size_kb[filhos], na.rm = TRUE)
+  }
+  
+  df =
+    df[order(as.numeric(rownames(df))), ] |>
+    mutate(
+      path = file.path(basename(here::here()), path)
+    ) |>
+    {\(.) rbind(data.frame(path = basename(here::here()), type = "pasta", color = "#FF0000", size_kb = NA, depth = 0), .)}() |>
+    mutate(
+      status = 1,
+      descricao = NA,
+      palavras_chave = NA
     )
   
-  widget = collapsibleTree::collapsibleTree(
-    data.tree::as.Node(df),
+  df
+}
+
+arvore_gerar_widget = function(df = NULL) {
+  if (is.null(df)) df = arvore_gerar_df()
+  collapsibleTree::collapsibleTree(
+    data.tree::as.Node(df, pathName = "path"),
     attribute    = "type",
     fill         = "color",
     fillByLevel  = FALSE,
@@ -178,10 +172,67 @@ gerar_arvore = function() {
     tooltip      = TRUE,
     fontSize     = 14,
     width        = NULL,
-    height       = 700,
+    height       = 800,
     zoomable     = TRUE,
     rootOrientated = TRUE,
     inputId = "selected_node"
   )
-  list(df=df, widget=widget)
+}
+
+
+
+arvore_io = function(tipo) {
+  if (tipo == "ler") {
+    tipo = 0
+  } else if (tipo == "escrever") {
+    tipo = 1
+  }
+  
+  df_guardado = readxl::read_xlsx(here::here("dashboards/arvore/arvore.xlsx"))[,1:8]
+  #df_guardado = readxl::read_xlsx("arvore.xlsx")[,1:8]
+  #df_guardado = readxl::read_xlsx("dashboards/arvore/arvore.xlsx")[,1:8]
+  df_gerado   = arvore_gerar_df()
+  
+  if (!setequal(colnames(df_gerado), c("path", "type", "color", "size_kb", "depth", "status", "descricao", "palavras_chave"))) {
+    warning("há algum erro na árvore salva em excel, usando árvore limpa")
+    if (tipo == 0) return(df_gerado) else stop("ERRO")
+  }
+  
+  if (tipo == 0) {  # read
+    return(df_guardado)
+  } else if (tipo == 1) {  # write
+    df_guardado_ativo =
+      df_guardado |>
+      filter(path %in% df_gerado$path) |>
+      select(path, descricao, palavras_chave)
+    
+    df_guardado_inativo =
+      df_guardado |>
+      filter(!(path %in% df_gerado$path)) |>
+      mutate(
+        status = 0
+      )
+    
+    df_novo = df_gerado
+    
+    if (nrow(df_guardado_ativo)) {
+      df_novo =
+        df_novo |>
+        select(-c(descricao, palavras_chave)) |>
+        left_join(df_guardado_ativo, by = "path")
+    }
+    if (nrow(df_guardado_inativo)) {
+      df_novo =
+        df_novo |>
+        rbind(df_guardado_inativo)
+    }
+    
+    df_novo =
+      df_novo |>
+      arrange(status)
+    
+    writexl::write_xlsx(df_novo, here::here("dashboards/arvore/arvore.xlsx"))
+  } else {
+    stop("tipo = 0  =>  ler árvore do sistema; tipo = 1  => escrever nova árvore")
+  }
 }

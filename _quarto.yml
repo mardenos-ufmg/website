@@ -22,7 +22,7 @@ website:
         text: Sobre nós
       - href: blog/index.qmd
         text: Blog
-      - href: dashboards/index.qmd
+      - href: dashboards.qmd
         text: Dashboards
       - href: repositorio.qmd
         text: Repositório de dados
