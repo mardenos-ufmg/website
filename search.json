@@ -18,7 +18,7 @@
     "href": "sobre/index.html#equipe",
     "title": "Sobre o Projeto",
     "section": "Equipe",
-    "text": "Equipe\n\n\n\n\nIzabel Matos\nDoutora em Saneamento, meio ambiente e recursos hídricos pela UFMG\n Currículo Lattes\n\n\n\n\n\nSonaly Rezende\nProfessora titular em Engenharia Sanitária e Ambiental, UFMG\n Currículo Lattes\n\n\n\n\n\nMarcos Prates\nPhD in Statistics (U Connecticut), Professor associado do Depto. de Estatística, UFMG\n Página pessoal\n\n\n\n\n\nNathalia Roland\nProfessora do Departamento de Engenharia Sanitária e Ambiental da UFJF\n Currículo Lattes\n\n\n\n\n\nCarlos de Moura\nMestrando em Estatística pela UFMG\n Currículo Lattes\n\n\n\n\n\nDiego Cunha\nEngenheiro Ambiental e Sanitarista (UFJF) e mestrando em Saneamento, Meio Ambiente e Recursos Hídricos (UFMG)\n Currículo Lattes"
+    "text": "Equipe\n\n\n\n\nIzabel Matos\nDoutora em Saneamento, meio ambiente e recursos hídricos pela UFMG\n Currículo Lattes\n\n\n\n\n\nSonaly Rezende\nProfessora titular em Engenharia Sanitária e Ambiental, UFMG\n Currículo Lattes\n\n\n\n\n\nMarcos Prates\nPhD in Statistics (U Connecticut), Professor associado do Depto. de Estatística, UFMG\n Página pessoal\n\n\n\n\n\nNathalia Roland\nProfessora do Departamento de Engenharia Sanitária e Ambiental da UFJF\n Currículo Lattes\n\n\n\n\n\nTalita Silva\nProfessora do Departamento de Engenharia Hidráulica e Recursos Hídricos da UFMG\n Currículo Lattes\n\n\n\n\n\nCarlos de Moura\nMestrando em Estatística pela UFMG\n Currículo Lattes\n\n\n\n\n\nDiego Cunha\nEngenheiro Ambiental e Sanitarista (UFJF) e mestrando em Saneamento, Meio Ambiente e Recursos Hídricos (UFMG)\n Currículo Lattes\n\n\n\n\n\nGustavo Reis\nAluno de graduação de Engenharia Ambiental (UFMG)\n Currículo Lattes"
   },
   {
     "objectID": "sobre/index.html#links-úteis",
@@ -301,8 +301,8 @@
     "text": "Conclusão\nObservamos que:\n\nPeso e cilindros têm forte correlação negativa com o consumo\nCarros com 4 cilindros apresentam, em geral, melhor eficiência\nA relação peso-consumo é quase linear\n\n\n\n\n\n\n\nTip\n\n\n\nExperimente substituir mtcars pelos seus próprios dados e adaptar as visualizações!"
   },
   {
-    "objectID": "dashboards/index.html",
-    "href": "dashboards/index.html",
+    "objectID": "dashboards.html",
+    "href": "dashboards.html",
     "title": "Dashboards",
     "section": "",
     "text": "Painel do SNIS\nDados e funções para a leitura e análise de dados do SNIS (Sistema Nacional de Informações sobre Saneamento).\nAtualização: Anual\nFonte: SNIS - Min. das Cidades\n\n\n\n\n\n\n\nCenso do IBGE\nVisualização de dados em mapas interativos. Explore distribuições geográficas e padrões regionais.\nAtualização: Quadrienal\nFonte: IBGE\n\n\n\n\n\n\n\nSéries Temporais\nDados longitudinais sobre o lago da represa de Furnas.\nAtualização: Mensal\nFonte: Bancos de dados diversos"
