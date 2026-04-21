@@ -94,8 +94,15 @@
     "objectID": "4devs/index.html#código-fonte",
     "href": "4devs/index.html#código-fonte",
     "title": "4devs",
-    "section": "🐱 Código fonte",
-    "text": "🐱 Código fonte\nO código fonte deste site está disponível no GitHub do projeto. Quaisquer problemas podem ser reportados via GitHub issues."
+    "section": "Código fonte",
+    "text": "Código fonte\nO código fonte deste site está disponível no GitHub do projeto. Quaisquer problemas podem ser reportados via GitHub issues."
+  },
+  {
+    "objectID": "4devs/index.html#autoindex",
+    "href": "4devs/index.html#autoindex",
+    "title": "4devs",
+    "section": "Autoindex",
+    "text": "Autoindex\nO Autoindex é um recurso que gera automaticamente uma página listando os arquivos de um diretório (gerando inclusive um arquivo de index.html). Isso permite navegar e baixar conteúdos diretamente pelo navegador e é útil para transmitir pastas estruturadas"
   },
   {
     "objectID": "4devs/index.html#to-do-list",
@@ -108,8 +115,8 @@
     "objectID": "4devs/index.html#artigos-para-devs",
     "href": "4devs/index.html#artigos-para-devs",
     "title": "4devs",
-    "section": "📝 Artigos para devs",
-    "text": "📝 Artigos para devs"
+    "section": "Artigos para devs",
+    "text": "Artigos para devs"
   },
   {
     "objectID": "4devs/artigos/fontes.html",
