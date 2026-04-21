@@ -1,0 +1,20 @@
+---
+title: "Referências técnicas"
+subtitle: "Materiais de referência sobre configuração de servidores"
+author: "Carlos de Moura"
+date: "2026-04-19"
+categories: [nginx, shiny server, servidor]
+draft: false
+toc: false
+---
+
+## Referências
+
+* https://www.nginx.com/resources/wiki/start/
+* https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/
+* https://wiki.debian.org/Nginx/DirectoryStructure
+* https://docs.posit.co/shiny-server/
+* https://shiny.posit.co/r/articles/share/shiny-server/
+* https://docs.posit.co/shiny-server/#host-a-directory-of-applications
+* https://cliente.hostgator.com.br/dominios/dns-wizard
+* https://suporte.hostgator.com.br/hc/pt-br/articles/30810621770387-Como-configurar-o-DNS-de-um-dom%C3%ADnio

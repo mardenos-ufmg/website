@@ -26,4 +26,9 @@ Uma árvore de site é a representação hierárquica de todas as páginas e se�
 Nessa documentação você encontra uma descrição estruturada dos códigos usados no projeto. No ecossistema do R, o **pkgdown** e o **roxygen2** transformam essa documentação em um site organizado, com páginas individuais para cada função (com seções como descrição, parâmetros, e exemplos).
 
 
+## 🐱 [Código fonte](https://github.com/mardenos-ufmg/website)
+
+O código fonte deste site está disponível no GitHub do projeto. Quaisquer problemas podem ser reportados via [GitHub issues](https://github.com/mardenos-ufmg/website/issues).
+
+
 ## 📝 Artigos para devs

@@ -1,13 +1,12 @@
 ---
-title: "Análise Exploratória com R e tidyverse"
-subtitle: "Um guia prático para EDA usando as melhores ferramentas do ecossistema R"
-author: "Ana Silva"
-date: "2025-03-30"
-categories: [R, EDA, tidyverse, tutorial]
+title: "Sobre o site"
+subtitle: "Uma apresentação técnica do site do Mar de Nós"
+author: "Carlos de Moura"
+date: "2026-04-24"
+categories: [website]
 #image: "thumbnail.png"
 draft: false
 toc: true
-#bibliography: references.bib
 ---
 
 ## Introdução
