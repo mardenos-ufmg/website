@@ -1,5 +1,4 @@
 * home: mudar imagem do parallax
-* 4devs: documentar árvore
 * Bibliografia: produção própria
 * Artigos 4devs: vídeo sobre funcionamento do blog
 * Artigos 4devs: post sobre filosofia do site
