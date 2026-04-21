@@ -9,913 +9,171 @@
 <link>https://mardenos-ufmg.github.io/website/blog/</link>
 <atom:link href="https://mardenos-ufmg.github.io/website/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>Site do projeto Mar de Nós - UFMG</description>
-<generator>quarto-1.9.36</generator>
-<lastBuildDate>Sun, 30 Mar 2025 03:00:00 GMT</lastBuildDate>
+<generator>quarto-1.8.26</generator>
+<lastBuildDate>Mon, 20 Apr 2026 03:00:00 GMT</lastBuildDate>
 <item>
-  <title>Análise Exploratória com R e tidyverse</title>
-  <dc:creator>Ana Silva</dc:creator>
-  <link>https://mardenos-ufmg.github.io/website/blog/posts/post01.html</link>
+  <title>Participação do grupo no II ENDHAS</title>
+  <dc:creator>Carlos de Moura</dc:creator>
+  <link>https://mardenos-ufmg.github.io/website/blog/posts/2026_endhas.html</link>
   <description><![CDATA[ 
 
 
 
 
 
-<section id="introdução" class="level2">
-<h2 class="anchored" data-anchor-id="introdução">Introdução</h2>
-<p>A Análise Exploratória de Dados (EDA) é o ponto de partida de qualquer projeto de ciência de dados. Neste post, vamos explorar como realizar uma EDA completa usando R e o <code>tidyverse</code>.</p>
-</section>
-<section id="carregando-os-dados" class="level2">
-<h2 class="anchored" data-anchor-id="carregando-os-dados">Carregando os dados</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Ver código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">library</span>(tidyverse)</span>
-<span id="cb1-2"></span>
-<span id="cb1-3"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Usando o dataset mtcars como exemplo</span></span>
-<span id="cb1-4">dados <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> mtcars <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|&gt;</span></span>
-<span id="cb1-5">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">rownames_to_column</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"modelo"</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|&gt;</span></span>
-<span id="cb1-6">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">as_tibble</span>()</span>
-<span id="cb1-7"></span>
-<span id="cb1-8"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">glimpse</span>(dados)</span></code></pre></div></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 32
-Columns: 12
-$ modelo &lt;chr&gt; "Mazda RX4", "Mazda RX4 Wag", "Datsun 710", "Hornet 4 Drive", "…
-$ mpg    &lt;dbl&gt; 21.0, 21.0, 22.8, 21.4, 18.7, 18.1, 14.3, 24.4, 22.8, 19.2, 17.…
-$ cyl    &lt;dbl&gt; 6, 6, 4, 6, 8, 6, 8, 4, 4, 6, 6, 8, 8, 8, 8, 8, 8, 4, 4, 4, 4, …
-$ disp   &lt;dbl&gt; 160.0, 160.0, 108.0, 258.0, 360.0, 225.0, 360.0, 146.7, 140.8, …
-$ hp     &lt;dbl&gt; 110, 110, 93, 110, 175, 105, 245, 62, 95, 123, 123, 180, 180, 1…
-$ drat   &lt;dbl&gt; 3.90, 3.90, 3.85, 3.08, 3.15, 2.76, 3.21, 3.69, 3.92, 3.92, 3.9…
-$ wt     &lt;dbl&gt; 2.620, 2.875, 2.320, 3.215, 3.440, 3.460, 3.570, 3.190, 3.150, …
-$ qsec   &lt;dbl&gt; 16.46, 17.02, 18.61, 19.44, 17.02, 20.22, 15.84, 20.00, 22.90, …
-$ vs     &lt;dbl&gt; 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, …
-$ am     &lt;dbl&gt; 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, …
-$ gear   &lt;dbl&gt; 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 4, 4, 4, 3, …
-$ carb   &lt;dbl&gt; 4, 4, 1, 1, 2, 1, 4, 2, 2, 4, 4, 3, 3, 3, 4, 4, 4, 1, 2, 1, 1, …</code></pre>
+<p>O grupo de pesquisa <strong>Mar de Nós</strong> participou do <em>II Encontro Nacional dos Direitos Humanos à Água e ao Saneamento (II ENDHAS)</em>, realizado entre os dias 18 e 20 de março de 2026, na Escola Politécnica da UFBA, em Salvador (Bahia). O evento reuniu pesquisadores, movimentos sociais, profissionais do setor e diferentes atores comprometidos com a construção de políticas públicas sobre o acesso à água e ao saneamento no Brasil.</p>
+<p><img src="https://mardenos-ufmg.github.io/website/blog/posts/img/2026_endhas/cartaz.png" class="img-fluid"></p>
+<p>Ao longo dos três dias, o encontro se consolidou como um espaço plural de diálogo entre saberes técnicos, acadêmicos e populares. Temas centrais como racismo ambiental, desigualdades regionais, saneamento em territórios tradicionais, mudanças climáticas e gestão comunitária da água atravessaram as discussões, sempre com ênfase nas múltiplas dimensões de vulnerabilidade que impactam o acesso a serviços essenciais.</p>
+<p>Nesse contexto, o grupo Mar de Nós contribuiu com a apresentação de trabalhos na sessão da tarde do dia 19 de março, abordando questões relevantes relacionadas à bacia hidrográfica do Lago de Furnas. As pesquisas apresentadas exploraram, de forma integrada, aspectos de desempenho dos serviços de água e esgoto, sustentabilidade econômica e universalização do acesso, além de análises sobre o papel da mídia na construção do debate público em torno da cota 762 e dos direitos humanos à água e ao saneamento na região.</p>
+<div style="width: 90%; margin: 0 auto;">
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://mardenos-ufmg.github.io/website/blog/posts/img/2026_endhas/Sonaly.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Sonaly Rezende</figcaption>
+</figure>
 </div>
 </div>
-</section>
-<section id="estatísticas-descritivas" class="level2">
-<h2 class="anchored" data-anchor-id="estatísticas-descritivas">Estatísticas Descritivas</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Ver código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">dados <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|&gt;</span></span>
-<span id="cb3-2">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">select</span>(mpg, cyl, hp, wt) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|&gt;</span></span>
-<span id="cb3-3">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">summary</span>()</span></code></pre></div></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>      mpg             cyl              hp              wt       
- Min.   :10.40   Min.   :4.000   Min.   : 52.0   Min.   :1.513  
- 1st Qu.:15.43   1st Qu.:4.000   1st Qu.: 96.5   1st Qu.:2.581  
- Median :19.20   Median :6.000   Median :123.0   Median :3.325  
- Mean   :20.09   Mean   :6.188   Mean   :146.7   Mean   :3.217  
- 3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:180.0   3rd Qu.:3.610  
- Max.   :33.90   Max.   :8.000   Max.   :335.0   Max.   :5.424  </code></pre>
-</div>
-</div>
-</section>
-<section id="visualizações" class="level2">
-<h2 class="anchored" data-anchor-id="visualizações">Visualizações</h2>
-<section id="distribuição-de-consumo-mpg" class="level3">
-<h3 class="anchored" data-anchor-id="distribuição-de-consumo-mpg">Distribuição de Consumo (mpg)</h3>
-<div class="cell">
-<details class="code-fold">
-<summary>Ver código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">ggplot</span>(dados, <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">x =</span> mpg)) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span></span>
-<span id="cb5-2">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">geom_histogram</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">bins =</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">15</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"#2c7bb6"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">color =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"white"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">alpha =</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.85</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span></span>
-<span id="cb5-3">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">geom_vline</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">xintercept =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">mean</span>(mpg)), <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">color =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"red"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">linetype =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"dashed"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">linewidth =</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span></span>
-<span id="cb5-4">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">labs</span>(</span>
-<span id="cb5-5">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Distribuição do Consumo (mpg)"</span>,</span>
-<span id="cb5-6">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">subtitle =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">paste</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Média:"</span>, <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">round</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">mean</span>(dados<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>mpg), <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>), <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"mpg"</span>),</span>
-<span id="cb5-7">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Milhas por Galão"</span>,</span>
-<span id="cb5-8">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Frequência"</span></span>
-<span id="cb5-9">  ) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span></span>
-<span id="cb5-10">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">theme_minimal</span>()</span></code></pre></div></div>
-</details>
-<div class="cell-output-display">
-<div id="fig-hist" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://mardenos-ufmg.github.io/website/blog/posts/post01_files/figure-html/fig-hist-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Distribuição do consumo de combustível
-</figcaption>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://mardenos-ufmg.github.io/website/blog/posts/img/2026_endhas/Izabel.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Izabel Matos</figcaption>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="relação-entre-peso-e-consumo" class="level3">
-<h3 class="anchored" data-anchor-id="relação-entre-peso-e-consumo">Relação entre Peso e Consumo</h3>
-<div class="cell">
-<details class="code-fold">
-<summary>Ver código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">dados <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> dados <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|&gt;</span></span>
-<span id="cb6-2">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">cyl =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">factor</span>(cyl))</span>
-<span id="cb6-3"></span>
-<span id="cb6-4"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">ggplot</span>(dados, <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">x =</span> wt, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">y =</span> mpg, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">color =</span> cyl)) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span></span>
-<span id="cb6-5">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">geom_point</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">size =</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">alpha =</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.8</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span></span>
-<span id="cb6-6">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">geom_smooth</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">method =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"lm"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">se =</span> <span class="cn" style="color: #8f5902;
-background-color: null;
-font-style: inherit;">TRUE</span>, <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">group =</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>), <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">color =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"gray50"</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span></span>
-<span id="cb6-7">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">scale_color_brewer</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">palette =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Set1"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">name =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Cilindros"</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span></span>
-<span id="cb6-8">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">labs</span>(</span>
-<span id="cb6-9">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Peso vs. Consumo"</span>,</span>
-<span id="cb6-10">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Peso (1000 lbs)"</span>,</span>
-<span id="cb6-11">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Milhas por Galão"</span></span>
-<span id="cb6-12">  ) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span></span>
-<span id="cb6-13">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">theme_minimal</span>()</span></code></pre></div></div>
-</details>
-<div class="cell-output-display">
-<div id="fig-scatter" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://mardenos-ufmg.github.io/website/blog/posts/post01_files/figure-html/fig-scatter-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Relação entre peso e consumo, colorido por número de cilindros
-</figcaption>
-</figure>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Apresentações do Mar de Nós no II ENDHAS</p>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="correlações" class="level2">
-<h2 class="anchored" data-anchor-id="correlações">Correlações</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Ver código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">dados <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|&gt;</span></span>
-<span id="cb7-2">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">select</span>(mpg, hp, wt, qsec) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|&gt;</span></span>
-<span id="cb7-3">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">cor</span>() <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|&gt;</span></span>
-<span id="cb7-4">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">round</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|&gt;</span></span>
-<span id="cb7-5">  knitr<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">kable</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">caption =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Matriz de correlação"</span>)</span></code></pre></div></div>
-</details>
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Matriz de correlação</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;"></th>
-<th style="text-align: right;">mpg</th>
-<th style="text-align: right;">hp</th>
-<th style="text-align: right;">wt</th>
-<th style="text-align: right;">qsec</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">mpg</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">-0.78</td>
-<td style="text-align: right;">-0.87</td>
-<td style="text-align: right;">0.42</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">hp</td>
-<td style="text-align: right;">-0.78</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">0.66</td>
-<td style="text-align: right;">-0.71</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">wt</td>
-<td style="text-align: right;">-0.87</td>
-<td style="text-align: right;">0.66</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">-0.17</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">qsec</td>
-<td style="text-align: right;">0.42</td>
-<td style="text-align: right;">-0.71</td>
-<td style="text-align: right;">-0.17</td>
-<td style="text-align: right;">1.00</td>
-</tr>
-</tbody>
-</table>
 </div>
-</div>
-</section>
-<section id="conclusão" class="level2">
-<h2 class="anchored" data-anchor-id="conclusão">Conclusão</h2>
-<p>Observamos que:</p>
-<ul>
-<li><strong>Peso</strong> e <strong>cilindros</strong> têm forte correlação negativa com o consumo</li>
-<li>Carros com <strong>4 cilindros</strong> apresentam, em geral, melhor eficiência</li>
-<li>A relação peso-consumo é quase linear</li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Experimente substituir <code>mtcars</code> pelos seus próprios dados e adaptar as visualizações!</p>
-</div>
-</div>
+<p>Os trabalhos apresentados foram desenvolvidos por uma equipe ampla e interdisciplinar, refletindo o caráter colaborativo do grupo e sua articulação com diferentes instituições e territórios. Essa diversidade de olhares foi essencial para compreender a complexidade dos desafios enfrentados na região de Furnas, especialmente no que diz respeito às tensões entre usos da água, governança e garantia de direitos.</p>
+<p>A participação no II ENDHAS também reforçou a importância de aproximar a produção acadêmica das demandas sociais concretas. Ao dialogar com movimentos e organizações da sociedade civil, o grupo ampliou as possibilidades de impacto de suas pesquisas, contribuindo para a construção de soluções mais sensíveis às realidades locais.</p>
+<p>Por fim, destacamos que os códigos utilizados nas análises apresentadas estão disponíveis publicamente, promovendo transparência e reprodutibilidade das pesquisas:</p>
+<p><a href="https://github.com/mardenos-ufmg/IIENDHAS---2025" class="uri">https://github.com/mardenos-ufmg/IIENDHAS---2025</a></p>
+<p>A experiência no encontro reafirma o compromisso do Mar de Nós com a produção de conhecimento crítico e engajado, voltado à promoção dos direitos humanos e à construção de caminhos para a superação das desigualdades no acesso à água e ao saneamento no Brasil.</p>
 
 
-</section>
 
  ]]></description>
-  <category>R</category>
-  <category>EDA</category>
-  <category>tidyverse</category>
-  <category>tutorial</category>
-  <guid>https://mardenos-ufmg.github.io/website/blog/posts/post01.html</guid>
-  <pubDate>Sun, 30 Mar 2025 03:00:00 GMT</pubDate>
+  <category>saneamento</category>
+  <category>pesquisa</category>
+  <category>ENDHAS</category>
+  <category>evento</category>
+  <guid>https://mardenos-ufmg.github.io/website/blog/posts/2026_endhas.html</guid>
+  <pubDate>Mon, 20 Apr 2026 03:00:00 GMT</pubDate>
 </item>
 <item>
-  <title>Visualizações Interativas com Observable JS no Quarto</title>
-  <dc:creator>Juliana Costa</dc:creator>
-  <link>https://mardenos-ufmg.github.io/website/blog/posts/post02.html</link>
+  <title>Participação do Mar de Nós em encontro sobre governança e inovação na USP</title>
+  <dc:creator>Carlos de Moura</dc:creator>
+  <link>https://mardenos-ufmg.github.io/website/blog/posts/2026_iea_usp.html</link>
   <description><![CDATA[ 
 
 
 
 
 
-<section id="por-que-observable-js" class="level2">
-<h2 class="anchored" data-anchor-id="por-que-observable-js">Por que Observable JS?</h2>
-<p>O <strong>Observable JS</strong> (OJS) é uma linguagem reativa baseada em JavaScript que se integra nativamente ao Quarto, permitindo criar visualizações interativas sem precisar de um servidor Shiny.</p>
-</section>
-<section id="exemplo-gráfico-interativo-com-d3" class="level2">
-<h2 class="anchored" data-anchor-id="exemplo-gráfico-interativo-com-d3">Exemplo: Gráfico Interativo com D3</h2>
-<p>O código abaixo cria um gráfico de dispersão interativo onde você pode filtrar os dados:</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Ver código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" data-startfrom="21" data-source-offset="0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 20;"><span id="cb1-21">viewof n_pontos <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> Inputs<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">range</span>([<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">10</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">200</span>]<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> {</span>
-<span id="cb1-22">  <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">label</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Número de pontos"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb1-23">  <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">step</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">10</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb1-24">  <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">value</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">100</span></span>
-<span id="cb1-25">})</span></code></pre></div></div>
-</details>
-<div id="slider-n" class="cell-output cell-output-display">
-<div id="ojs-cell-1" data-nodetype="declaration">
-
+<p>Realizado em 10 de fevereiro de 2026, na Sala Alfredo Bosi da Cidade Universitária, em São Paulo, o encontro “Água, Saneamento e Ação Climática: Ciência e Políticas Públicas em São Paulo” reuniu especialistas, gestores públicos e representantes da sociedade civil para debater estratégias de adaptação às mudanças climáticas no setor. Ao longo do dia, foram discutidos os desafios e as oportunidades para fortalecer a resiliência dos serviços de saneamento, com foco na integração entre ciência, planejamento e políticas públicas em um cenário de crescente pressão sobre os recursos hídricos. O evento foi organizado pelo <a href="https://www.iea.usp.br/eventos/agua-saneamento-acao-climatica">Instituto de Estudos Avançados (IEA-USP)</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://mardenos-ufmg.github.io/website/blog/posts/img/2026_iea_usp/cartaz.jpg" class="img-fluid figure-img"></p>
+<figcaption>Cartaz de divulgação</figcaption>
+</figure>
 </div>
+<p>Um dos marcos do encontro foi o lançamento oficial do <strong>Centro de Ciência para o Desenvolvimento em Saneamento e Resiliência Climática (CCD Saneaclima)</strong>, iniciativa apoiada pela FAPESP e voltada à produção de pesquisa aplicada e à cooperação entre instituições. O centro surge com o objetivo de responder a problemas estratégicos do saneamento, articulando ciência e política pública em um cenário de crescente complexidade ambiental.</p>
+<p>A programação incluiu duas mesas principais de debate. Na mesa “Governança e Planejamento para Saneamento Resiliente”, foram discutidos os desafios institucionais para a construção de sistemas capazes de responder de forma eficaz aos eventos climáticos extremos. Representando o grupo Mar de Nós, <strong>Sonaly Rezende (UFMG)</strong> participou como debatedora, contribuindo remotamente para a reflexão sobre integração entre planejamento, saúde pública e instrumentos de governança.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://mardenos-ufmg.github.io/website/blog/posts/img/2026_iea_usp/sonaly.png" class="img-fluid figure-img"></p>
+<figcaption>Apresentação de Sonaly Rezende</figcaption>
+</figure>
 </div>
-</div>
-<div id="scatter-plot" class="cell">
-<details class="code-fold">
-<summary>Ver código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" data-startfrom="32" data-source-offset="-28" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 31;"><span id="cb2-32">dados <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">Array</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">from</span>({<span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">length</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> n_pontos}<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> (_<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> i) <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">=&gt;</span> ({</span>
-<span id="cb2-33">  <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">x</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">Math</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">random</span>() <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">10</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb2-34">  <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">y</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">Math</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">random</span>() <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">10</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">Math</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">random</span>() <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb2-35">  <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">grupo</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">Math</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">random</span>() <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">&gt;</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.5</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">?</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"A"</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"B"</span></span>
-<span id="cb2-36">}))</span>
-<span id="cb2-37"></span>
-<span id="cb2-38">Plot<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">plot</span>({</span>
-<span id="cb2-39">  <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">marks</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> [</span>
-<span id="cb2-40">    Plot<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">dot</span>(dados<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> {</span>
-<span id="cb2-41">      <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">x</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"x"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb2-42">      <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">y</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"y"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb2-43">      <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">fill</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"grupo"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb2-44">      <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">r</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">5</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb2-45">      <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">opacity</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.7</span></span>
-<span id="cb2-46">    })<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb2-47">    Plot<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">frame</span>()</span>
-<span id="cb2-48">  ]<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb2-49">  <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">color</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> {<span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">legend</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">true</span>}<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb2-50">  <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">grid</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">true</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb2-51">  <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">style</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> {<span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">fontSize</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">13</span>}</span>
-<span id="cb2-52">})</span></code></pre></div></div>
-</details>
-<div class="cell-output cell-output-display">
-<div id="scatter-plot-1">
-<div id="ojs-cell-2-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div id="scatter-plot-2">
-<div id="ojs-cell-2-2" data-nodetype="expression">
-
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="passando-dados-do-r-para-ojs" class="level2">
-<h2 class="anchored" data-anchor-id="passando-dados-do-r-para-ojs">Passando dados do R para OJS</h2>
-<p>Uma das grandes vantagens é poder processar dados no R e enviá-los para OJS:</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Ver código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">library</span>(tidyverse)</span>
-<span id="cb3-2"></span>
-<span id="cb3-3">resumo_carros <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> mtcars <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|&gt;</span></span>
-<span id="cb3-4">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">group_by</span>(cyl) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|&gt;</span></span>
-<span id="cb3-5">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">summarise</span>(</span>
-<span id="cb3-6">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">mpg_medio =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">mean</span>(mpg),</span>
-<span id="cb3-7">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">n =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">n</span>(),</span>
-<span id="cb3-8">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">.groups =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"drop"</span></span>
-<span id="cb3-9">  )</span>
-<span id="cb3-10"></span>
-<span id="cb3-11"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">ojs_define</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">carros_ojs =</span> resumo_carros)</span></code></pre></div></div>
-</details>
-</div>
-<div class="cell">
-<details class="code-fold">
-<summary>Ver código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" data-startfrom="76" data-source-offset="0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 75;"><span id="cb4-76">Plot<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">plot</span>({</span>
-<span id="cb4-77">  <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">marks</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> [</span>
-<span id="cb4-78">    Plot<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">barY</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">transpose</span>(carros_ojs)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span> {</span>
-<span id="cb4-79">      <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">x</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"cyl"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb4-80">      <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">y</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"mpg_medio"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb4-81">      <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">fill</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"steelblue"</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb4-82">      <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">tip</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">true</span></span>
-<span id="cb4-83">    })<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb4-84">    Plot<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">ruleY</span>([<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>])</span>
-<span id="cb4-85">  ]<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb4-86">  <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">x</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> {<span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">label</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Cilindros"</span>}<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb4-87">  <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">y</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> {<span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">label</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"MPG Médio"</span>}<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb4-88">  <span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">style</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> {<span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">fontSize</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">13</span>}</span>
-<span id="cb4-89">})</span></code></pre></div></div>
-</details>
-<div id="bar-chart-ojs" class="cell-output cell-output-display">
-<div id="ojs-cell-3" data-nodetype="expression">
-
-</div>
-</div>
-</div>
-</section>
-<section id="conclusão" class="level2">
-<h2 class="anchored" data-anchor-id="conclusão">Conclusão</h2>
-<p>O Observable JS é uma ferramenta poderosa para criar visualizações interativas em documentos Quarto, sem a necessidade de infraestrutura adicional. No próximo post, veremos como criar dashboards completos com Quarto e OJS.</p>
+<p>A discussão foi orientada por uma questão central: como construir sistemas de saneamento que, além de tecnicamente eficientes, promovam justiça socioambiental? As falas destacaram a necessidade de superar abordagens fragmentadas, incorporando perspectivas interdisciplinares e reconhecendo as desigualdades estruturais que marcam o acesso à água e ao saneamento no Brasil.</p>
+<p>Mesmo com participação presencial limitada, o evento contou com <a href="https://youtu.be/J_bTCWAnSc4&amp;t=10240">transmissão online</a>, ampliando o alcance das discussões e reforçando a importância de espaços como esse para a construção coletiva de conhecimento e políticas públicas mais robustas.</p>
 
 
-</section>
 
  ]]></description>
-  <category>Observable JS</category>
-  <category>visualização</category>
-  <category>Quarto</category>
-  <category>interativo</category>
-  <guid>https://mardenos-ufmg.github.io/website/blog/posts/post02.html</guid>
-  <pubDate>Sat, 15 Mar 2025 03:00:00 GMT</pubDate>
+  <category>saneamento</category>
+  <category>mudanças climáticas</category>
+  <category>governança</category>
+  <category>evento</category>
+  <guid>https://mardenos-ufmg.github.io/website/blog/posts/2026_iea_usp.html</guid>
+  <pubDate>Wed, 11 Feb 2026 03:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Mar de Nós no XXVI Simpósio Brasileiro de Recursos Hídricos</title>
+  <dc:creator>Carlos de Moura</dc:creator>
+  <link>https://mardenos-ufmg.github.io/website/blog/posts/2025_sbrh.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>Realizado entre os dias 23 e 28 de novembro de 2025, no Pavilhão de Carapina, na grande Vitória (ES), o <strong>XXVI Simpósio Brasileiro de Recursos Hídricos</strong> reuniu pesquisadores, estudantes e profissionais para discutir avanços científicos, tecnológicos e institucionais na gestão das águas no Brasil. Promovido pela Associação Brasileira de Recursos Hídricos, o evento consolidou-se como um dos principais fóruns nacionais para o debate de estratégias e prioridades no setor, fortalecendo o diálogo entre pesquisa, políticas públicas e práticas de gestão.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://mardenos-ufmg.github.io/website/blog/posts/img/2025_sbrh/cartaz.png" class="img-fluid figure-img"></p>
+<figcaption>Cartaz de divulgação</figcaption>
+</figure>
+</div>
+<p>A participação do grupo <strong>Mar de Nós</strong> no simpósio refletiu a diversidade de temas e abordagens que orientam suas pesquisas, com destaque para a articulação entre saneamento, gestão de recursos hídricos e dinâmicas sociais na bacia do Lago de Furnas.</p>
+<p>No dia 24 de novembro, foram realizadas duas apresentações orais. A primeira abordou o trabalho <em>“ÁGUAPLAY: gamificação como estratégia extensionista na formação em engenharia ambiental”</em>, apresentado por Talita Fernanda das Graças Silva, explorando o uso de ferramentas lúdicas como forma de ampliar o engajamento e a formação crítica de estudantes. Ainda no mesmo dia, Maria Júlia Paulino Pereira apresentou o estudo <em>“Conflito e mobilização na bacia do Lago de Furnas: uma interpretação a partir de conteúdos midiáticos”</em>, discutindo como narrativas da mídia refletem e influenciam processos sociais e políticos relacionados ao uso da água.</p>
+<p>Complementando as atividades, no dia 25 de novembro foi apresentado o pôster <em>“Gestão dos recursos hídricos na bacia do entorno do Lago de Furnas, em Minas Gerais: usos da água e a relação com o saneamento básico”</em>, de autoria de Diego Santos Cunha. O trabalho destacou as interações entre diferentes usos da água e os desafios para uma gestão integrada que considere tanto aspectos ambientais quanto sociais.</p>
+<div style="width: 100%; margin: 0 auto;">
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://mardenos-ufmg.github.io/website/blog/posts/img/2025_sbrh/talita.jpg" class="img-fluid figure-img"></p>
+<figcaption>Talita Silva</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://mardenos-ufmg.github.io/website/blog/posts/img/2025_sbrh/maju.jpg" class="img-fluid figure-img"></p>
+<figcaption>Maria Júlia Pereira</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://mardenos-ufmg.github.io/website/blog/posts/img/2025_sbrh/diego.jpg" class="img-fluid figure-img"></p>
+<figcaption>Diego Cunha</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p>Apresentações do Mar de Nós no XXVI SBRH</p>
+</div>
+</div>
+</div>
+</div>
+<p>A presença do grupo no simpósio reforça o compromisso com a produção de conhecimento interdisciplinar e socialmente engajado, contribuindo para o avanço do debate sobre recursos hídricos no Brasil. Ao articular pesquisa, extensão e análise crítica, os trabalhos apresentados evidenciam a importância de compreender a água não apenas como recurso natural, mas como elemento central em disputas, políticas e processos de transformação social.</p>
+<p>Mais informações sobre o evento podem ser encontradas em: <a href="https://eventos.abrhidro.org.br/xxvisbrh/" class="uri">https://eventos.abrhidro.org.br/xxvisbrh/</a></p>
+
+
+
+ ]]></description>
+  <category>recursos hídricos</category>
+  <category>saneamento</category>
+  <category>extensão</category>
+  <category>pesquisa</category>
+  <category>evento</category>
+  <guid>https://mardenos-ufmg.github.io/website/blog/posts/2025_sbrh.html</guid>
+  <pubDate>Fri, 05 Dec 2025 03:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

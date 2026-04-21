@@ -1,16 +1,19 @@
 [
   {
-    "listing": "/blog/index.html",
+    "listing": "/4devs/index.html",
     "items": [
-      "/blog/posts/post01.html",
-      "/blog/posts/post02.html"
+      "/4devs/artigos/como-funciona-blog.html",
+      "/4devs/artigos/estrutura.html",
+      "/4devs/artigos/fontes.html",
+      "/4devs/artigos/sobre.html"
     ]
   },
   {
-    "listing": "/4devs/index.html",
+    "listing": "/blog/index.html",
     "items": [
-      "/4devs/artigos/avisos.html",
-      "/4devs/artigos/estrutura.html"
+      "/blog/posts/2026_endhas.html",
+      "/blog/posts/2026_iea_usp.html",
+      "/blog/posts/2025_sbrh.html"
     ]
   }
 ]

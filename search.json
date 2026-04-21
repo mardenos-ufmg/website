@@ -49,158 +49,18 @@
     "text": "Destaques\n\n\n\n\nAcompanhe nosso projeto no Instagram!\n\n\n\n \n\n\n\n\nÚltimo Post do Blog\n\nAnálise Exploratória com R e tidyverse\nAna Silva, 30/03/2025\nUm guia prático para EDA usando as melhores ferramentas do ecossistema R.\n\n\n\nDashboard em Destaque\n\nPainel SNIS\nAnálise fatorial com dados do SNIS\nVeja a construção e análise de indicadores sobre o saneamento em Minas Gerais.\n\n\n\nInformações para desenvolvedores\n\n4devs\nAcesse informações úteis sobre a parte de programação e códigos do projeto."
   },
   {
-    "objectID": "blog/posts/post02.html",
-    "href": "blog/posts/post02.html",
-    "title": "Visualizações Interativas com Observable JS no Quarto",
+    "objectID": "blog/posts/2026_iea_usp.html",
+    "href": "blog/posts/2026_iea_usp.html",
+    "title": "Participação do Mar de Nós em encontro sobre governança e inovação na USP",
     "section": "",
-    "text": "O Observable JS (OJS) é uma linguagem reativa baseada em JavaScript que se integra nativamente ao Quarto, permitindo criar visualizações interativas sem precisar de um servidor Shiny."
+    "text": "Realizado em 10 de fevereiro de 2026, na Sala Alfredo Bosi da Cidade Universitária, em São Paulo, o encontro “Água, Saneamento e Ação Climática: Ciência e Políticas Públicas em São Paulo” reuniu especialistas, gestores públicos e representantes da sociedade civil para debater estratégias de adaptação às mudanças climáticas no setor. Ao longo do dia, foram discutidos os desafios e as oportunidades para fortalecer a resiliência dos serviços de saneamento, com foco na integração entre ciência, planejamento e políticas públicas em um cenário de crescente pressão sobre os recursos hídricos. O evento foi organizado pelo Instituto de Estudos Avançados (IEA-USP).\n\n\n\nCartaz de divulgação\n\n\nUm dos marcos do encontro foi o lançamento oficial do Centro de Ciência para o Desenvolvimento em Saneamento e Resiliência Climática (CCD Saneaclima), iniciativa apoiada pela FAPESP e voltada à produção de pesquisa aplicada e à cooperação entre instituições. O centro surge com o objetivo de responder a problemas estratégicos do saneamento, articulando ciência e política pública em um cenário de crescente complexidade ambiental.\nA programação incluiu duas mesas principais de debate. Na mesa “Governança e Planejamento para Saneamento Resiliente”, foram discutidos os desafios institucionais para a construção de sistemas capazes de responder de forma eficaz aos eventos climáticos extremos. Representando o grupo Mar de Nós, Sonaly Rezende (UFMG) participou como debatedora, contribuindo remotamente para a reflexão sobre integração entre planejamento, saúde pública e instrumentos de governança.\n\n\n\nApresentação de Sonaly Rezende\n\n\nA discussão foi orientada por uma questão central: como construir sistemas de saneamento que, além de tecnicamente eficientes, promovam justiça socioambiental? As falas destacaram a necessidade de superar abordagens fragmentadas, incorporando perspectivas interdisciplinares e reconhecendo as desigualdades estruturais que marcam o acesso à água e ao saneamento no Brasil.\nMesmo com participação presencial limitada, o evento contou com transmissão online, ampliando o alcance das discussões e reforçando a importância de espaços como esse para a construção coletiva de conhecimento e políticas públicas mais robustas."
   },
   {
-    "objectID": "blog/posts/post02.html#por-que-observable-js",
-    "href": "blog/posts/post02.html#por-que-observable-js",
-    "title": "Visualizações Interativas com Observable JS no Quarto",
+    "objectID": "blog/posts/2025_sbrh.html",
+    "href": "blog/posts/2025_sbrh.html",
+    "title": "Mar de Nós no XXVI Simpósio Brasileiro de Recursos Hídricos",
     "section": "",
-    "text": "O Observable JS (OJS) é uma linguagem reativa baseada em JavaScript que se integra nativamente ao Quarto, permitindo criar visualizações interativas sem precisar de um servidor Shiny."
-  },
-  {
-    "objectID": "blog/posts/post02.html#exemplo-gráfico-interativo-com-d3",
-    "href": "blog/posts/post02.html#exemplo-gráfico-interativo-com-d3",
-    "title": "Visualizações Interativas com Observable JS no Quarto",
-    "section": "Exemplo: Gráfico Interativo com D3",
-    "text": "Exemplo: Gráfico Interativo com D3\nO código abaixo cria um gráfico de dispersão interativo onde você pode filtrar os dados:\n\n\nVer código\nviewof n_pontos = Inputs.range([10, 200], {\n  label: \"Número de pontos\",\n  step: 10,\n  value: 100\n})\n\n\n\n\n\n\n\n\n\nVer código\ndados = Array.from({length: n_pontos}, (_, i) =&gt; ({\n  x: Math.random() * 10,\n  y: Math.random() * 10 + Math.random() * 2,\n  grupo: Math.random() &gt; 0.5 ? \"A\" : \"B\"\n}))\n\nPlot.plot({\n  marks: [\n    Plot.dot(dados, {\n      x: \"x\",\n      y: \"y\",\n      fill: \"grupo\",\n      r: 5,\n      opacity: 0.7\n    }),\n    Plot.frame()\n  ],\n  color: {legend: true},\n  grid: true,\n  style: {fontSize: 13}\n})"
-  },
-  {
-    "objectID": "blog/posts/post02.html#passando-dados-do-r-para-ojs",
-    "href": "blog/posts/post02.html#passando-dados-do-r-para-ojs",
-    "title": "Visualizações Interativas com Observable JS no Quarto",
-    "section": "Passando dados do R para OJS",
-    "text": "Passando dados do R para OJS\nUma das grandes vantagens é poder processar dados no R e enviá-los para OJS:\n\n\nVer código\nlibrary(tidyverse)\n\nresumo_carros &lt;- mtcars |&gt;\n  group_by(cyl) |&gt;\n  summarise(\n    mpg_medio = mean(mpg),\n    n = n(),\n    .groups = \"drop\"\n  )\n\nojs_define(carros_ojs = resumo_carros)\n\n\n\n\nVer código\nPlot.plot({\n  marks: [\n    Plot.barY(transpose(carros_ojs), {\n      x: \"cyl\",\n      y: \"mpg_medio\",\n      fill: \"steelblue\",\n      tip: true\n    }),\n    Plot.ruleY([0])\n  ],\n  x: {label: \"Cilindros\"},\n  y: {label: \"MPG Médio\"},\n  style: {fontSize: 13}\n})"
-  },
-  {
-    "objectID": "blog/posts/post02.html#conclusão",
-    "href": "blog/posts/post02.html#conclusão",
-    "title": "Visualizações Interativas com Observable JS no Quarto",
-    "section": "Conclusão",
-    "text": "Conclusão\nO Observable JS é uma ferramenta poderosa para criar visualizações interativas em documentos Quarto, sem a necessidade de infraestrutura adicional. No próximo post, veremos como criar dashboards completos com Quarto e OJS."
-  },
-  {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nAnálise Exploratória com R e tidyverse\n\n\nUm guia prático para EDA usando as melhores ferramentas do ecossistema R\n\n\n\nR\n\nEDA\n\ntidyverse\n\ntutorial\n\n\n\n\n\n\nMar 30, 2025\n\n\nAna Silva\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\nVisualizações Interativas com Observable JS no Quarto\n\n\nComo usar OJS para criar gráficos reativos diretamente em documentos Quarto\n\n\n\nObservable JS\n\nvisualização\n\nQuarto\n\ninterativo\n\n\n\n\n\n\nMar 15, 2025\n\n\nJuliana Costa\n\n2 min\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "4devs/index.html",
-    "href": "4devs/index.html",
-    "title": "4devs",
-    "section": "",
-    "text": "Uma árvore de site é a representação hierárquica de todas as páginas e seções de um site, mostrando como os conteúdos estão organizados e relacionados entre si. Ela funciona como um mapa do site, facilitando navegação e visualização da estrutura."
-  },
-  {
-    "objectID": "4devs/index.html#árvore-do-site",
-    "href": "4devs/index.html#árvore-do-site",
-    "title": "4devs",
-    "section": "",
-    "text": "Uma árvore de site é a representação hierárquica de todas as páginas e seções de um site, mostrando como os conteúdos estão organizados e relacionados entre si. Ela funciona como um mapa do site, facilitando navegação e visualização da estrutura."
-  },
-  {
-    "objectID": "4devs/index.html#documentação-de-códigos",
-    "href": "4devs/index.html#documentação-de-códigos",
-    "title": "4devs",
-    "section": "📦 Documentação de códigos",
-    "text": "📦 Documentação de códigos\nNessa documentação você encontra uma descrição estruturada dos códigos usados no projeto. No ecossistema do R, o pkgdown e o roxygen2 transformam essa documentação em um site organizado, com páginas individuais para cada função (com seções como descrição, parâmetros, e exemplos)."
-  },
-  {
-    "objectID": "4devs/index.html#artigos-para-devs",
-    "href": "4devs/index.html#artigos-para-devs",
-    "title": "4devs",
-    "section": "📝 Artigos para devs",
-    "text": "📝 Artigos para devs"
-  },
-  {
-    "objectID": "4devs/artigos/avisos.html",
-    "href": "4devs/artigos/avisos.html",
-    "title": "Análise Exploratória com R e tidyverse",
-    "section": "",
-    "text": "A Análise Exploratória de Dados (EDA) é o ponto de partida de qualquer projeto de ciência de dados. Neste post, vamos explorar como realizar uma EDA completa usando R e o tidyverse."
-  },
-  {
-    "objectID": "4devs/artigos/avisos.html#introdução",
-    "href": "4devs/artigos/avisos.html#introdução",
-    "title": "Análise Exploratória com R e tidyverse",
-    "section": "",
-    "text": "A Análise Exploratória de Dados (EDA) é o ponto de partida de qualquer projeto de ciência de dados. Neste post, vamos explorar como realizar uma EDA completa usando R e o tidyverse."
-  },
-  {
-    "objectID": "4devs/artigos/avisos.html#carregando-os-dados",
-    "href": "4devs/artigos/avisos.html#carregando-os-dados",
-    "title": "Análise Exploratória com R e tidyverse",
-    "section": "Carregando os dados",
-    "text": "Carregando os dados\n\n\nVer código\nlibrary(tidyverse)\n\n# Usando o dataset mtcars como exemplo\ndados &lt;- mtcars |&gt;\n  rownames_to_column(\"modelo\") |&gt;\n  as_tibble()\n\nglimpse(dados)\n\n\nRows: 32\nColumns: 12\n$ modelo &lt;chr&gt; \"Mazda RX4\", \"Mazda RX4 Wag\", \"Datsun 710\", \"Hornet 4 Drive\", \"…\n$ mpg    &lt;dbl&gt; 21.0, 21.0, 22.8, 21.4, 18.7, 18.1, 14.3, 24.4, 22.8, 19.2, 17.…\n$ cyl    &lt;dbl&gt; 6, 6, 4, 6, 8, 6, 8, 4, 4, 6, 6, 8, 8, 8, 8, 8, 8, 4, 4, 4, 4, …\n$ disp   &lt;dbl&gt; 160.0, 160.0, 108.0, 258.0, 360.0, 225.0, 360.0, 146.7, 140.8, …\n$ hp     &lt;dbl&gt; 110, 110, 93, 110, 175, 105, 245, 62, 95, 123, 123, 180, 180, 1…\n$ drat   &lt;dbl&gt; 3.90, 3.90, 3.85, 3.08, 3.15, 2.76, 3.21, 3.69, 3.92, 3.92, 3.9…\n$ wt     &lt;dbl&gt; 2.620, 2.875, 2.320, 3.215, 3.440, 3.460, 3.570, 3.190, 3.150, …\n$ qsec   &lt;dbl&gt; 16.46, 17.02, 18.61, 19.44, 17.02, 20.22, 15.84, 20.00, 22.90, …\n$ vs     &lt;dbl&gt; 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, …\n$ am     &lt;dbl&gt; 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, …\n$ gear   &lt;dbl&gt; 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 4, 4, 4, 3, …\n$ carb   &lt;dbl&gt; 4, 4, 1, 1, 2, 1, 4, 2, 2, 4, 4, 3, 3, 3, 4, 4, 4, 1, 2, 1, 1, …"
-  },
-  {
-    "objectID": "4devs/artigos/avisos.html#estatísticas-descritivas",
-    "href": "4devs/artigos/avisos.html#estatísticas-descritivas",
-    "title": "Análise Exploratória com R e tidyverse",
-    "section": "Estatísticas Descritivas",
-    "text": "Estatísticas Descritivas\n\n\nVer código\ndados |&gt;\n  select(mpg, cyl, hp, wt) |&gt;\n  summary()\n\n\n      mpg             cyl              hp              wt       \n Min.   :10.40   Min.   :4.000   Min.   : 52.0   Min.   :1.513  \n 1st Qu.:15.43   1st Qu.:4.000   1st Qu.: 96.5   1st Qu.:2.581  \n Median :19.20   Median :6.000   Median :123.0   Median :3.325  \n Mean   :20.09   Mean   :6.188   Mean   :146.7   Mean   :3.217  \n 3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:180.0   3rd Qu.:3.610  \n Max.   :33.90   Max.   :8.000   Max.   :335.0   Max.   :5.424"
-  },
-  {
-    "objectID": "4devs/artigos/avisos.html#visualizações",
-    "href": "4devs/artigos/avisos.html#visualizações",
-    "title": "Análise Exploratória com R e tidyverse",
-    "section": "Visualizações",
-    "text": "Visualizações\n\nDistribuição de Consumo (mpg)\n\n\nVer código\nggplot(dados, aes(x = mpg)) +\n  geom_histogram(bins = 15, fill = \"#2c7bb6\", color = \"white\", alpha = 0.85) +\n  geom_vline(aes(xintercept = mean(mpg)), color = \"red\", linetype = \"dashed\", linewidth = 1) +\n  labs(\n    title = \"Distribuição do Consumo (mpg)\",\n    subtitle = paste(\"Média:\", round(mean(dados$mpg), 1), \"mpg\"),\n    x = \"Milhas por Galão\",\n    y = \"Frequência\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nFigure 1: Distribuição do consumo de combustível\n\n\n\n\n\n\n\nRelação entre Peso e Consumo\n\n\nVer código\ndados &lt;- dados |&gt;\n  mutate(cyl = factor(cyl))\n\nggplot(dados, aes(x = wt, y = mpg, color = cyl)) +\n  geom_point(size = 3, alpha = 0.8) +\n  geom_smooth(method = \"lm\", se = TRUE, aes(group = 1), color = \"gray50\") +\n  scale_color_brewer(palette = \"Set1\", name = \"Cilindros\") +\n  labs(\n    title = \"Peso vs. Consumo\",\n    x = \"Peso (1000 lbs)\",\n    y = \"Milhas por Galão\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nFigure 2: Relação entre peso e consumo, colorido por número de cilindros"
-  },
-  {
-    "objectID": "4devs/artigos/avisos.html#correlações",
-    "href": "4devs/artigos/avisos.html#correlações",
-    "title": "Análise Exploratória com R e tidyverse",
-    "section": "Correlações",
-    "text": "Correlações\n\n\nVer código\ndados |&gt;\n  select(mpg, hp, wt, qsec) |&gt;\n  cor() |&gt;\n  round(2) |&gt;\n  knitr::kable(caption = \"Matriz de correlação\")\n\n\n\nMatriz de correlação\n\n\n\nmpg\nhp\nwt\nqsec\n\n\n\n\nmpg\n1.00\n-0.78\n-0.87\n0.42\n\n\nhp\n-0.78\n1.00\n0.66\n-0.71\n\n\nwt\n-0.87\n0.66\n1.00\n-0.17\n\n\nqsec\n0.42\n-0.71\n-0.17\n1.00"
-  },
-  {
-    "objectID": "4devs/artigos/avisos.html#conclusão",
-    "href": "4devs/artigos/avisos.html#conclusão",
-    "title": "Análise Exploratória com R e tidyverse",
-    "section": "Conclusão",
-    "text": "Conclusão\nObservamos que:\n\nPeso e cilindros têm forte correlação negativa com o consumo\nCarros com 4 cilindros apresentam, em geral, melhor eficiência\nA relação peso-consumo é quase linear\n\n\n\n\n\n\n\nTip\n\n\n\nExperimente substituir mtcars pelos seus próprios dados e adaptar as visualizações!"
-  },
-  {
-    "objectID": "4devs/artigos/estrutura.html",
-    "href": "4devs/artigos/estrutura.html",
-    "title": "Visualizações Interativas com Observable JS no Quarto",
-    "section": "",
-    "text": "O Observable JS (OJS) é uma linguagem reativa baseada em JavaScript que se integra nativamente ao Quarto, permitindo criar visualizações interativas sem precisar de um servidor Shiny."
-  },
-  {
-    "objectID": "4devs/artigos/estrutura.html#por-que-observable-js",
-    "href": "4devs/artigos/estrutura.html#por-que-observable-js",
-    "title": "Visualizações Interativas com Observable JS no Quarto",
-    "section": "",
-    "text": "O Observable JS (OJS) é uma linguagem reativa baseada em JavaScript que se integra nativamente ao Quarto, permitindo criar visualizações interativas sem precisar de um servidor Shiny."
-  },
-  {
-    "objectID": "4devs/artigos/estrutura.html#exemplo-gráfico-interativo-com-d3",
-    "href": "4devs/artigos/estrutura.html#exemplo-gráfico-interativo-com-d3",
-    "title": "Visualizações Interativas com Observable JS no Quarto",
-    "section": "Exemplo: Gráfico Interativo com D3",
-    "text": "Exemplo: Gráfico Interativo com D3\nO código abaixo cria um gráfico de dispersão interativo onde você pode filtrar os dados:\n\n\nVer código\nviewof n_pontos = Inputs.range([10, 200], {\n  label: \"Número de pontos\",\n  step: 10,\n  value: 100\n})\n\n\n\n\n\n\n\n\n\nVer código\ndados = Array.from({length: n_pontos}, (_, i) =&gt; ({\n  x: Math.random() * 10,\n  y: Math.random() * 10 + Math.random() * 2,\n  grupo: Math.random() &gt; 0.5 ? \"A\" : \"B\"\n}))\n\nPlot.plot({\n  marks: [\n    Plot.dot(dados, {\n      x: \"x\",\n      y: \"y\",\n      fill: \"grupo\",\n      r: 5,\n      opacity: 0.7\n    }),\n    Plot.frame()\n  ],\n  color: {legend: true},\n  grid: true,\n  style: {fontSize: 13}\n})"
-  },
-  {
-    "objectID": "4devs/artigos/estrutura.html#passando-dados-do-r-para-ojs",
-    "href": "4devs/artigos/estrutura.html#passando-dados-do-r-para-ojs",
-    "title": "Visualizações Interativas com Observable JS no Quarto",
-    "section": "Passando dados do R para OJS",
-    "text": "Passando dados do R para OJS\nUma das grandes vantagens é poder processar dados no R e enviá-los para OJS:\n\n\nVer código\nlibrary(tidyverse)\n\nresumo_carros &lt;- mtcars |&gt;\n  group_by(cyl) |&gt;\n  summarise(\n    mpg_medio = mean(mpg),\n    n = n(),\n    .groups = \"drop\"\n  )\n\nojs_define(carros_ojs = resumo_carros)\n\n\n\n\nVer código\nPlot.plot({\n  marks: [\n    Plot.barY(transpose(carros_ojs), {\n      x: \"cyl\",\n      y: \"mpg_medio\",\n      fill: \"steelblue\",\n      tip: true\n    }),\n    Plot.ruleY([0])\n  ],\n  x: {label: \"Cilindros\"},\n  y: {label: \"MPG Médio\"},\n  style: {fontSize: 13}\n})"
-  },
-  {
-    "objectID": "4devs/artigos/estrutura.html#conclusão",
-    "href": "4devs/artigos/estrutura.html#conclusão",
-    "title": "Visualizações Interativas com Observable JS no Quarto",
-    "section": "Conclusão",
-    "text": "Conclusão\nO Observable JS é uma ferramenta poderosa para criar visualizações interativas em documentos Quarto, sem a necessidade de infraestrutura adicional. No próximo post, veremos como criar dashboards completos com Quarto e OJS."
+    "text": "Realizado entre os dias 23 e 28 de novembro de 2025, no Pavilhão de Carapina, na grande Vitória (ES), o XXVI Simpósio Brasileiro de Recursos Hídricos reuniu pesquisadores, estudantes e profissionais para discutir avanços científicos, tecnológicos e institucionais na gestão das águas no Brasil. Promovido pela Associação Brasileira de Recursos Hídricos, o evento consolidou-se como um dos principais fóruns nacionais para o debate de estratégias e prioridades no setor, fortalecendo o diálogo entre pesquisa, políticas públicas e práticas de gestão.\n\n\n\nCartaz de divulgação\n\n\nA participação do grupo Mar de Nós no simpósio refletiu a diversidade de temas e abordagens que orientam suas pesquisas, com destaque para a articulação entre saneamento, gestão de recursos hídricos e dinâmicas sociais na bacia do Lago de Furnas.\nNo dia 24 de novembro, foram realizadas duas apresentações orais. A primeira abordou o trabalho “ÁGUAPLAY: gamificação como estratégia extensionista na formação em engenharia ambiental”, apresentado por Talita Fernanda das Graças Silva, explorando o uso de ferramentas lúdicas como forma de ampliar o engajamento e a formação crítica de estudantes. Ainda no mesmo dia, Maria Júlia Paulino Pereira apresentou o estudo “Conflito e mobilização na bacia do Lago de Furnas: uma interpretação a partir de conteúdos midiáticos”, discutindo como narrativas da mídia refletem e influenciam processos sociais e políticos relacionados ao uso da água.\nComplementando as atividades, no dia 25 de novembro foi apresentado o pôster “Gestão dos recursos hídricos na bacia do entorno do Lago de Furnas, em Minas Gerais: usos da água e a relação com o saneamento básico”, de autoria de Diego Santos Cunha. O trabalho destacou as interações entre diferentes usos da água e os desafios para uma gestão integrada que considere tanto aspectos ambientais quanto sociais.\n\n\n\n\n\n\n\nTalita Silva\n\n\n\n\n\n\n\nMaria Júlia Pereira\n\n\n\n\n\n\n\nDiego Cunha\n\n\n\n\n\n\nApresentações do Mar de Nós no XXVI SBRH\n\n\n\n\nA presença do grupo no simpósio reforça o compromisso com a produção de conhecimento interdisciplinar e socialmente engajado, contribuindo para o avanço do debate sobre recursos hídricos no Brasil. Ao articular pesquisa, extensão e análise crítica, os trabalhos apresentados evidenciam a importância de compreender a água não apenas como recurso natural, mas como elemento central em disputas, políticas e processos de transformação social.\nMais informações sobre o evento podem ser encontradas em: https://eventos.abrhidro.org.br/xxvisbrh/"
   },
   {
     "objectID": "bibliografia.html",
@@ -249,56 +109,119 @@
     "href": "bibliografia.html#documentário",
     "title": "Bibliografia",
     "section": "Documentário ",
-    "text": "Documentário \n\n\n\nReportagem do Jornal da EPTV\nFonte: Globoplay\nRepresa de Furnas, em Minas Gerais, é uma joia da engenharia\nAcessar material\n\n\n\n\nReportagem do Globo Repórter\nFonte: Globoplay\nBarragem da Usina Hidrelétrica de Furnas marca o início do lago\nAcessar material\n\n\n\n\nMatéria do G1\nFonte: G1\nFurnas: lago criado para ser ‘caixa d’água do Brasil’ tem 11 vezes o volume da Baía de Guanabara e ‘cidades submersas’\nAcessar material\n\n\n\n\nMatéria do UAI\nFonte: uai.com.br\nO Mar de Minas com cânions de até 20 metros e lago 4 vezes maior que a Baía de Guanabara que faz desse paraíso mineiro o destino do verão\nAcessar material"
+    "text": "Documentário \n\n\n\nReportagem do Jornal da EPTV\nFonte: Globoplay\nRepresa de Furnas, em Minas Gerais, é uma joia da engenharia\nAcessar material\n\n\n\n\nReportagem do Globo Repórter\nFonte: Globoplay\nBarragem da Usina Hidrelétrica de Furnas marca o início do lago\nAcessar material\n\n\n\n\nMatéria do G1\nFonte: G1\nFurnas: lago criado para ser ‘caixa d’água do Brasil’ tem 11 vezes o volume da Baía de Guanabara e ‘cidades submersas’\nAcessar material\n\n\n\n\nMatéria do UAI\nFonte: uai.com.br\nO Mar de Minas com cânions de até 20 metros e lago 4 vezes maior que a Baía de Guanabara que faz desse paraíso mineiro o destino do verão\nAcessar material\n\n\n\n\nHistórias de Quando A Água Chegou\nFonte: Canal do Youtube\nO objetivo principal desse projeto é registrar, na forma de documentário, as histórias orais e memórias ligadas à construção da Hidrelétrica de Furnas, inaugurada no início dos anos 1960.\nAcessar material"
   },
   {
-    "objectID": "blog/posts/post01.html",
-    "href": "blog/posts/post01.html",
-    "title": "Análise Exploratória com R e tidyverse",
+    "objectID": "4devs/artigos/sobre.html",
+    "href": "4devs/artigos/sobre.html",
+    "title": "Sobre o site",
     "section": "",
     "text": "A Análise Exploratória de Dados (EDA) é o ponto de partida de qualquer projeto de ciência de dados. Neste post, vamos explorar como realizar uma EDA completa usando R e o tidyverse."
   },
   {
-    "objectID": "blog/posts/post01.html#introdução",
-    "href": "blog/posts/post01.html#introdução",
-    "title": "Análise Exploratória com R e tidyverse",
+    "objectID": "4devs/artigos/sobre.html#introdução",
+    "href": "4devs/artigos/sobre.html#introdução",
+    "title": "Sobre o site",
     "section": "",
     "text": "A Análise Exploratória de Dados (EDA) é o ponto de partida de qualquer projeto de ciência de dados. Neste post, vamos explorar como realizar uma EDA completa usando R e o tidyverse."
   },
   {
-    "objectID": "blog/posts/post01.html#carregando-os-dados",
-    "href": "blog/posts/post01.html#carregando-os-dados",
-    "title": "Análise Exploratória com R e tidyverse",
-    "section": "Carregando os dados",
-    "text": "Carregando os dados\n\n\nVer código\nlibrary(tidyverse)\n\n# Usando o dataset mtcars como exemplo\ndados &lt;- mtcars |&gt;\n  rownames_to_column(\"modelo\") |&gt;\n  as_tibble()\n\nglimpse(dados)\n\n\nRows: 32\nColumns: 12\n$ modelo &lt;chr&gt; \"Mazda RX4\", \"Mazda RX4 Wag\", \"Datsun 710\", \"Hornet 4 Drive\", \"…\n$ mpg    &lt;dbl&gt; 21.0, 21.0, 22.8, 21.4, 18.7, 18.1, 14.3, 24.4, 22.8, 19.2, 17.…\n$ cyl    &lt;dbl&gt; 6, 6, 4, 6, 8, 6, 8, 4, 4, 6, 6, 8, 8, 8, 8, 8, 8, 4, 4, 4, 4, …\n$ disp   &lt;dbl&gt; 160.0, 160.0, 108.0, 258.0, 360.0, 225.0, 360.0, 146.7, 140.8, …\n$ hp     &lt;dbl&gt; 110, 110, 93, 110, 175, 105, 245, 62, 95, 123, 123, 180, 180, 1…\n$ drat   &lt;dbl&gt; 3.90, 3.90, 3.85, 3.08, 3.15, 2.76, 3.21, 3.69, 3.92, 3.92, 3.9…\n$ wt     &lt;dbl&gt; 2.620, 2.875, 2.320, 3.215, 3.440, 3.460, 3.570, 3.190, 3.150, …\n$ qsec   &lt;dbl&gt; 16.46, 17.02, 18.61, 19.44, 17.02, 20.22, 15.84, 20.00, 22.90, …\n$ vs     &lt;dbl&gt; 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, …\n$ am     &lt;dbl&gt; 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, …\n$ gear   &lt;dbl&gt; 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 4, 4, 4, 3, …\n$ carb   &lt;dbl&gt; 4, 4, 1, 1, 2, 1, 4, 2, 2, 4, 4, 3, 3, 3, 4, 4, 4, 1, 2, 1, 1, …"
+    "objectID": "4devs/artigos/estrutura.html",
+    "href": "4devs/artigos/estrutura.html",
+    "title": "Configurando o servidor",
+    "section": "",
+    "text": "Esta plataforma funciona sob o paradigma de conter todo o código num só diretório, com o mínimo de alterações no ambiente do servidor. Como estamos usando dois servidores - server shiny para os dashboards e nginx para a parte estática -, depender do mínimo de coisas do ambiente do servidor parece ser uma boa escolha de design. Aparentemente é possível guardar páginas estáticas num shiny server. Embora pareça uma boa ideia depender apenas de um servidor, não está claro para nós se é possível guardar páginas estáticas num shiny server sem que ele incie uma nova sessão de R para cada novo acesso (o que é muito custoso). Além disso, o nginx é uma opção antiga, simples e customizável para servidores, com vasta documentação online. Por conta disso, fizemos a escolha por nginx combinado com shiny server."
   },
   {
-    "objectID": "blog/posts/post01.html#estatísticas-descritivas",
-    "href": "blog/posts/post01.html#estatísticas-descritivas",
-    "title": "Análise Exploratória com R e tidyverse",
-    "section": "Estatísticas Descritivas",
-    "text": "Estatísticas Descritivas\n\n\nVer código\ndados |&gt;\n  select(mpg, cyl, hp, wt) |&gt;\n  summary()\n\n\n      mpg             cyl              hp              wt       \n Min.   :10.40   Min.   :4.000   Min.   : 52.0   Min.   :1.513  \n 1st Qu.:15.43   1st Qu.:4.000   1st Qu.: 96.5   1st Qu.:2.581  \n Median :19.20   Median :6.000   Median :123.0   Median :3.325  \n Mean   :20.09   Mean   :6.188   Mean   :146.7   Mean   :3.217  \n 3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:180.0   3rd Qu.:3.610  \n Max.   :33.90   Max.   :8.000   Max.   :335.0   Max.   :5.424"
+    "objectID": "4devs/artigos/estrutura.html#shiny-server",
+    "href": "4devs/artigos/estrutura.html#shiny-server",
+    "title": "Configurando o servidor",
+    "section": "shiny server",
+    "text": "shiny server\nA instalação do shiny server está documentada no site da posit. As instruções necessárias para um servidor shiny estão contidas num arquivo de nome shiny-server.conf, geralmente guardado em /etc/shiny-server Por default, ele vem assim (sem comentários).\nrun_as shiny;\n\nserver {\n  listen 3838;\n\n  location / {\n    site_dir /srv/shiny-server;\n    log_dir /var/log/shiny-server;\n    directory_index on;\n  }\n}\n\nO argumentos básicos são estes:\n\nrun_as diz em nome de qual usuário a aplicação vai rodar.\nlisten é o número da porta em que o site vai rodar, por default é a 3838 (é bom não mexer niso).\nsite_dir é a pasta onde devem estar os aplicativos shiny; se você tem um aplicativo numa pasta de nome meu_app e colá-la no caminho especificado nesse agumento, a aplicação shiny vai rodar em root:3838/meu_app, em que root é o seu domínio, que pode ser checado via hostname -I.\ndirectory_index pode ser on ou off, quando está on aparece uma página com um índice de todos os projetos em site_dir caso o usuário acesse root:3838 sem especificar o projeto.\n\n\nGerenciadores de serviços\nEm servidores linux, há a necessidades de rodar processos em segundo plano, como servidores shiny e nginx. Nesse contexto são usados gerenciadores de serviços do sistema, como service e systemctl. Dentre outras coisas, esses gerenciadores permitem a execução de serviços em segundo plano, a incialização automática de serviços após boot, o gerenciamento de logs, e a padronização de comandos. O systemctl é um sistema mais moderno que service e alguns comandos úteis desses gerenciadores são mostrados abaixo.\n\n\n\n\n\n\n\n\nAção\nsystemctl\nservice\n\n\n\n\nIniciar serviço\nsystemctl start serviço\nservice serviço start\n\n\nParar serviço\nsystemctl stop serviço\nservice serviço stop\n\n\nReiniciar serviço\nsystemctl restart serviço\nservice serviço restart\n\n\nRecarregar config\nsystemctl reload serviço\nservice serviço reload\n\n\nVer status\nsystemctl status serviço\nservice serviço status\n\n\nHabilitar no boot\nsystemctl enable serviço\n(não disponível direto)\n\n\nDesabilitar no boot\nsystemctl disable serviço\n(não disponível direto)\n\n\nListar serviços\nsystemctl list-units\nservice --status-all\n\n\n\nTambém é possível rodar o shiny server em segundo plano via shiny-server &, embora isso não tenha todas as vantagens de um gerenciador, a vantagem dessa abordagem é que ela permite especificar qual o arquivo de configuração de sistema do shiny server. Isso é necessário em parte porque é difícil fazer alterações nos aplicativos se eles estiverem armazenados site_dir default (/srv/shiny-server). Isto é assim porque alterações nas pastas raízes precisam de permissões de administrador (o famoso sudo).\nPara contornar isso, podemos especificar um site_dir numa pasta em ~, no nosso caso optamos por ~/website. Parte do problema da ausência de um gerenciador é solucionada pelo argumento log_dir, pasta na qual serão armazenados os logs do shiny server. O arquivo com a configuração do sistema pode ser visto aqui. Um servidor personalizado pode ser executado via shiny-server caminho/para/shiny-server.conf &, o que não pode ser feito diretamente via service ou systemctl."
   },
   {
-    "objectID": "blog/posts/post01.html#visualizações",
-    "href": "blog/posts/post01.html#visualizações",
-    "title": "Análise Exploratória com R e tidyverse",
-    "section": "Visualizações",
-    "text": "Visualizações\n\nDistribuição de Consumo (mpg)\n\n\nVer código\nggplot(dados, aes(x = mpg)) +\n  geom_histogram(bins = 15, fill = \"#2c7bb6\", color = \"white\", alpha = 0.85) +\n  geom_vline(aes(xintercept = mean(mpg)), color = \"red\", linetype = \"dashed\", linewidth = 1) +\n  labs(\n    title = \"Distribuição do Consumo (mpg)\",\n    subtitle = paste(\"Média:\", round(mean(dados$mpg), 1), \"mpg\"),\n    x = \"Milhas por Galão\",\n    y = \"Frequência\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nFigure 1: Distribuição do consumo de combustível\n\n\n\n\n\n\n\nRelação entre Peso e Consumo\n\n\nVer código\ndados &lt;- dados |&gt;\n  mutate(cyl = factor(cyl))\n\nggplot(dados, aes(x = wt, y = mpg, color = cyl)) +\n  geom_point(size = 3, alpha = 0.8) +\n  geom_smooth(method = \"lm\", se = TRUE, aes(group = 1), color = \"gray50\") +\n  scale_color_brewer(palette = \"Set1\", name = \"Cilindros\") +\n  labs(\n    title = \"Peso vs. Consumo\",\n    x = \"Peso (1000 lbs)\",\n    y = \"Milhas por Galão\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nFigure 2: Relação entre peso e consumo, colorido por número de cilindros"
+    "objectID": "4devs/artigos/estrutura.html#nginx",
+    "href": "4devs/artigos/estrutura.html#nginx",
+    "title": "Configurando o servidor",
+    "section": "nginx",
+    "text": "nginx\nnginx é um servidor web amplamente usado na internet que aqui é usado para gerenciar as páginas estáticas do projeto.\n\nMudando a máscara dos shiny apps\nUma das alterações no ambiente do servidor que é necessária para um uso mais agradável do site é a criação de máscaras para as aplicações Shiny. Por padrão, o shiny server guarda as aplicações na porta 3838. Se *nome_app* - por exemplo - é o nome de uma palicação, então isso ficará disponível em dominio:3838/*nome_app*, em que dominio é a URL raíz, como http://127.0.0.1 ou http://site.com. Para que o usuário tenha uma melhor experiência ao navegar pelo site, gostaríamos que essa aplicação ficasse disponível em dominio/*nome_app*(sem número da porta).\nAo executar sudo nano /etc/nginx/sites-available/default, aparecerá algo como o trecho abaixo.\nserver {\n    listen 80 default_server;\n    listen [::]:80 default_server\n    root /var/www/html;\n    index index.html\n\n    location /dashboards/arvore/ {\n        proxy_pass http://127.0.0.1:3838/arvore/;\n        proxy_http_version 1.1;\n        proxy_set_header Upgrade $http_upgrade;\n        proxy_set_header Connection \"upgrade\";\n        proxy_read_timeout 20d;\n    }\n\n    location /dashboards/snis/ {\n        proxy_pass http://127.0.0.1:3838/snis/;\n        proxy_http_version 1.1;\n        proxy_set_header Upgrade $http_upgrade;\n        proxy_set_header Connection \"upgrade\";\n        proxy_read_timeout 20d;\n    }\n}\nA criação do que estamos chamando de ‘máscara’ nada mais é que uma especificação de caminho. Como isso fica num local fora da raíz do projeto, optamos por não automatizar a criação dessas máscaras, apenas explicar o procedimento nesse artigo. Para um novo dashboard shiny chamado *nome_app*, o seguinte snippet deve ser adicionado na seção server do arquivo /etc/nginx/sites-available/default. Atenção, o arquivo em questão não deve ser substituído pelo código abaixo, isso deve apenas ser adicionado ao arquivo.\nlocation /dashboards/*nome_app*/ {\n        proxy_pass http://127.0.0.1:3838/*nome_app*/;\n        proxy_http_version 1.1;\n        proxy_set_header Upgrade $http_upgrade;\n        proxy_set_header Connection \"upgrade\";\n        proxy_read_timeout 20d;\n    }\n\n\nDeploying (on one click)\nEm nosso projeto há um arquivo chamado deploy.sh que contém uma série de comandos bash que automatizam certas tarefas. Grosso modo, este arquivo está assim.\nquarto render ~/website\n\nrm -rf /var/www/html/*\ncp -r ~/website/_site/. /var/www/html\n\nsudo pkill -f shiny-server || true\nshiny-server ~/website/conf/shiny-server.conf\nTrês coisas estão acontecendo aqui:\n\nO projeto é renderizado.\nTodos os arquivos em /var/www/html são apagados e os arquivos de output do website são copiados para lá. O diretório /var/www/html é onde o servidor nginx busca os arquivos do site.\nProcessos antigos do shiny server são encerrados (de maneira meio rudimentar) e uma nova instância do shiny server é inicializada com as configurações de conf/shiny-server.conf.\n\nComo os arquivos em /var são restritos, é necessário rodar essa série de comandos com permissões de administrador, assim sudo bash ~/website/conf/deploy.sh &. Usar esse recurso de um arquivo bash é necessário pois não é possível criar um arquivo com configurações do nginx, para - dentre outras coisas - apontar o site para website/_site, como fizemos com o arquivo shiny-server.conf."
   },
   {
-    "objectID": "blog/posts/post01.html#correlações",
-    "href": "blog/posts/post01.html#correlações",
-    "title": "Análise Exploratória com R e tidyverse",
-    "section": "Correlações",
-    "text": "Correlações\n\n\nVer código\ndados |&gt;\n  select(mpg, hp, wt, qsec) |&gt;\n  cor() |&gt;\n  round(2) |&gt;\n  knitr::kable(caption = \"Matriz de correlação\")\n\n\n\nMatriz de correlação\n\n\n\nmpg\nhp\nwt\nqsec\n\n\n\n\nmpg\n1.00\n-0.78\n-0.87\n0.42\n\n\nhp\n-0.78\n1.00\n0.66\n-0.71\n\n\nwt\n-0.87\n0.66\n1.00\n-0.17\n\n\nqsec\n0.42\n-0.71\n-0.17\n1.00"
+    "objectID": "4devs/artigos/como-funciona-blog.html",
+    "href": "4devs/artigos/como-funciona-blog.html",
+    "title": "Como postar no blog",
+    "section": "",
+    "text": "A Análise Exploratória de Dados (EDA) é o ponto de partida de qualquer projeto de ciência de dados. Neste post, vamos explorar como realizar uma EDA completa usando R e o tidyverse."
   },
   {
-    "objectID": "blog/posts/post01.html#conclusão",
-    "href": "blog/posts/post01.html#conclusão",
-    "title": "Análise Exploratória com R e tidyverse",
-    "section": "Conclusão",
-    "text": "Conclusão\nObservamos que:\n\nPeso e cilindros têm forte correlação negativa com o consumo\nCarros com 4 cilindros apresentam, em geral, melhor eficiência\nA relação peso-consumo é quase linear\n\n\n\n\n\n\n\nTip\n\n\n\nExperimente substituir mtcars pelos seus próprios dados e adaptar as visualizações!"
+    "objectID": "4devs/artigos/como-funciona-blog.html#introdução",
+    "href": "4devs/artigos/como-funciona-blog.html#introdução",
+    "title": "Como postar no blog",
+    "section": "",
+    "text": "A Análise Exploratória de Dados (EDA) é o ponto de partida de qualquer projeto de ciência de dados. Neste post, vamos explorar como realizar uma EDA completa usando R e o tidyverse."
+  },
+  {
+    "objectID": "4devs/artigos/fontes.html",
+    "href": "4devs/artigos/fontes.html",
+    "title": "Referências técnicas",
+    "section": "",
+    "text": "https://www.nginx.com/resources/wiki/start/\nhttps://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/\nhttps://wiki.debian.org/Nginx/DirectoryStructure\nhttps://docs.posit.co/shiny-server/\nhttps://shiny.posit.co/r/articles/share/shiny-server/\nhttps://docs.posit.co/shiny-server/#host-a-directory-of-applications\nhttps://cliente.hostgator.com.br/dominios/dns-wizard\nhttps://suporte.hostgator.com.br/hc/pt-br/articles/30810621770387-Como-configurar-o-DNS-de-um-dom%C3%ADnio"
+  },
+  {
+    "objectID": "4devs/artigos/fontes.html#referências",
+    "href": "4devs/artigos/fontes.html#referências",
+    "title": "Referências técnicas",
+    "section": "",
+    "text": "https://www.nginx.com/resources/wiki/start/\nhttps://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/\nhttps://wiki.debian.org/Nginx/DirectoryStructure\nhttps://docs.posit.co/shiny-server/\nhttps://shiny.posit.co/r/articles/share/shiny-server/\nhttps://docs.posit.co/shiny-server/#host-a-directory-of-applications\nhttps://cliente.hostgator.com.br/dominios/dns-wizard\nhttps://suporte.hostgator.com.br/hc/pt-br/articles/30810621770387-Como-configurar-o-DNS-de-um-dom%C3%ADnio"
+  },
+  {
+    "objectID": "4devs/index.html",
+    "href": "4devs/index.html",
+    "title": "4devs",
+    "section": "",
+    "text": "Uma árvore de site é a representação hierárquica de todas as páginas e seções de um site, mostrando como os conteúdos estão organizados e relacionados entre si. Ela funciona como um mapa do site, facilitando navegação e visualização da estrutura."
+  },
+  {
+    "objectID": "4devs/index.html#árvore-do-site",
+    "href": "4devs/index.html#árvore-do-site",
+    "title": "4devs",
+    "section": "",
+    "text": "Uma árvore de site é a representação hierárquica de todas as páginas e seções de um site, mostrando como os conteúdos estão organizados e relacionados entre si. Ela funciona como um mapa do site, facilitando navegação e visualização da estrutura."
+  },
+  {
+    "objectID": "4devs/index.html#documentação-de-códigos",
+    "href": "4devs/index.html#documentação-de-códigos",
+    "title": "4devs",
+    "section": "📦 Documentação de códigos",
+    "text": "📦 Documentação de códigos\nNessa documentação você encontra uma descrição estruturada dos códigos usados no projeto. No ecossistema do R, o pkgdown e o roxygen2 transformam essa documentação em um site organizado, com páginas individuais para cada função (com seções como descrição, parâmetros, e exemplos)."
+  },
+  {
+    "objectID": "4devs/index.html#código-fonte",
+    "href": "4devs/index.html#código-fonte",
+    "title": "4devs",
+    "section": "🐱 Código fonte",
+    "text": "🐱 Código fonte\nO código fonte deste site está disponível no GitHub do projeto. Quaisquer problemas podem ser reportados via GitHub issues."
+  },
+  {
+    "objectID": "4devs/index.html#artigos-para-devs",
+    "href": "4devs/index.html#artigos-para-devs",
+    "title": "4devs",
+    "section": "📝 Artigos para devs",
+    "text": "📝 Artigos para devs"
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nParticipação do grupo no II ENDHAS\n\n\nPesquisa, território e direitos humanos à água e ao saneamento\n\n\n\nsaneamento\n\npesquisa\n\nENDHAS\n\nevento\n\n\n\n\n\n\nApr 20, 2026\n\n\nCarlos de Moura\n\n\n\n\n\n\n\n\n\n\n\n\nParticipação do Mar de Nós em encontro sobre governança e inovação na USP\n\n\nSaneamento e Resiliência Climática: desafios e caminhos em debate\n\n\n\nsaneamento\n\nmudanças climáticas\n\ngovernança\n\nevento\n\n\n\n\n\n\nFeb 11, 2026\n\n\nCarlos de Moura\n\n\n\n\n\n\n\n\n\n\n\n\nMar de Nós no XXVI Simpósio Brasileiro de Recursos Hídricos\n\n\nPesquisa, extensão e conflitos socioambientais em debate\n\n\n\nrecursos hídricos\n\nsaneamento\n\nextensão\n\npesquisa\n\nevento\n\n\n\n\n\n\nDec 5, 2025\n\n\nCarlos de Moura\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "blog/posts/2026_endhas.html",
+    "href": "blog/posts/2026_endhas.html",
+    "title": "Participação do grupo no II ENDHAS",
+    "section": "",
+    "text": "O grupo de pesquisa Mar de Nós participou do II Encontro Nacional dos Direitos Humanos à Água e ao Saneamento (II ENDHAS), realizado entre os dias 18 e 20 de março de 2026, na Escola Politécnica da UFBA, em Salvador (Bahia). O evento reuniu pesquisadores, movimentos sociais, profissionais do setor e diferentes atores comprometidos com a construção de políticas públicas sobre o acesso à água e ao saneamento no Brasil.\n\nAo longo dos três dias, o encontro se consolidou como um espaço plural de diálogo entre saberes técnicos, acadêmicos e populares. Temas centrais como racismo ambiental, desigualdades regionais, saneamento em territórios tradicionais, mudanças climáticas e gestão comunitária da água atravessaram as discussões, sempre com ênfase nas múltiplas dimensões de vulnerabilidade que impactam o acesso a serviços essenciais.\nNesse contexto, o grupo Mar de Nós contribuiu com a apresentação de trabalhos na sessão da tarde do dia 19 de março, abordando questões relevantes relacionadas à bacia hidrográfica do Lago de Furnas. As pesquisas apresentadas exploraram, de forma integrada, aspectos de desempenho dos serviços de água e esgoto, sustentabilidade econômica e universalização do acesso, além de análises sobre o papel da mídia na construção do debate público em torno da cota 762 e dos direitos humanos à água e ao saneamento na região.\n\n\n\n\n\n\n\nSonaly Rezende\n\n\n\n\n\n\n\nIzabel Matos\n\n\n\n\n\n\nApresentações do Mar de Nós no II ENDHAS\n\n\n\n\nOs trabalhos apresentados foram desenvolvidos por uma equipe ampla e interdisciplinar, refletindo o caráter colaborativo do grupo e sua articulação com diferentes instituições e territórios. Essa diversidade de olhares foi essencial para compreender a complexidade dos desafios enfrentados na região de Furnas, especialmente no que diz respeito às tensões entre usos da água, governança e garantia de direitos.\nA participação no II ENDHAS também reforçou a importância de aproximar a produção acadêmica das demandas sociais concretas. Ao dialogar com movimentos e organizações da sociedade civil, o grupo ampliou as possibilidades de impacto de suas pesquisas, contribuindo para a construção de soluções mais sensíveis às realidades locais.\nPor fim, destacamos que os códigos utilizados nas análises apresentadas estão disponíveis publicamente, promovendo transparência e reprodutibilidade das pesquisas:\nhttps://github.com/mardenos-ufmg/IIENDHAS---2025\nA experiência no encontro reafirma o compromisso do Mar de Nós com a produção de conhecimento crítico e engajado, voltado à promoção dos direitos humanos e à construção de caminhos para a superação das desigualdades no acesso à água e ao saneamento no Brasil."
   },
   {
     "objectID": "dashboards.html",

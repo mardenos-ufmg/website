@@ -2,18 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.36">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Juliana Costa">
-<meta name="dcterms.date" content="2025-03-15">
+<meta name="author" content="Carlos de Moura">
+<meta name="dcterms.date" content="2026-04-20">
 
-<title>Visualizações Interativas com Observable JS no Quarto – Mar de Nós</title>
+<title>Configurando o servidor – Mar de Nós</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -24,41 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -72,18 +34,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../stuff/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-a06763021a52c43c40a351ac8b799b8f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-dbc92dda8186f57fa2e333fbb71d6a9d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-a06763021a52c43c40a351ac8b799b8f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-7ac2f9da8c2617a4fdd15004b4601015.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-1d1c19a7ca3847f098d61c06348c07e1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-99a4b47cc5c4716a465be7a4fb898186.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-1d1c19a7ca3847f098d61c06348c07e1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-6488bdb636d690890a03945ddfdee43e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-d0b1ecc6e73ccb1b78429d59de5edcbd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-6488bdb636d690890a03945ddfdee43e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -112,13 +75,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
-<link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
-<link href="../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-<script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-<script type="ojs-define">
-{"contents":[{"name":"carros_ojs","value":{"cyl":[4,6,8],"mpg_medio":[26.6636,19.7429,15.1],"n":[11,7,14]}}]}
-</script>
 
 
 <link rel="stylesheet" href="../../stuff/styles.css">
@@ -365,10 +321,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#por-que-observable-js" id="toc-por-que-observable-js" class="nav-link active" data-scroll-target="#por-que-observable-js">Por que Observable JS?</a></li>
-  <li><a href="#exemplo-gráfico-interativo-com-d3" id="toc-exemplo-gráfico-interativo-com-d3" class="nav-link" data-scroll-target="#exemplo-gráfico-interativo-com-d3">Exemplo: Gráfico Interativo com D3</a></li>
-  <li><a href="#passando-dados-do-r-para-ojs" id="toc-passando-dados-do-r-para-ojs" class="nav-link" data-scroll-target="#passando-dados-do-r-para-ojs">Passando dados do R para OJS</a></li>
-  <li><a href="#conclusão" id="toc-conclusão" class="nav-link" data-scroll-target="#conclusão">Conclusão</a></li>
+  <li><a href="#shiny-server" id="toc-shiny-server" class="nav-link active" data-scroll-target="#shiny-server">shiny server</a>
+  <ul class="collapse">
+  <li><a href="#gerenciadores-de-serviços" id="toc-gerenciadores-de-serviços" class="nav-link" data-scroll-target="#gerenciadores-de-serviços">Gerenciadores de serviços</a></li>
+  </ul></li>
+  <li><a href="#nginx" id="toc-nginx" class="nav-link" data-scroll-target="#nginx">nginx</a>
+  <ul class="collapse">
+  <li><a href="#mudando-a-máscara-dos-shiny-apps" id="toc-mudando-a-máscara-dos-shiny-apps" class="nav-link" data-scroll-target="#mudando-a-máscara-dos-shiny-apps">Mudando a máscara dos shiny apps</a></li>
+  <li><a href="#deploying-on-one-click" id="toc-deploying-on-one-click" class="nav-link" data-scroll-target="#deploying-on-one-click">Deploying (on one click)</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -378,13 +339,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Visualizações Interativas com Observable JS no Quarto</h1>
-<p class="subtitle lead">Como usar OJS para criar gráficos reativos diretamente em documentos Quarto</p>
+<h1 class="title">Configurando o servidor</h1>
+<p class="subtitle lead">Como configurar o servidor para hospedar o site</p>
   <div class="quarto-categories">
-    <div class="quarto-category">Observable JS</div>
-    <div class="quarto-category">visualização</div>
-    <div class="quarto-category">Quarto</div>
-    <div class="quarto-category">interativo</div>
+    <div class="quarto-category">servidor</div>
+    <div class="quarto-category">hospedagem</div>
+    <div class="quarto-category">nginx</div>
+    <div class="quarto-category">shiny server</div>
   </div>
   </div>
 
@@ -395,14 +356,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Juliana Costa </p>
+             <p>Carlos de Moura </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 15, 2025</p>
+      <p class="date">April 20, 2026</p>
     </div>
   </div>
   
@@ -414,132 +375,153 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="por-que-observable-js" class="level2">
-<h2 class="anchored" data-anchor-id="por-que-observable-js">Por que Observable JS?</h2>
-<p>O <strong>Observable JS</strong> (OJS) é uma linguagem reativa baseada em JavaScript que se integra nativamente ao Quarto, permitindo criar visualizações interativas sem precisar de um servidor Shiny.</p>
+<p>Esta plataforma funciona sob o paradigma de conter todo o código num só diretório, com o mínimo de alterações no ambiente do servidor. Como estamos usando dois servidores - server shiny para os dashboards e nginx para a parte estática -, depender do mínimo de coisas do ambiente do servidor parece ser uma boa escolha de design. Aparentemente é possível guardar páginas estáticas num shiny server. Embora pareça uma boa ideia depender apenas de um servidor, não está claro para nós se é possível guardar páginas estáticas num shiny server sem que ele incie uma nova sessão de R para cada novo acesso (o que é muito custoso). Além disso, o nginx é uma opção antiga, simples e customizável para servidores, com vasta documentação online. Por conta disso, fizemos a escolha por nginx combinado com shiny server.</p>
+<section id="shiny-server" class="level2">
+<h2 class="anchored" data-anchor-id="shiny-server">shiny server</h2>
+<p>A instalação do shiny server está documentada no site da <a href="https://posit.co/download/shiny-server">posit</a>. As instruções necessárias para um servidor shiny estão contidas num arquivo de nome <code>shiny-server.conf</code>, geralmente guardado em <code>/etc/shiny-server</code> Por default, ele vem assim (sem comentários).</p>
+<pre><code>run_as shiny;
+
+server {
+  listen 3838;
+
+  location / {
+    site_dir /srv/shiny-server;
+    log_dir /var/log/shiny-server;
+    directory_index on;
+  }
+}
+</code></pre>
+<p>O argumentos básicos são estes:</p>
+<ul>
+<li><code>run_as</code> diz em nome de qual usuário a aplicação vai rodar.</li>
+<li><code>listen</code> é o número da porta em que o site vai rodar, por default é a 3838 (é bom não mexer niso).</li>
+<li><code>site_dir</code> é a pasta onde devem estar os aplicativos shiny; se você tem um aplicativo numa pasta de nome <code>meu_app</code> e colá-la no caminho especificado nesse agumento, a aplicação shiny vai rodar em <code>root:3838/meu_app</code>, em que root é o seu domínio, que pode ser checado via <code>hostname -I</code>.</li>
+<li><code>directory_index</code> pode ser <code>on</code> ou <code>off</code>, quando está <code>on</code> aparece uma página com um índice de todos os projetos em <code>site_dir</code> caso o usuário acesse <code>root:3838</code> sem especificar o projeto.</li>
+</ul>
+<section id="gerenciadores-de-serviços" class="level3">
+<h3 class="anchored" data-anchor-id="gerenciadores-de-serviços">Gerenciadores de serviços</h3>
+<p>Em servidores linux, há a necessidades de rodar processos em segundo plano, como servidores shiny e nginx. Nesse contexto são usados gerenciadores de serviços do sistema, como <code>service</code> e <code>systemctl</code>. Dentre outras coisas, esses gerenciadores permitem a execução de serviços em segundo plano, a incialização automática de serviços após boot, o gerenciamento de logs, e a padronização de comandos. O <code>systemctl</code> é um sistema mais moderno que <code>service</code> e alguns comandos úteis desses gerenciadores são mostrados abaixo.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 40%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ação</th>
+<th>systemctl</th>
+<th>service</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Iniciar serviço</td>
+<td><code>systemctl start serviço</code></td>
+<td><code>service serviço start</code></td>
+</tr>
+<tr class="even">
+<td>Parar serviço</td>
+<td><code>systemctl stop serviço</code></td>
+<td><code>service serviço stop</code></td>
+</tr>
+<tr class="odd">
+<td>Reiniciar serviço</td>
+<td><code>systemctl restart serviço</code></td>
+<td><code>service serviço restart</code></td>
+</tr>
+<tr class="even">
+<td>Recarregar config</td>
+<td><code>systemctl reload serviço</code></td>
+<td><code>service serviço reload</code></td>
+</tr>
+<tr class="odd">
+<td>Ver status</td>
+<td><code>systemctl status serviço</code></td>
+<td><code>service serviço status</code></td>
+</tr>
+<tr class="even">
+<td>Habilitar no boot</td>
+<td><code>systemctl enable serviço</code></td>
+<td><em>(não disponível direto)</em></td>
+</tr>
+<tr class="odd">
+<td>Desabilitar no boot</td>
+<td><code>systemctl disable serviço</code></td>
+<td><em>(não disponível direto)</em></td>
+</tr>
+<tr class="even">
+<td>Listar serviços</td>
+<td><code>systemctl list-units</code></td>
+<td><code>service --status-all</code></td>
+</tr>
+</tbody>
+</table>
+<p>Também é possível rodar o shiny server em segundo plano via <code>shiny-server &amp;</code>, embora isso não tenha todas as vantagens de um gerenciador, a vantagem dessa abordagem é que ela permite especificar qual o arquivo de configuração de sistema do shiny server. Isso é necessário em parte porque é difícil fazer alterações nos aplicativos se eles estiverem armazenados <code>site_dir</code> default (<code>/srv/shiny-server</code>). Isto é assim porque alterações nas pastas raízes precisam de permissões de administrador (o famoso <code>sudo</code>).</p>
+<p>Para contornar isso, podemos especificar um <code>site_dir</code> numa pasta em <code>~</code>, no nosso caso optamos por <code>~/website</code>. Parte do problema da ausência de um gerenciador é solucionada pelo argumento <code>log_dir</code>, pasta na qual serão armazenados os logs do shiny server. O arquivo com a configuração do sistema pode ser visto <a href="https://raw.githubusercontent.com/mardenos-ufmg/website/refs/heads/main/conf/shiny-server.conf">aqui</a>. Um servidor personalizado pode ser executado via <code>shiny-server caminho/para/shiny-server.conf &amp;</code>, o que não pode ser feito diretamente via <code>service</code> ou <code>systemctl</code>.</p>
 </section>
-<section id="exemplo-gráfico-interativo-com-d3" class="level2">
-<h2 class="anchored" data-anchor-id="exemplo-gráfico-interativo-com-d3">Exemplo: Gráfico Interativo com D3</h2>
-<p>O código abaixo cria um gráfico de dispersão interativo onde você pode filtrar os dados:</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Ver código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" data-startfrom="21" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 20;"><span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>viewof n_pontos <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">10</span><span class="op">,</span> <span class="dv">200</span>]<span class="op">,</span> {</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"Número de pontos"</span><span class="op">,</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="dt">step</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="dv">100</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div id="slider-n" class="cell-output cell-output-display">
-<div id="ojs-cell-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div id="scatter-plot" class="cell">
-<details class="code-fold">
-<summary>Ver código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" data-startfrom="32" data-source-offset="-28"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 31;"><span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>dados <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> n_pontos}<span class="op">,</span> (_<span class="op">,</span> i) <span class="kw">=&gt;</span> ({</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="dv">10</span><span class="op">,</span></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="dv">10</span> <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="dv">2</span><span class="op">,</span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  <span class="dt">grupo</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">&gt;</span> <span class="fl">0.5</span> <span class="op">?</span> <span class="st">"A"</span> <span class="op">:</span> <span class="st">"B"</span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>}))</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(dados<span class="op">,</span> {</span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"grupo"</span><span class="op">,</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>      <span class="dt">r</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>      <span class="dt">opacity</span><span class="op">:</span> <span class="fl">0.7</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">frame</span>()</span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {<span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span>}<span class="op">,</span></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>  <span class="dt">style</span><span class="op">:</span> {<span class="dt">fontSize</span><span class="op">:</span> <span class="dv">13</span>}</span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-display">
-<div id="scatter-plot-1">
-<div id="ojs-cell-2-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div id="scatter-plot-2">
-<div id="ojs-cell-2-2" data-nodetype="expression">
-
-</div>
-</div>
-</div>
-</div>
 </section>
-<section id="passando-dados-do-r-para-ojs" class="level2">
-<h2 class="anchored" data-anchor-id="passando-dados-do-r-para-ojs">Passando dados do R para OJS</h2>
-<p>Uma das grandes vantagens é poder processar dados no R e enviá-los para OJS:</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Ver código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>resumo_carros <span class="ot">&lt;-</span> mtcars <span class="sc">|&gt;</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">|&gt;</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mpg_medio =</span> <span class="fu">mean</span>(mpg),</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>(),</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ojs_define</span>(<span class="at">carros_ojs =</span> resumo_carros)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
-<div class="cell">
-<details class="code-fold">
-<summary>Ver código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" data-startfrom="76" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 75;"><span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barY</span>(<span class="fu">transpose</span>(carros_ojs)<span class="op">,</span> {</span>
-<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"cyl"</span><span class="op">,</span></span>
-<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"mpg_medio"</span><span class="op">,</span></span>
-<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"steelblue"</span><span class="op">,</span></span>
-<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a>      <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span></span>
-<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])</span>
-<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
-<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Cilindros"</span>}<span class="op">,</span></span>
-<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"MPG Médio"</span>}<span class="op">,</span></span>
-<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a>  <span class="dt">style</span><span class="op">:</span> {<span class="dt">fontSize</span><span class="op">:</span> <span class="dv">13</span>}</span>
-<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div id="bar-chart-ojs" class="cell-output cell-output-display">
-<div id="ojs-cell-3" data-nodetype="expression">
+<section id="nginx" class="level2">
+<h2 class="anchored" data-anchor-id="nginx">nginx</h2>
+<p><a href="https://nginx.org">nginx</a> é um servidor web amplamente usado na internet que aqui é usado para gerenciar as páginas estáticas do projeto.</p>
+<section id="mudando-a-máscara-dos-shiny-apps" class="level3">
+<h3 class="anchored" data-anchor-id="mudando-a-máscara-dos-shiny-apps">Mudando a máscara dos shiny apps</h3>
+<p>Uma das alterações no ambiente do servidor que é necessária para um uso mais agradável do site é a criação de máscaras para as aplicações Shiny. Por padrão, o shiny server guarda as aplicações na porta <code>3838</code>. Se <code>*nome_app*</code> - por exemplo - é o nome de uma palicação, então isso ficará disponível em <code>dominio:3838/*nome_app*</code>, em que <code>dominio</code> é a URL raíz, como <code>http://127.0.0.1</code> ou <code>http://site.com</code>. Para que o usuário tenha uma melhor experiência ao navegar pelo site, gostaríamos que essa aplicação ficasse disponível em <code>dominio/*nome_app*</code>(sem número da porta).</p>
+<p>Ao executar <code>sudo nano /etc/nginx/sites-available/default</code>, aparecerá algo como o trecho abaixo.</p>
+<pre><code>server {
+    listen 80 default_server;
+    listen [::]:80 default_server
+    root /var/www/html;
+    index index.html
 
-</div>
-</div>
-</div>
+    location /dashboards/arvore/ {
+        proxy_pass http://127.0.0.1:3838/arvore/;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_read_timeout 20d;
+    }
+
+    location /dashboards/snis/ {
+        proxy_pass http://127.0.0.1:3838/snis/;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_read_timeout 20d;
+    }
+}</code></pre>
+<p>A criação do que estamos chamando de ‘máscara’ nada mais é que uma especificação de caminho. Como isso fica num local fora da raíz do projeto, optamos por não automatizar a criação dessas máscaras, apenas explicar o procedimento nesse artigo. Para um novo dashboard shiny chamado <code>*nome_app*</code>, o seguinte snippet deve ser adicionado na seção <code>server</code> do arquivo <code>/etc/nginx/sites-available/default</code>. Atenção, o arquivo em questão não deve ser substituído pelo código abaixo, isso deve apenas ser adicionado ao arquivo.</p>
+<pre><code>location /dashboards/*nome_app*/ {
+        proxy_pass http://127.0.0.1:3838/*nome_app*/;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_read_timeout 20d;
+    }</code></pre>
 </section>
-<section id="conclusão" class="level2">
-<h2 class="anchored" data-anchor-id="conclusão">Conclusão</h2>
-<p>O Observable JS é uma ferramenta poderosa para criar visualizações interativas em documentos Quarto, sem a necessidade de infraestrutura adicional. No próximo post, veremos como criar dashboards completos com Quarto e OJS.</p>
+<section id="deploying-on-one-click" class="level3">
+<h3 class="anchored" data-anchor-id="deploying-on-one-click">Deploying (on one click)</h3>
+<p>Em nosso projeto há um arquivo chamado <a href="https://raw.githubusercontent.com/mardenos-ufmg/website/refs/heads/main/conf/deploy.sh">deploy.sh</a> que contém uma série de comandos bash que automatizam certas tarefas. Grosso modo, este arquivo está assim.</p>
+<pre><code>quarto render ~/website
+
+rm -rf /var/www/html/*
+cp -r ~/website/_site/. /var/www/html
+
+sudo pkill -f shiny-server || true
+shiny-server ~/website/conf/shiny-server.conf</code></pre>
+<p>Três coisas estão acontecendo aqui:</p>
+<ul>
+<li>O projeto é renderizado.</li>
+<li>Todos os arquivos em <code>/var/www/html</code> são apagados e os arquivos de output do website são copiados para lá. O diretório <code>/var/www/html</code> é onde o servidor nginx busca os arquivos do site.</li>
+<li>Processos antigos do shiny server são encerrados (de maneira meio rudimentar) e uma nova instância do shiny server é inicializada com as configurações de <code>conf/shiny-server.conf</code>.</li>
+</ul>
+<p>Como os arquivos em <code>/var</code> são restritos, é necessário rodar essa série de comandos com permissões de administrador, assim <code>sudo bash ~/website/conf/deploy.sh &amp;</code>. Usar esse recurso de um arquivo bash é necessário pois não é possível criar um arquivo com configurações do nginx, para - dentre outras coisas - apontar o site para <code>website/_site</code>, como fizemos com o arquivo <code>shiny-server.conf</code>.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
-<script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBuX3BvbnRvcyA9IElucHV0cy5yYW5nZShbMTAsIDIwMF0sIHtcbiAgbGFiZWw6IFwiTsO6bWVybyBkZSBwb250b3NcIixcbiAgc3RlcDogMTAsXG4gIHZhbHVlOiAxMDBcbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLyBHZXJhbmRvIGRhZG9zIGFsZWF0w7NyaW9zXG5kYWRvcyA9IEFycmF5LmZyb20oe2xlbmd0aDogbl9wb250b3N9LCAoXywgaSkgPT4gKHtcbiAgeDogTWF0aC5yYW5kb20oKSAqIDEwLFxuICB5OiBNYXRoLnJhbmRvbSgpICogMTAgKyBNYXRoLnJhbmRvbSgpICogMixcbiAgZ3J1cG86IE1hdGgucmFuZG9tKCkgPiAwLjUgPyBcIkFcIiA6IFwiQlwiXG59KSlcblxuUGxvdC5wbG90KHtcbiAgbWFya3M6IFtcbiAgICBQbG90LmRvdChkYWRvcywge1xuICAgICAgeDogXCJ4XCIsXG4gICAgICB5OiBcInlcIixcbiAgICAgIGZpbGw6IFwiZ3J1cG9cIixcbiAgICAgIHI6IDUsXG4gICAgICBvcGFjaXR5OiAwLjdcbiAgICB9KSxcbiAgICBQbG90LmZyYW1lKClcbiAgXSxcbiAgY29sb3I6IHtsZWdlbmQ6IHRydWV9LFxuICBncmlkOiB0cnVlLFxuICBzdHlsZToge2ZvbnRTaXplOiAxM31cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJQbG90LnBsb3Qoe1xuICBtYXJrczogW1xuICAgIFBsb3QuYmFyWSh0cmFuc3Bvc2UoY2Fycm9zX29qcyksIHtcbiAgICAgIHg6IFwiY3lsXCIsXG4gICAgICB5OiBcIm1wZ19tZWRpb1wiLFxuICAgICAgZmlsbDogXCJzdGVlbGJsdWVcIixcbiAgICAgIHRpcDogdHJ1ZVxuICAgIH0pLFxuICAgIFBsb3QucnVsZVkoWzBdKVxuICBdLFxuICB4OiB7bGFiZWw6IFwiQ2lsaW5kcm9zXCJ9LFxuICB5OiB7bGFiZWw6IFwiTVBHIE3DqWRpb1wifSxcbiAgc3R5bGU6IHtmb250U2l6ZTogMTN9XG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCduX3BvbnRvcycpIn1dfQ==
-</script>
-<script type="module">
-if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
-window._ojs.paths.runtimeToDoc = "../../4devs/artigos";
-window._ojs.paths.runtimeToRoot = "../..";
-window._ojs.paths.docToRoot = "../..";
-window._ojs.selfContained = false;
-window._ojs.runtime.interpretFromScriptTags();
-</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

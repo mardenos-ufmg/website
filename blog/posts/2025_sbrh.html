@@ -2,18 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.36">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ana Silva">
-<meta name="dcterms.date" content="2025-03-30">
+<meta name="author" content="Carlos de Moura">
+<meta name="dcterms.date" content="2025-12-05">
 
-<title>Análise Exploratória com R e tidyverse – Mar de Nós</title>
+<title>Mar de Nós no XXVI Simpósio Brasileiro de Recursos Hídricos – Mar de Nós</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -24,41 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -72,18 +34,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../stuff/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-a06763021a52c43c40a351ac8b799b8f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-dbc92dda8186f57fa2e333fbb71d6a9d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-a06763021a52c43c40a351ac8b799b8f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-7ac2f9da8c2617a4fdd15004b4601015.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-1d1c19a7ca3847f098d61c06348c07e1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-99a4b47cc5c4716a465be7a4fb898186.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-1d1c19a7ca3847f098d61c06348c07e1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-6488bdb636d690890a03945ddfdee43e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-d0b1ecc6e73ccb1b78429d59de5edcbd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-6488bdb636d690890a03945ddfdee43e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -112,14 +75,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<link href="../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-<script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 
 <link rel="stylesheet" href="../../stuff/styles.css">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -355,37 +316,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Nesta página</h2>
-   
-  <ul>
-  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a></li>
-  <li><a href="#carregando-os-dados" id="toc-carregando-os-dados" class="nav-link" data-scroll-target="#carregando-os-dados">Carregando os dados</a></li>
-  <li><a href="#estatísticas-descritivas" id="toc-estatísticas-descritivas" class="nav-link" data-scroll-target="#estatísticas-descritivas">Estatísticas Descritivas</a></li>
-  <li><a href="#visualizações" id="toc-visualizações" class="nav-link" data-scroll-target="#visualizações">Visualizações</a>
-  <ul class="collapse">
-  <li><a href="#distribuição-de-consumo-mpg" id="toc-distribuição-de-consumo-mpg" class="nav-link" data-scroll-target="#distribuição-de-consumo-mpg">Distribuição de Consumo (mpg)</a></li>
-  <li><a href="#relação-entre-peso-e-consumo" id="toc-relação-entre-peso-e-consumo" class="nav-link" data-scroll-target="#relação-entre-peso-e-consumo">Relação entre Peso e Consumo</a></li>
-  </ul></li>
-  <li><a href="#correlações" id="toc-correlações" class="nav-link" data-scroll-target="#correlações">Correlações</a></li>
-  <li><a href="#conclusão" id="toc-conclusão" class="nav-link" data-scroll-target="#conclusão">Conclusão</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Análise Exploratória com R e tidyverse</h1>
-<p class="subtitle lead">Um guia prático para EDA usando as melhores ferramentas do ecossistema R</p>
+<h1 class="title">Mar de Nós no XXVI Simpósio Brasileiro de Recursos Hídricos</h1>
+<p class="subtitle lead">Pesquisa, extensão e conflitos socioambientais em debate</p>
   <div class="quarto-categories">
-    <div class="quarto-category">R</div>
-    <div class="quarto-category">EDA</div>
-    <div class="quarto-category">tidyverse</div>
-    <div class="quarto-category">tutorial</div>
+    <div class="quarto-category">recursos hídricos</div>
+    <div class="quarto-category">saneamento</div>
+    <div class="quarto-category">extensão</div>
+    <div class="quarto-category">pesquisa</div>
+    <div class="quarto-category">evento</div>
   </div>
   </div>
 
@@ -396,14 +341,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Ana Silva </p>
+             <p>Carlos de Moura </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 30, 2025</p>
+      <p class="date">December 5, 2025</p>
     </div>
   </div>
   
@@ -415,209 +360,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introdução" class="level2">
-<h2 class="anchored" data-anchor-id="introdução">Introdução</h2>
-<p>A Análise Exploratória de Dados (EDA) é o ponto de partida de qualquer projeto de ciência de dados. Neste post, vamos explorar como realizar uma EDA completa usando R e o <code>tidyverse</code>.</p>
-</section>
-<section id="carregando-os-dados" class="level2">
-<h2 class="anchored" data-anchor-id="carregando-os-dados">Carregando os dados</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Ver código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando o dataset mtcars como exemplo</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> mtcars <span class="sc">|&gt;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">"modelo"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>()</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(dados)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 32
-Columns: 12
-$ modelo &lt;chr&gt; "Mazda RX4", "Mazda RX4 Wag", "Datsun 710", "Hornet 4 Drive", "…
-$ mpg    &lt;dbl&gt; 21.0, 21.0, 22.8, 21.4, 18.7, 18.1, 14.3, 24.4, 22.8, 19.2, 17.…
-$ cyl    &lt;dbl&gt; 6, 6, 4, 6, 8, 6, 8, 4, 4, 6, 6, 8, 8, 8, 8, 8, 8, 4, 4, 4, 4, …
-$ disp   &lt;dbl&gt; 160.0, 160.0, 108.0, 258.0, 360.0, 225.0, 360.0, 146.7, 140.8, …
-$ hp     &lt;dbl&gt; 110, 110, 93, 110, 175, 105, 245, 62, 95, 123, 123, 180, 180, 1…
-$ drat   &lt;dbl&gt; 3.90, 3.90, 3.85, 3.08, 3.15, 2.76, 3.21, 3.69, 3.92, 3.92, 3.9…
-$ wt     &lt;dbl&gt; 2.620, 2.875, 2.320, 3.215, 3.440, 3.460, 3.570, 3.190, 3.150, …
-$ qsec   &lt;dbl&gt; 16.46, 17.02, 18.61, 19.44, 17.02, 20.22, 15.84, 20.00, 22.90, …
-$ vs     &lt;dbl&gt; 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, …
-$ am     &lt;dbl&gt; 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, …
-$ gear   &lt;dbl&gt; 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 4, 4, 4, 3, …
-$ carb   &lt;dbl&gt; 4, 4, 1, 1, 2, 1, 4, 2, 2, 4, 4, 3, 3, 3, 4, 4, 4, 1, 2, 1, 1, …</code></pre>
+<p>Realizado entre os dias 23 e 28 de novembro de 2025, no Pavilhão de Carapina, na grande Vitória (ES), o <strong>XXVI Simpósio Brasileiro de Recursos Hídricos</strong> reuniu pesquisadores, estudantes e profissionais para discutir avanços científicos, tecnológicos e institucionais na gestão das águas no Brasil. Promovido pela Associação Brasileira de Recursos Hídricos, o evento consolidou-se como um dos principais fóruns nacionais para o debate de estratégias e prioridades no setor, fortalecendo o diálogo entre pesquisa, políticas públicas e práticas de gestão.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/2025_sbrh/cartaz.png" class="img-fluid figure-img"></p>
+<figcaption>Cartaz de divulgação</figcaption>
+</figure>
+</div>
+<p>A participação do grupo <strong>Mar de Nós</strong> no simpósio refletiu a diversidade de temas e abordagens que orientam suas pesquisas, com destaque para a articulação entre saneamento, gestão de recursos hídricos e dinâmicas sociais na bacia do Lago de Furnas.</p>
+<p>No dia 24 de novembro, foram realizadas duas apresentações orais. A primeira abordou o trabalho <em>“ÁGUAPLAY: gamificação como estratégia extensionista na formação em engenharia ambiental”</em>, apresentado por Talita Fernanda das Graças Silva, explorando o uso de ferramentas lúdicas como forma de ampliar o engajamento e a formação crítica de estudantes. Ainda no mesmo dia, Maria Júlia Paulino Pereira apresentou o estudo <em>“Conflito e mobilização na bacia do Lago de Furnas: uma interpretação a partir de conteúdos midiáticos”</em>, discutindo como narrativas da mídia refletem e influenciam processos sociais e políticos relacionados ao uso da água.</p>
+<p>Complementando as atividades, no dia 25 de novembro foi apresentado o pôster <em>“Gestão dos recursos hídricos na bacia do entorno do Lago de Furnas, em Minas Gerais: usos da água e a relação com o saneamento básico”</em>, de autoria de Diego Santos Cunha. O trabalho destacou as interações entre diferentes usos da água e os desafios para uma gestão integrada que considere tanto aspectos ambientais quanto sociais.</p>
+<div style="width: 100%; margin: 0 auto;">
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/2025_sbrh/talita.jpg" class="img-fluid figure-img"></p>
+<figcaption>Talita Silva</figcaption>
+</figure>
 </div>
 </div>
-</section>
-<section id="estatísticas-descritivas" class="level2">
-<h2 class="anchored" data-anchor-id="estatísticas-descritivas">Estatísticas Descritivas</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Ver código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dados <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(mpg, cyl, hp, wt) <span class="sc">|&gt;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>      mpg             cyl              hp              wt       
- Min.   :10.40   Min.   :4.000   Min.   : 52.0   Min.   :1.513  
- 1st Qu.:15.43   1st Qu.:4.000   1st Qu.: 96.5   1st Qu.:2.581  
- Median :19.20   Median :6.000   Median :123.0   Median :3.325  
- Mean   :20.09   Mean   :6.188   Mean   :146.7   Mean   :3.217  
- 3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:180.0   3rd Qu.:3.610  
- Max.   :33.90   Max.   :8.000   Max.   :335.0   Max.   :5.424  </code></pre>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/2025_sbrh/maju.jpg" class="img-fluid figure-img"></p>
+<figcaption>Maria Júlia Pereira</figcaption>
+</figure>
 </div>
 </div>
-</section>
-<section id="visualizações" class="level2">
-<h2 class="anchored" data-anchor-id="visualizações">Visualizações</h2>
-<section id="distribuição-de-consumo-mpg" class="level3">
-<h3 class="anchored" data-anchor-id="distribuição-de-consumo-mpg">Distribuição de Consumo (mpg)</h3>
-<div class="cell">
-<details class="code-fold">
-<summary>Ver código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> mpg)) <span class="sc">+</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">15</span>, <span class="at">fill =</span> <span class="st">"#2c7bb6"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">alpha =</span> <span class="fl">0.85</span>) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(mpg)), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribuição do Consumo (mpg)"</span>,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"Média:"</span>, <span class="fu">round</span>(<span class="fu">mean</span>(dados<span class="sc">$</span>mpg), <span class="dv">1</span>), <span class="st">"mpg"</span>),</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Milhas por Galão"</span>,</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Frequência"</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output-display">
-<div id="fig-hist" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="avisos_files/figure-html/fig-hist-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Distribuição do consumo de combustível
-</figcaption>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/2025_sbrh/diego.jpg" class="img-fluid figure-img"></p>
+<figcaption>Diego Cunha</figcaption>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="relação-entre-peso-e-consumo" class="level3">
-<h3 class="anchored" data-anchor-id="relação-entre-peso-e-consumo">Relação entre Peso e Consumo</h3>
-<div class="cell">
-<details class="code-fold">
-<summary>Ver código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> dados <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cyl =</span> <span class="fu">factor</span>(cyl))</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg, <span class="at">color =</span> cyl)) <span class="sc">+</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="fu">aes</span>(<span class="at">group =</span> <span class="dv">1</span>), <span class="at">color =</span> <span class="st">"gray50"</span>) <span class="sc">+</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>, <span class="at">name =</span> <span class="st">"Cilindros"</span>) <span class="sc">+</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Peso vs. Consumo"</span>,</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Peso (1000 lbs)"</span>,</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Milhas por Galão"</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output-display">
-<div id="fig-scatter" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="avisos_files/figure-html/fig-scatter-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Relação entre peso e consumo, colorido por número de cilindros
-</figcaption>
-</figure>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p>Apresentações do Mar de Nós no XXVI SBRH</p>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="correlações" class="level2">
-<h2 class="anchored" data-anchor-id="correlações">Correlações</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Ver código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dados <span class="sc">|&gt;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(mpg, hp, wt, qsec) <span class="sc">|&gt;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>() <span class="sc">|&gt;</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">2</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">"Matriz de correlação"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Matriz de correlação</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;"></th>
-<th style="text-align: right;">mpg</th>
-<th style="text-align: right;">hp</th>
-<th style="text-align: right;">wt</th>
-<th style="text-align: right;">qsec</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">mpg</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">-0.78</td>
-<td style="text-align: right;">-0.87</td>
-<td style="text-align: right;">0.42</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">hp</td>
-<td style="text-align: right;">-0.78</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">0.66</td>
-<td style="text-align: right;">-0.71</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">wt</td>
-<td style="text-align: right;">-0.87</td>
-<td style="text-align: right;">0.66</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">-0.17</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">qsec</td>
-<td style="text-align: right;">0.42</td>
-<td style="text-align: right;">-0.71</td>
-<td style="text-align: right;">-0.17</td>
-<td style="text-align: right;">1.00</td>
-</tr>
-</tbody>
-</table>
 </div>
-</div>
-</section>
-<section id="conclusão" class="level2">
-<h2 class="anchored" data-anchor-id="conclusão">Conclusão</h2>
-<p>Observamos que:</p>
-<ul>
-<li><strong>Peso</strong> e <strong>cilindros</strong> têm forte correlação negativa com o consumo</li>
-<li>Carros com <strong>4 cilindros</strong> apresentam, em geral, melhor eficiência</li>
-<li>A relação peso-consumo é quase linear</li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Experimente substituir <code>mtcars</code> pelos seus próprios dados e adaptar as visualizações!</p>
-</div>
-</div>
+<p>A presença do grupo no simpósio reforça o compromisso com a produção de conhecimento interdisciplinar e socialmente engajado, contribuindo para o avanço do debate sobre recursos hídricos no Brasil. Ao articular pesquisa, extensão e análise crítica, os trabalhos apresentados evidenciam a importância de compreender a água não apenas como recurso natural, mas como elemento central em disputas, políticas e processos de transformação social.</p>
+<p>Mais informações sobre o evento podem ser encontradas em: <a href="https://eventos.abrhidro.org.br/xxvisbrh/" class="uri">https://eventos.abrhidro.org.br/xxvisbrh/</a></p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
