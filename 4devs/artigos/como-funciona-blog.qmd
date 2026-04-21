@@ -1,14 +1,37 @@
 ---
-title: "Como postar no blog"
-subtitle: "Como funciona o blog do site do Mar de Nós"
+title: "Como funciona o blog do site (e como publicar um post)"
+subtitle: "Guia simples usando Git e GitHub"
 author: "Carlos de Moura"
 date: "2026-04-24"
-categories: [website]
-#image: "thumbnail.png"
+categories: [blog, GitHub, Quarto]
 draft: false
-toc: true
+toc: false
 ---
 
-## Introdução
+O blog deste site funciona de forma simples: todos os posts ficam armazenados em um repositório no [GitHub](https://github.com/mardenos-ufmg/website-blog). Quando o site é renderizado, ele automaticamente lê tudo que está dentro da pasta `posts`. Isso inclui arquivos `.qmd` e também imagens (que devem ficar em `posts/img`).
 
-A Análise Exploratória de Dados (EDA) é o ponto de partida de qualquer projeto de ciência de dados. Neste post, vamos explorar como realizar uma EDA completa usando R e o `tidyverse`.
+Ou seja, para publicar um post, basta adicionar um arquivo `.qmd` dentro da pasta `posts`. Se houver imagens, elas também devem estar dentro dessa pasta, normalmente em uma subpasta `img/`. A estrutura básica do repositório é a seguinte.
+
+```
+posts/
+├── meu-post.qmd
+└── img/
+    └── meu-post/
+        └── imagem1.png
+```
+
+## Como publicar um post
+
+De forma geral, o processo para publicar um post no blog envolve alguns passos simples. Primeiro, é necessário ter uma conta no GitHub, já que é lá que o conteúdo do site fica armazenado. Em seguida, você deve instalar e configurar o Git no seu computador, que é a ferramenta responsável por enviar arquivos para o repositório. Depois disso, basta clonar o repositório do site para sua máquina, adicionar o novo arquivo `.qmd` (e eventuais imagens na pasta correta), registrar as alterações e enviá-las de volta ao GitHub. Uma vez feito o envio, o site poderá incorporar automaticamente o novo conteúdo na próxima renderização.
+
+A etapa de configurar as credenciais do GitHub localmente tem alguns detalhes importantes. Assim, citamos materiais auxiliares para usuários de [Linux](https://medium.com/@ak4634/a-step-by-step-guide-to-setting-up-your-github-account-on-ubuntu-69143502b7d0) e [Windows](https://www.youtube.com/watch?v=NgWExh3bswg).
+
+Em resumo:
+
+* O blog lê automaticamente a pasta `posts`
+* Para publicar: adicionar `.qmd` + imagens
+* Usar Git: clone -> add -> commit -> push
+
+## Tutorial de Quarto
+
+Um breve tutorial de como escrever arquivos em quarto markdown está disponível [aqui](https://quarto.org/).

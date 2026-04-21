@@ -58,7 +58,7 @@ precisa_baixar_blog =
   (timestamp_blog_local < timestamp_blog_github) |>
   {\(.) ifelse(is.na(.), T, .)}()
 
-if (precisa_baixar_blog) {
+if (precisa_baixar_blog) { try({
   repo_github = "git@github.com:mardenos-ufmg/website-blog.git"
   destino_temp = file.path(tempdir(), "github-blog")
   
@@ -94,7 +94,7 @@ if (precisa_baixar_blog) {
     saveRDS("stuff/df_ultimo_post.rds")
   
   cat("\nblog OK\n")
-}
+})}
 
 source("stuff/funs.R")
 
