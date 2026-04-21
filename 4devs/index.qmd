@@ -8,7 +8,7 @@ listing:
   # categories: true
   # sort-ui: true
   # filter-ui: true
-  fields: [image, date, title, subtitle, author]
+  fields: [date, title, subtitle, author]
   feed: true
 page-layout: full
 toc: false
@@ -28,12 +28,17 @@ Uma árvore de site é a representação hierárquica de todas as páginas e se�
 Nessa documentação você encontra uma descrição estruturada dos códigos usados no projeto. No ecossistema do R, o **pkgdown** e o **roxygen2** transformam essa documentação em um site organizado, com páginas individuais para cada função (com seções como descrição, parâmetros, e exemplos).
 
 
-## 🐱 [Código fonte](https://github.com/mardenos-ufmg/website)
+## [Código fonte](https://github.com/mardenos-ufmg/website)
 
 O código fonte deste site está disponível no GitHub do projeto. Quaisquer problemas podem ser reportados via [GitHub issues](https://github.com/mardenos-ufmg/website/issues).
+
+## [Autoindex](/autoindex)
+
+O Autoindex é um recurso que gera automaticamente uma página listando os arquivos de um diretório (gerando inclusive um arquivo de index.html). Isso permite navegar e baixar conteúdos diretamente pelo navegador e é útil para transmitir pastas estruturadas
+
 
 ## To do list
 
 {{< include TODO.MD >}}
 
-## 📝 Artigos para devs
+## Artigos para devs
