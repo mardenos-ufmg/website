@@ -5,10 +5,10 @@ project:
   post-render: Rscript stuff/postrender.R
   render:
     - "*.qmd"
-    - "!raw/snis/**"
+    - "!autoindex/snis/**"
     - "!**/vignettes/**"
-  resources:
-    - "raw/"
+  # resources:
+  #   - "autoindex/"
 
 website:
   #site-url: "https://google.com"

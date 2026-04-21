@@ -2,7 +2,7 @@ source("stuff/pacotes.R")
 instalar_pacotes()
 
 ultima_alteracao_snis =
-  list.files("raw/snis", full.names = TRUE) |>
+  list.files("autoindex/snis", full.names = TRUE) |>
   file.info() |>
   dplyr::select(dplyr::all_of("mtime")) |>
   unlist() |>
@@ -15,7 +15,7 @@ precisa_build_site =
 
 if (precisa_build_site) {
   cat("\niniciando pkgdown\n")
-  pkgdown::build_site("raw/snis", install = TRUE)
+  pkgdown::build_site("autoindex/snis", install = TRUE)
   cat(as.character(Sys.time()), "\n", file = "stuff/timestamp_snis_docs.txt")
   cat("pkgdown OK\n")
 }
@@ -67,8 +67,7 @@ if (precisa_baixar_blog) { try({
   system(paste("git clone", repo_github, destino_temp))
   
   destino_website = "blog/posts"
-  if (dir.exists(destino_website)) unlink(destino_website, recursive = T)
-  fs::dir_copy(file.path(destino_temp, "posts"), destino_website)
+  fs::dir_copy(file.path(destino_temp, "posts"), destino_website, overwrite = TRUE)
   unlink(destino_temp, recursive = T)
   
   df_posts =
