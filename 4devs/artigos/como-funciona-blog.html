@@ -9,7 +9,7 @@
 <meta name="author" content="Carlos de Moura">
 <meta name="dcterms.date" content="2026-04-24">
 
-<title>Como postar no blog – Mar de Nós</title>
+<title>Como funciona o blog do site (e como publicar um post) – Mar de Nós</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../stuff/styles.css">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -316,25 +316,19 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Nesta página</h2>
-   
-  <ul>
-  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Como postar no blog</h1>
-<p class="subtitle lead">Como funciona o blog do site do Mar de Nós</p>
+<h1 class="title">Como funciona o blog do site (e como publicar um post)</h1>
+<p class="subtitle lead">Guia simples usando Git e GitHub</p>
   <div class="quarto-categories">
-    <div class="quarto-category">website</div>
+    <div class="quarto-category">blog</div>
+    <div class="quarto-category">GitHub</div>
+    <div class="quarto-category">Quarto</div>
   </div>
   </div>
 
@@ -364,9 +358,27 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introdução" class="level2">
-<h2 class="anchored" data-anchor-id="introdução">Introdução</h2>
-<p>A Análise Exploratória de Dados (EDA) é o ponto de partida de qualquer projeto de ciência de dados. Neste post, vamos explorar como realizar uma EDA completa usando R e o <code>tidyverse</code>.</p>
+<p>O blog deste site funciona de forma simples: todos os posts ficam armazenados em um repositório no <a href="https://github.com/mardenos-ufmg/website-blog">GitHub</a>. Quando o site é renderizado, ele automaticamente lê tudo que está dentro da pasta <code>posts</code>. Isso inclui arquivos <code>.qmd</code> e também imagens (que devem ficar em <code>posts/img</code>).</p>
+<p>Ou seja, para publicar um post, basta adicionar um arquivo <code>.qmd</code> dentro da pasta <code>posts</code>. Se houver imagens, elas também devem estar dentro dessa pasta, normalmente em uma subpasta <code>img/</code>. A estrutura básica do repositório é a seguinte.</p>
+<pre><code>posts/
+├── meu-post.qmd
+└── img/
+    └── meu-post/
+        └── imagem1.png</code></pre>
+<section id="como-publicar-um-post" class="level2">
+<h2 class="anchored" data-anchor-id="como-publicar-um-post">Como publicar um post</h2>
+<p>De forma geral, o processo para publicar um post no blog envolve alguns passos simples. Primeiro, é necessário ter uma conta no GitHub, já que é lá que o conteúdo do site fica armazenado. Em seguida, você deve instalar e configurar o Git no seu computador, que é a ferramenta responsável por enviar arquivos para o repositório. Depois disso, basta clonar o repositório do site para sua máquina, adicionar o novo arquivo <code>.qmd</code> (e eventuais imagens na pasta correta), registrar as alterações e enviá-las de volta ao GitHub. Uma vez feito o envio, o site poderá incorporar automaticamente o novo conteúdo na próxima renderização.</p>
+<p>A etapa de configurar as credenciais do GitHub localmente tem alguns detalhes importantes. Assim, citamos materiais auxiliares para usuários de <a href="https://medium.com/@ak4634/a-step-by-step-guide-to-setting-up-your-github-account-on-ubuntu-69143502b7d0">Linux</a> e <a href="https://www.youtube.com/watch?v=NgWExh3bswg">Windows</a>.</p>
+<p>Em resumo:</p>
+<ul>
+<li>O blog lê automaticamente a pasta <code>posts</code></li>
+<li>Para publicar: adicionar <code>.qmd</code> + imagens</li>
+<li>Usar Git: clone -&gt; add -&gt; commit -&gt; push</li>
+</ul>
+</section>
+<section id="tutorial-de-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="tutorial-de-quarto">Tutorial de Quarto</h2>
+<p>Um breve tutorial de como escrever arquivos em quarto markdown está disponível <a href="https://quarto.org/">aqui</a>.</p>
 
 
 </section>

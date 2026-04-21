@@ -329,6 +329,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#mudando-a-máscara-dos-shiny-apps" id="toc-mudando-a-máscara-dos-shiny-apps" class="nav-link" data-scroll-target="#mudando-a-máscara-dos-shiny-apps">Mudando a máscara dos shiny apps</a></li>
   <li><a href="#deploying-on-one-click" id="toc-deploying-on-one-click" class="nav-link" data-scroll-target="#deploying-on-one-click">Deploying (on one click)</a></li>
+  <li><a href="#sobre-autoindex" id="toc-sobre-autoindex" class="nav-link" data-scroll-target="#sobre-autoindex">Sobre autoindex</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -482,13 +483,6 @@ server {
         proxy_read_timeout 20d;
     }
 
-    location /dashboards/snis/ {
-        proxy_pass http://127.0.0.1:3838/snis/;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "upgrade";
-        proxy_read_timeout 20d;
-    }
 }</code></pre>
 <p>A criação do que estamos chamando de ‘máscara’ nada mais é que uma especificação de caminho. Como isso fica num local fora da raíz do projeto, optamos por não automatizar a criação dessas máscaras, apenas explicar o procedimento nesse artigo. Para um novo dashboard shiny chamado <code>*nome_app*</code>, o seguinte snippet deve ser adicionado na seção <code>server</code> do arquivo <code>/etc/nginx/sites-available/default</code>. Atenção, o arquivo em questão não deve ser substituído pelo código abaixo, isso deve apenas ser adicionado ao arquivo.</p>
 <pre><code>location /dashboards/*nome_app*/ {
@@ -516,6 +510,20 @@ shiny-server ~/website/conf/shiny-server.conf</code></pre>
 <li>Processos antigos do shiny server são encerrados (de maneira meio rudimentar) e uma nova instância do shiny server é inicializada com as configurações de <code>conf/shiny-server.conf</code>.</li>
 </ul>
 <p>Como os arquivos em <code>/var</code> são restritos, é necessário rodar essa série de comandos com permissões de administrador, assim <code>sudo bash ~/website/conf/deploy.sh &amp;</code>. Usar esse recurso de um arquivo bash é necessário pois não é possível criar um arquivo com configurações do nginx, para - dentre outras coisas - apontar o site para <code>website/_site</code>, como fizemos com o arquivo <code>shiny-server.conf</code>.</p>
+</section>
+<section id="sobre-autoindex" class="level3">
+<h3 class="anchored" data-anchor-id="sobre-autoindex">Sobre autoindex</h3>
+<p>Ainda em <code>/etc/nginx/sites-available/default</code> é possível adicionar a seginte configuração de autoindex.</p>
+<pre><code>    location /autoindex {
+    root /var/www;
+    autoindex on;
+    autoindex_exact_size on;
+    autoindex_localtime on;
+}</code></pre>
+<p>O Autoindex é um recurso que gera automaticamente uma página listando os arquivos de um diretório (gerando inclusive um arquivo de index.html). Isso permite navegar e baixar conteúdos diretamente pelo navegador e é útil para transmitir pastas estruturadas. No diretório do website, há uma pasta chamada autoindex e tudo nela deve ficar disponível em <code>dominio/autoindex</code>. Para automatizar essa tarefa, esse código consta no <code>deploy.sh</code>.</p>
+<pre><code>rm -rf /var/www/autoindex
+mkdir -p /var/www/autoindex
+cp -r ~/website/autoindex/. /var/www/autoindex</code></pre>
 
 
 </section>

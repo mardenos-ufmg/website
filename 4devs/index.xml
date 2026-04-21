@@ -12,7 +12,7 @@
 <generator>quarto-1.8.26</generator>
 <lastBuildDate>Fri, 24 Apr 2026 03:00:00 GMT</lastBuildDate>
 <item>
-  <title>Como postar no blog</title>
+  <title>Como funciona o blog do site (e como publicar um post)</title>
   <dc:creator>Carlos de Moura</dc:creator>
   <link>https://mardenos-ufmg.github.io/website/4devs/artigos/como-funciona-blog.html</link>
   <description><![CDATA[ 
@@ -21,15 +21,35 @@
 
 
 
-<section id="introdução" class="level2">
-<h2 class="anchored" data-anchor-id="introdução">Introdução</h2>
-<p>A Análise Exploratória de Dados (EDA) é o ponto de partida de qualquer projeto de ciência de dados. Neste post, vamos explorar como realizar uma EDA completa usando R e o <code>tidyverse</code>.</p>
+<p>O blog deste site funciona de forma simples: todos os posts ficam armazenados em um repositório no <a href="https://github.com/mardenos-ufmg/website-blog">GitHub</a>. Quando o site é renderizado, ele automaticamente lê tudo que está dentro da pasta <code>posts</code>. Isso inclui arquivos <code>.qmd</code> e também imagens (que devem ficar em <code>posts/img</code>).</p>
+<p>Ou seja, para publicar um post, basta adicionar um arquivo <code>.qmd</code> dentro da pasta <code>posts</code>. Se houver imagens, elas também devem estar dentro dessa pasta, normalmente em uma subpasta <code>img/</code>. A estrutura básica do repositório é a seguinte.</p>
+<pre><code>posts/
+├── meu-post.qmd
+└── img/
+    └── meu-post/
+        └── imagem1.png</code></pre>
+<section id="como-publicar-um-post" class="level2">
+<h2 class="anchored" data-anchor-id="como-publicar-um-post">Como publicar um post</h2>
+<p>De forma geral, o processo para publicar um post no blog envolve alguns passos simples. Primeiro, é necessário ter uma conta no GitHub, já que é lá que o conteúdo do site fica armazenado. Em seguida, você deve instalar e configurar o Git no seu computador, que é a ferramenta responsável por enviar arquivos para o repositório. Depois disso, basta clonar o repositório do site para sua máquina, adicionar o novo arquivo <code>.qmd</code> (e eventuais imagens na pasta correta), registrar as alterações e enviá-las de volta ao GitHub. Uma vez feito o envio, o site poderá incorporar automaticamente o novo conteúdo na próxima renderização.</p>
+<p>A etapa de configurar as credenciais do GitHub localmente tem alguns detalhes importantes. Assim, citamos materiais auxiliares para usuários de <a href="https://medium.com/@ak4634/a-step-by-step-guide-to-setting-up-your-github-account-on-ubuntu-69143502b7d0">Linux</a> e <a href="https://www.youtube.com/watch?v=NgWExh3bswg">Windows</a>.</p>
+<p>Em resumo:</p>
+<ul>
+<li>O blog lê automaticamente a pasta <code>posts</code></li>
+<li>Para publicar: adicionar <code>.qmd</code> + imagens</li>
+<li>Usar Git: clone -&gt; add -&gt; commit -&gt; push</li>
+</ul>
+</section>
+<section id="tutorial-de-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="tutorial-de-quarto">Tutorial de Quarto</h2>
+<p>Um breve tutorial de como escrever arquivos em quarto markdown está disponível <a href="https://quarto.org/">aqui</a>.</p>
 
 
 </section>
 
  ]]></description>
-  <category>website</category>
+  <category>blog</category>
+  <category>GitHub</category>
+  <category>Quarto</category>
   <guid>https://mardenos-ufmg.github.io/website/4devs/artigos/como-funciona-blog.html</guid>
   <pubDate>Fri, 24 Apr 2026 03:00:00 GMT</pubDate>
 </item>
@@ -172,13 +192,6 @@ server {
         proxy_read_timeout 20d;
     }
 
-    location /dashboards/snis/ {
-        proxy_pass http://127.0.0.1:3838/snis/;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "upgrade";
-        proxy_read_timeout 20d;
-    }
 }</code></pre>
 <p>A criação do que estamos chamando de ‘máscara’ nada mais é que uma especificação de caminho. Como isso fica num local fora da raíz do projeto, optamos por não automatizar a criação dessas máscaras, apenas explicar o procedimento nesse artigo. Para um novo dashboard shiny chamado <code>*nome_app*</code>, o seguinte snippet deve ser adicionado na seção <code>server</code> do arquivo <code>/etc/nginx/sites-available/default</code>. Atenção, o arquivo em questão não deve ser substituído pelo código abaixo, isso deve apenas ser adicionado ao arquivo.</p>
 <pre><code>location /dashboards/*nome_app*/ {
@@ -206,6 +219,20 @@ shiny-server ~/website/conf/shiny-server.conf</code></pre>
 <li>Processos antigos do shiny server são encerrados (de maneira meio rudimentar) e uma nova instância do shiny server é inicializada com as configurações de <code>conf/shiny-server.conf</code>.</li>
 </ul>
 <p>Como os arquivos em <code>/var</code> são restritos, é necessário rodar essa série de comandos com permissões de administrador, assim <code>sudo bash ~/website/conf/deploy.sh &amp;</code>. Usar esse recurso de um arquivo bash é necessário pois não é possível criar um arquivo com configurações do nginx, para - dentre outras coisas - apontar o site para <code>website/_site</code>, como fizemos com o arquivo <code>shiny-server.conf</code>.</p>
+</section>
+<section id="sobre-autoindex" class="level3">
+<h3 class="anchored" data-anchor-id="sobre-autoindex">Sobre autoindex</h3>
+<p>Ainda em <code>/etc/nginx/sites-available/default</code> é possível adicionar a seginte configuração de autoindex.</p>
+<pre><code>    location /autoindex {
+    root /var/www;
+    autoindex on;
+    autoindex_exact_size on;
+    autoindex_localtime on;
+}</code></pre>
+<p>O Autoindex é um recurso que gera automaticamente uma página listando os arquivos de um diretório (gerando inclusive um arquivo de index.html). Isso permite navegar e baixar conteúdos diretamente pelo navegador e é útil para transmitir pastas estruturadas. No diretório do website, há uma pasta chamada autoindex e tudo nela deve ficar disponível em <code>dominio/autoindex</code>. Para automatizar essa tarefa, esse código consta no <code>deploy.sh</code>.</p>
+<pre><code>rm -rf /var/www/autoindex
+mkdir -p /var/www/autoindex
+cp -r ~/website/autoindex/. /var/www/autoindex</code></pre>
 
 
 </section>
