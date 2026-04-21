@@ -59,7 +59,7 @@ precisa_baixar_blog =
   {\(.) ifelse(is.na(.), T, .)}()
 
 if (precisa_baixar_blog) { try({
-  repo_github = "git@github.com:mardenos-ufmg/website-blog.git"
+  repo_github = "https://github.com/mardenos-ufmg/website.git"
   destino_temp = file.path(tempdir(), "github-blog")
   
   if (dir.exists(destino_temp)) unlink(destino_temp, recursive = T)
