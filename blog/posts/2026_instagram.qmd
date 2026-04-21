@@ -1,0 +1,28 @@
+---
+title: "Mar de Nós agora está no Instagram"
+subtitle: "Divulgação científica e conexão com o público em um novo canal"
+author: "Carlos de Moura"
+date: "2026-04-01"
+categories: [redes sociais, instagram]
+draft: false
+toc: false
+image: "img/2026_instagram/insta.jpeg"
+---
+
+O projeto **Mar de Nós** acaba de lançar seu perfil no Instagram no [@mar.de.nos_ufmg](https://www.instagram.com/mar.de.nos_ufmg/)!
+
+Mais do que uma vitrine de resultados, o perfil nasce como um canal dinâmico, onde serão divulgados projetos, eventos, bastidores da pesquisa e reflexões sobre saneamento, recursos hídricos e justiça socioambiental. A proposta é tornar visível o que é produzido dentro da universidade, conectando ciência e sociedade de forma acessível e contínua.
+
+::: {.grid style="width: 100%; margin: 0 auto;"}
+
+:::: {.g-col-6}
+<iframe src="https://www.instagram.com/p/DXK5fOiERcj/embed"
+        width="100%" height="480" frameborder="0" scrolling="no"></iframe>
+::::
+
+:::: {.g-col-6}
+<iframe src="https://www.instagram.com/p/DP2HlqCgeRj/embed"
+        width="100%" height="480" frameborder="0" scrolling="no"></iframe>
+::::
+
+:::

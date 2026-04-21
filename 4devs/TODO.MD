@@ -1,4 +1,3 @@
-* Blog: post sobre questionário e com vídeo do instagram
 * Artigos 4devs: post com vídeo sobre funcionamento do blog
 * Artigos 4devs: post sobre filosofia do site
 * Bibliografia: produção própria

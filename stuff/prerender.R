@@ -48,6 +48,10 @@ timestamp_blog_github = tryCatch({
   as.POSIXct("1900-01-01", tz = "UTC")
 })
 
+if (format(timestamp_blog_github, "%H:%M") == "00:00") {
+  timestamp_blog_github = timestamp_blog_github + (23 * 3600 + 59 * 60)
+}
+
 timestamp_blog_local = as.POSIXct(readLines("stuff/timestamp_blog.txt"))
 
 precisa_baixar_blog =
