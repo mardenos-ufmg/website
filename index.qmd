@@ -2,6 +2,8 @@
 title: "Bem-vindo ao Mar de Nós"
 page-layout: full
 toc: false
+execute:
+  freeze: false
 format:
   html:
     body-classes: home-page
@@ -93,6 +95,7 @@ Painéis interativos com análises e indicadores em tempo real.
 
 ```{r}
 #| include: false
+#```{r, cache=TRUE, cache.extra=file.info("stuff/df_ultimo_post.rds")$mtime}
 df_ultimo_post = readRDS("stuff/df_ultimo_post.rds")
 ```
 
