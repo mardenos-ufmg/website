@@ -1,0 +1,38 @@
+---
+title: "Mar de Nós no XXVI Simpósio Brasileiro de Recursos Hídricos"
+subtitle: "Pesquisa, extensão e conflitos socioambientais em debate"
+author: "Carlos de Moura"
+date: "2025-12-05"
+categories: [recursos hídricos, saneamento, extensão, pesquisa, evento]
+draft: false
+toc: false
+---
+
+Realizado entre os dias 23 e 28 de novembro de 2025, no Pavilhão de Carapina, na grande Vitória (ES), o **XXVI Simpósio Brasileiro de Recursos Hídricos** reuniu pesquisadores, estudantes e profissionais para discutir avanços científicos, tecnológicos e institucionais na gestão das águas no Brasil. Promovido pela Associação Brasileira de Recursos Hídricos, o evento consolidou-se como um dos principais fóruns nacionais para o debate de estratégias e prioridades no setor, fortalecendo o diálogo entre pesquisa, políticas públicas e práticas de gestão.
+
+![Cartaz de divulgação](img/2025_sbrh/cartaz.png)
+
+A participação do grupo **Mar de Nós** no simpósio refletiu a diversidade de temas e abordagens que orientam suas pesquisas, com destaque para a articulação entre saneamento, gestão de recursos hídricos e dinâmicas sociais na bacia do Lago de Furnas.
+
+No dia 24 de novembro, foram realizadas duas apresentações orais. A primeira abordou o trabalho *“ÁGUAPLAY: gamificação como estratégia extensionista na formação em engenharia ambiental”*, apresentado por Talita Fernanda das Graças Silva, explorando o uso de ferramentas lúdicas como forma de ampliar o engajamento e a formação crítica de estudantes. Ainda no mesmo dia, Maria Júlia Paulino Pereira apresentou o estudo *“Conflito e mobilização na bacia do Lago de Furnas: uma interpretação a partir de conteúdos midiáticos”*, discutindo como narrativas da mídia refletem e influenciam processos sociais e políticos relacionados ao uso da água.
+
+Complementando as atividades, no dia 25 de novembro foi apresentado o pôster *“Gestão dos recursos hídricos na bacia do entorno do Lago de Furnas, em Minas Gerais: usos da água e a relação com o saneamento básico”*, de autoria de Diego Santos Cunha. O trabalho destacou as interações entre diferentes usos da água e os desafios para uma gestão integrada que considere tanto aspectos ambientais quanto sociais.
+
+::: {style="width: 100%; margin: 0 auto;"}
+::: {layout-ncol=3}
+
+![Talita Silva](img/2025_sbrh/talita.jpg)
+
+![Maria Júlia Pereira](img/2025_sbrh/maju.jpg)
+
+![Diego Cunha](img/2025_sbrh/diego.jpg)
+
+Apresentações do Mar de Nós no XXVI SBRH
+
+:::
+:::
+
+A presença do grupo no simpósio reforça o compromisso com a produção de conhecimento interdisciplinar e socialmente engajado, contribuindo para o avanço do debate sobre recursos hídricos no Brasil. Ao articular pesquisa, extensão e análise crítica, os trabalhos apresentados evidenciam a importância de compreender a água não apenas como recurso natural, mas como elemento central em disputas, políticas e processos de transformação social.
+
+Mais informações sobre o evento podem ser encontradas em:
+<https://eventos.abrhidro.org.br/xxvisbrh/>

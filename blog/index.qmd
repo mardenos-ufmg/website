@@ -9,7 +9,7 @@ listing:
   categories: true
   sort-ui: true
   filter-ui: true
-  fields: [image, date, title, subtitle, author, reading-time, categories]
+  fields: [image, date, title, subtitle, author, categories]
   feed: true
 page-layout: full
 toc: false

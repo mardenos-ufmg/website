@@ -1,6 +1,6 @@
 ---
-title: "Sobre o site"
-subtitle: "Uma apresentação técnica do site do Mar de Nós"
+title: "Como postar no blog"
+subtitle: "Como funciona o blog do site do Mar de Nós"
 author: "Carlos de Moura"
 date: "2026-04-24"
 categories: [website]

@@ -94,4 +94,4 @@ if (precisa_baixar_blog) {
 
 source("stuff/funs.R")
 
-gerar_bibliografia()
+try(gerar_bibliografia())
