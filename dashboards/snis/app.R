@@ -1,4 +1,4 @@
-source(here::here("stuff/shiny/topbar.R"))
+source(here::here("stuff/shiny_topbar.R"))
 # devtools::load_all(here::here("raw/snis"))
 load(here::here("raw/snis/data/dados_snis.rda"))
 load(here::here("raw/snis/data/mapa_MG.rda"))
@@ -32,7 +32,7 @@ shiny = function() {
   #####  Painel FA  #####
   #######################
   PainelFA = 
-    tagList(topbar_style, topbar_ui, fluidPage(
+    tagList(topbar$style, topbar$ui, fluidPage(
     fluidPage(
 
     fluidRow(header_col("Análise Fatorial com dados do SNIS", "#a8f2fe", 8)),

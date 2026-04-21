@@ -1,5 +1,5 @@
 library(shiny)
-source(here::here("stuff/shiny/topbar.R"))
+source(here::here("stuff/shiny_topbar.R"))
 source(here::here("dashboards/arvore/funs.R"))
 
 ui = tagList(
@@ -11,8 +11,8 @@ ui = tagList(
       text-align: center;
   }
    ")),
-  topbar_style,
-  topbar_ui,
+  topbar$style,
+  topbar$ui,
   fluidPage(
     titlePanel(div("Árvore de Arquivos", class = "title-panel")),
     fluidRow(column(12, uiOutput("node_info"))),

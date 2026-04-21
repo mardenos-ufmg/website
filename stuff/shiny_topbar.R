@@ -1,4 +1,6 @@
-topbar_style =
+topbar = list()
+
+topbar$style =
   tags$head(
   tags$style(HTML("
       .topbar {
@@ -36,7 +38,7 @@ topbar_style =
     "))
 )
 
-topbar_ui =
+topbar$ui =
 div(class = "topbar",
     div(class = "left",
         a(class = "logo", href = "https://mardenos-ufmg.github.io/website/index.html", img(src = "https://mardenos-ufmg.github.io/website/stuff/favicon.png", height = "20px", style = "margin-right: 10px;"), "Mar de Nós"),
@@ -54,3 +56,17 @@ div(class = "topbar",
         a(icon("envelope"), href = "mailto:mardenos.ufmg@gmail.com")
     )
 )
+
+# usage example
+# 
+# ui = tagList(
+#   topbar$style,
+#   topbar$ui,
+#   fluidPage(
+#     titlePanel(div("Árvore de Arquivos", class = "title-panel")),
+#     fluidRow(column(12, uiOutput("node_info"))),
+#     fluidRow(column(12, collapsibleTree::collapsibleTreeOutput("tree", height = "700px")))
+#   )
+# )
+# 
+# shinyApp(ui, function(input, output, session){})
