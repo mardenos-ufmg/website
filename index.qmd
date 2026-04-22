@@ -29,7 +29,8 @@ Bem-vindo ao Mar de Nós
 :::
 
 Este projeto é fruto de uma parceria entre a UFMG ([DESA](https://www.desa.ufmg.br/), [DERH](https://www.eng.ufmg.br/portal/dehr/), [DEST](https://www.est.ufmg.br/)), e atores engajados no Movimento Pró-Furnas 762, em especial: [ALAGO](https://www.instagram.com/alago.furnas/),  [Unelagos](https://www.instagram.com/unelagos/), e [FECITUR](https://www.fecitur.com.br/). 
-A parceria foi iniciada em 2021 e se aprofundou em 2025, mediante financiamento ao Projeto de Pesquisa *“Saneamento básico em municípios da área de influência da represa de Furnas – MG: situação existente e relação com a participação e o controle social”*, por meio de emenda parlamentar obtida pelos Deputados [Odair Cunha](https://www.camara.leg.br/deputados/74159) e [Professor Cleiton](https://www.almg.gov.br/deputados/professor-cleiton/26119).
+A parceria foi iniciada em 2021 e se aprofundou em 2025, mediante financiamento ao Projeto de Pesquisa *“Saneamento básico em municípios da área de influência da represa de Furnas – MG: situação existente e relação com a participação e o controle social”*, por meio de emendas parlamentares.
+<!--Depois citar Deputados [Odair Cunha](https://www.camara.leg.br/deputados/74159) e [Professor Cleiton](https://www.almg.gov.br/deputados/professor-cleiton/26119).-->
 
 Nosso foco é na caracterização dos usos múltiplos da água e mecanismos de participação social como instrumentos para o engajamento voltado à construção de uma agenda comum entre os municípios que compõem a bacia e às ações coletivas de longo prazo e amplo alcance.
 
@@ -37,13 +38,6 @@ Nosso foco é na caracterização dos usos múltiplos da água e mecanismos de p
 ## O que você encontra aqui
 
 ::::::::::: grid
-:::: {.g-col-12 .g-col-md-3}
-::: {.card .h-100 .text-center .p-3}
-<i class="bi bi-house-fill fs-1 text-primary"></i>
-<a href="index.qmd" class="text-decoration-none">Home</a><br>
-Visão geral do projeto, destaques e novidades mais recentes.
-:::
-::::
 
 :::: {.g-col-12 .g-col-md-3}
 ::: {.card .h-100 .text-center .p-3}
@@ -68,6 +62,15 @@ Artigos, tutoriais e insights sobre análise de dados e o projeto.
 Painéis interativos com análises e indicadores em tempo real.
 :::
 ::::
+
+:::: {.g-col-12 .g-col-md-3}
+::: {.card .h-100 .text-center .p-3}
+<i class="bi bi-box-seam-fill fs-1 text-primary"></i>
+<a href="index.qmd" class="text-decoration-none">Repositório de dados</a><br>
+Uma curadoria de dados tratados sobre saneamento básico em Minas e no Brasil. 
+:::
+::::
+
 :::::::::::
 
 
@@ -91,7 +94,7 @@ Painéis interativos com análises e indicadores em tempo real.
 
 ::: {.g-col-12 .g-col-md-6}
 
-#### Último Post do Blog
+#### Último post do blog
 
 ```{r}
 #| include: false
@@ -104,15 +107,22 @@ df_ultimo_post = readRDS("stuff/df_ultimo_post.rds")
 > *`r df_ultimo_post$author`, `r df_ultimo_post$date`*  
 > `r df_ultimo_post$subtitle`.
 
-#### Dashboard em Destaque
+#### Dashboard em destaque
 
 > [**Painel SNIS**](https://dh3kih-carlos-de0moura.shinyapps.io/snis/)  
 > *Análise fatorial com dados do SNIS*  
 > Veja a construção e análise de indicadores sobre o saneamento em Minas Gerais.
 
+#### Documentos
+
+> [**Autoindex**](autoindex/)  
+> *Navegação automatizada de conteúdos*  
+> Acesse uma lista organizada de documentos sobre o projeto.
+
 #### Informações para desenvolvedores
 
 > [**4devs**](/4devs/index.qmd)  
-> Acesse informações úteis sobre a parte de programação e códigos do projeto.
+> *Recursos técnicos do projeto*  
+> Acesse informações úteis sobre a programação e os códigos utilizados no projeto.
 :::
 :::::

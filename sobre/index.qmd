@@ -122,6 +122,17 @@ Democratizar o acesso a análises de dados de qualidade, promovendo transparênc
 ::::
 
 
+:::: {.g-col-12 .g-col-md-4}
+::: {.card .text-center .p-3}
+<img src="/sobre/pessoas/IsadoraDrumond.png" class="img-fluid rounded-circle mb-2" alt="Isadora Drumond" style="width:120px; height:120px;">
+
+**Isadora Drumond**  
+*Graduanda em Estatística pela UFMG*
+
+[<i class="bi bi-link-45deg"></i> Currículo Lattes](http://lattes.cnpq.br/8541530971047615)
+:::
+::::
+
 
 
 :::

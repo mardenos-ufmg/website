@@ -28,8 +28,6 @@ website:
         text: Repositório de dados
       - href: bibliografia.qmd
         text: Bibliografia
-      - href: 4devs/index.qmd
-        text: 4devs
     right:
       - icon: github
         href: https://github.com/mardenos-ufmg
