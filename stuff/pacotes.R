@@ -14,9 +14,11 @@ instalar_pacotes = function() {
     list.files(recursive = TRUE, pattern = "\\.(R|qmd)$", full.names = T) |>
     renv::dependencies() |>
     {\(.) .$Package}() |>
+    c(renv::dependencies("autoindex/snis")[,"Package"]) |>
     unique() |>
-    setdiff(pacotes_instalados) |>
-    setdiff("snis")
+    sort() |>
+    setdiff("snis") |>
+    setdiff(pacotes_instalados)
   
   if (length(pacotes_necessarios) == 0) return("pacotes OK")
   
