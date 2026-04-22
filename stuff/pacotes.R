@@ -11,10 +11,9 @@ instalar_pacotes = function() {
   } 
   
   pacotes_necessarios =
-    list.files(recursive = TRUE, pattern = "\\.(R|qmd)$", full.names = T) |>
+    list.files(recursive = TRUE, pattern = "(\\.(R|qmd)$)|(^DESCRIPTION$)", full.names = T) |>
     renv::dependencies() |>
     {\(.) .$Package}() |>
-    c(renv::dependencies("autoindex/snis")[,"Package"]) |>
     unique() |>
     sort() |>
     setdiff("snis") |>
