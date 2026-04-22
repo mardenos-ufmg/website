@@ -78,7 +78,7 @@
 <item>
   <title>Configurando o servidor</title>
   <dc:creator>Carlos de Moura</dc:creator>
-  <link>https://mardenos-ufmg.github.io/website/4devs/artigos/estrutura.html</link>
+  <link>https://mardenos-ufmg.github.io/website/4devs/artigos/servidor.html</link>
   <description><![CDATA[ 
 
 
@@ -243,7 +243,7 @@ cp -r ~/website/autoindex/. /var/www/autoindex</code></pre>
   <category>hospedagem</category>
   <category>nginx</category>
   <category>shiny server</category>
-  <guid>https://mardenos-ufmg.github.io/website/4devs/artigos/estrutura.html</guid>
+  <guid>https://mardenos-ufmg.github.io/website/4devs/artigos/servidor.html</guid>
   <pubDate>Mon, 20 Apr 2026 03:00:00 GMT</pubDate>
 </item>
 <item>
