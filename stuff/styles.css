@@ -176,8 +176,8 @@ code {
 /* home */
 /* Rolagem de imagem ancorada */
 .parallax {
-  background-image: url(https://imgmd.net/images/v1/guia/1617219/lago-da-represa-de-furnas.jpg);
-  min-height: 400px;
+  background-image: url("pintura-sonaly-gpt.png");
+  min-height: 500px;
   
   width: 100vw;
   margin-left: calc(-50vw + 50%);
