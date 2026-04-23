@@ -18,7 +18,7 @@
     "href": "sobre/index.html#equipe",
     "title": "Sobre o Projeto",
     "section": "Equipe",
-    "text": "Equipe\n\n\n\n\nIzabel Matos\nDoutora em Saneamento, meio ambiente e recursos hídricos pela UFMG\n Currículo Lattes\n\n\n\n\n\nSonaly Rezende\nProfessora titular em Engenharia Sanitária e Ambiental, UFMG\n Currículo Lattes\n\n\n\n\n\nMarcos Prates\nPhD in Statistics (U Connecticut), Professor associado do Depto. de Estatística, UFMG\n Página pessoal\n\n\n\n\n\nNathalia Roland\nProfessora do Departamento de Engenharia Sanitária e Ambiental da UFJF\n Currículo Lattes\n\n\n\n\n\nTalita Silva\nProfessora do Departamento de Engenharia Hidráulica e Recursos Hídricos da UFMG\n Currículo Lattes\n\n\n\n\n\nDiego Cunha\nMestrando em Saneamento, Meio Ambiente e Recursos Hídricos (UFMG)\n Currículo Lattes\n\n\n\n\n\nCarlos de Moura\nMestrando em Estatística pela UFMG\n Currículo Lattes\n\n\n\n\n\nGustavo Reis\nAluno de graduação de Engenharia Ambiental (UFMG)\n Currículo Lattes\n\n\n\n\n\nIsadora Drumond\nGraduanda em Estatística pela UFMG\n Currículo Lattes"
+    "text": "Equipe\n\n\n\n\nIzabel Matos\nDoutora em Saneamento, meio ambiente e recursos hídricos pela UFMG\n Currículo Lattes\n\n\n\n\n\nSonaly Rezende\nProfessora titular em Engenharia Sanitária e Ambiental, UFMG\n Currículo Lattes\n\n\n\n\n\nMarcos Prates\nPhD in Statistics (U Connecticut), Professor associado do Depto. de Estatística, UFMG\n Página pessoal\n\n\n\n\n\nNathalia Roland\nProfessora do Departamento de Engenharia Sanitária e Ambiental da UFJF\n Currículo Lattes\n\n\n\n\n\nTalita Silva\nProfessora do Departamento de Engenharia Hidráulica e Recursos Hídricos da UFMG\n Currículo Lattes\n\n\n\n\n\nDiego Cunha\nMestrando em Saneamento, Meio Ambiente e Recursos Hídricos (UFMG)\n Currículo Lattes\n\n\n\n\n\nCarlos de Moura\nMestrando em Estatística pela UFMG\n Currículo Lattes\n\n\n\n\n\nGustavo Reis\nAluno de graduação de Engenharia Ambiental (UFMG)\n Currículo Lattes\n\n\n\n\n\nIsadora Drumond\nGraduanda em Estatística pela UFMG\n Currículo Lattes\n\n\n\n\n\nPriscylla Senna\nMestranda em Saneamento, Meio Ambiente e Recursos Hídricos (UFMG)\n Currículo Lattes"
   },
   {
     "objectID": "sobre/index.html#links-úteis",
@@ -165,14 +165,14 @@
     "href": "4devs/artigos/fontes.html",
     "title": "Referências técnicas",
     "section": "",
-    "text": "https://www.nginx.com/resources/wiki/start/\nhttps://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/\nhttps://wiki.debian.org/Nginx/DirectoryStructure\nhttps://docs.posit.co/shiny-server/\nhttps://shiny.posit.co/r/articles/share/shiny-server/\nhttps://docs.posit.co/shiny-server/#host-a-directory-of-applications\nhttps://cliente.hostgator.com.br/dominios/dns-wizard\nhttps://suporte.hostgator.com.br/hc/pt-br/articles/30810621770387-Como-configurar-o-DNS-de-um-dom%C3%ADnio"
+    "text": "https://www.nginx.com/resources/wiki/start/\nhttps://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/\nhttps://wiki.debian.org/Nginx/DirectoryStructure\nhttps://docs.posit.co/shiny-server/\nhttps://shiny.posit.co/r/articles/share/shiny-server/\nhttps://docs.posit.co/shiny-server/#host-a-directory-of-applications\nhttps://cliente.hostgator.com.br/dominios/dns-wizard\nhttps://suporte.hostgator.com.br/hc/pt-br/articles/30810621770387-Como-configurar-o-DNS-de-um-dom%C3%ADnio\nhttp://nginx.org/en/docs/\nhttps://fedoraproject.org/wiki/Nginx"
   },
   {
     "objectID": "4devs/artigos/fontes.html#referências",
     "href": "4devs/artigos/fontes.html#referências",
     "title": "Referências técnicas",
     "section": "",
-    "text": "https://www.nginx.com/resources/wiki/start/\nhttps://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/\nhttps://wiki.debian.org/Nginx/DirectoryStructure\nhttps://docs.posit.co/shiny-server/\nhttps://shiny.posit.co/r/articles/share/shiny-server/\nhttps://docs.posit.co/shiny-server/#host-a-directory-of-applications\nhttps://cliente.hostgator.com.br/dominios/dns-wizard\nhttps://suporte.hostgator.com.br/hc/pt-br/articles/30810621770387-Como-configurar-o-DNS-de-um-dom%C3%ADnio"
+    "text": "https://www.nginx.com/resources/wiki/start/\nhttps://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/\nhttps://wiki.debian.org/Nginx/DirectoryStructure\nhttps://docs.posit.co/shiny-server/\nhttps://shiny.posit.co/r/articles/share/shiny-server/\nhttps://docs.posit.co/shiny-server/#host-a-directory-of-applications\nhttps://cliente.hostgator.com.br/dominios/dns-wizard\nhttps://suporte.hostgator.com.br/hc/pt-br/articles/30810621770387-Como-configurar-o-DNS-de-um-dom%C3%ADnio\nhttp://nginx.org/en/docs/\nhttps://fedoraproject.org/wiki/Nginx"
   },
   {
     "objectID": "4devs/artigos/sobre.html",
