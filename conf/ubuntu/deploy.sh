@@ -13,5 +13,8 @@ rm -rf /var/www/autoindex
 mkdir -p /var/www/autoindex
 cp -r "$HOME_DIR/website/autoindex/." /var/www/autoindex
 
+cp "$HOME_DIR/website/conf/ubuntu/nginx.conf" /etc/nginx/sites-available/default
+systemctl restart nginx
+
 sudo pkill -f shiny-server || true
 shiny-server "$HOME_DIR/website/conf/shiny-server.conf"

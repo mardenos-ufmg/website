@@ -18,3 +18,5 @@ toc: false
 * https://docs.posit.co/shiny-server/#host-a-directory-of-applications
 * https://cliente.hostgator.com.br/dominios/dns-wizard
 * https://suporte.hostgator.com.br/hc/pt-br/articles/30810621770387-Como-configurar-o-DNS-de-um-dom%C3%ADnio
+* http://nginx.org/en/docs/
+* https://fedoraproject.org/wiki/Nginx
