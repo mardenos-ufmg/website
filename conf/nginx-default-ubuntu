@@ -1,0 +1,39 @@
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	root /var/www/html;
+
+	index index.html index.htm index.nginx-debian.html;
+
+	server_name _;
+	# server_name carlosdemoura.com.br www.carlosdemoura.com.br carlosdemoura.com www.carlosdemoura.com;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+
+	location /dashboards/arvore/ {
+		proxy_pass http://127.0.0.1:3838/arvore/;
+		proxy_http_version 1.1;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection "upgrade";
+		proxy_read_timeout 20d;
+	}
+
+	location /dashboards/snis/ {
+		proxy_pass http://127.0.0.1:3838/snis/;
+		proxy_http_version 1.1;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection "upgrade";
+		proxy_read_timeout 20d;
+	}
+	
+	location /autoindex {
+		root /var/www;
+		autoindex on;
+		autoindex_exact_size on;
+		autoindex_localtime on;
+	}
+	
+}
