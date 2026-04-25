@@ -8,3 +8,5 @@ more/
 ^\.github$
 ^data-raw$
 ^main\.R$
+^\.positai$
+^\.claude$
