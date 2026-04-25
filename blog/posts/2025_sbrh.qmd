@@ -8,22 +8,30 @@ draft: false
 toc: false
 ---
 
-Realizado entre os dias 23 e 28 de novembro de 2025, no Pavilhão de Carapina, na grande Vitória (ES), o **XXVI Simpósio Brasileiro de Recursos Hídricos** reuniu pesquisadores, estudantes e profissionais para discutir avanços científicos, tecnológicos e institucionais na gestão das águas no Brasil. Promovido pela Associação Brasileira de Recursos Hídricos, o evento consolidou-se como um dos principais fóruns nacionais para o debate de estratégias e prioridades no setor, fortalecendo o diálogo entre pesquisa, políticas públicas e práticas de gestão.
+Realizado entre os dias 23 e 28 de novembro de 2025, no Pavilhão de Carapina, na grande Vitória (ES), o **XXVI Simpósio Brasileiro de Recursos Hídricos** reuniu pesquisadores, estudantes e profissionais para discutir avanços científicos, tecnológicos e institucionais na gestão das águas no Brasil. Os alunos do Projeto Mar de Nós, realizado pela UFMG em parceria com a ALAGO, UNELAGOS e a FECITUR, apresentaram trabalhos científicos baseados em estudos sobre o Lago de Furnas nesse simpósio promovido pela Associação Brasileira de Recursos Hídricos.
 
 ![Cartaz de divulgação](img/2025_sbrh/cartaz.png)
 
-A participação do grupo **Mar de Nós** no simpósio refletiu a diversidade de temas e abordagens que orientam suas pesquisas, com destaque para a articulação entre saneamento, gestão de recursos hídricos e dinâmicas sociais na bacia do Lago de Furnas.
+Priscylla Pavlowa Senna, aluna de mestrado do PPG em Saneamento, Meio Ambiente e Recursos Hídricos da UFMG, apresentou o trabalho **Análise da Provisão de Serviços de Água e Esgotos em Municípios da Bacia do Lago de Furnas Considerando a Existência de Políticas Públicas Estruturadas.** Foi realizada a análise da adequação dos serviços de saneamento nos municípios e da existência de Planos Diretores e Planos Municipais de Saneamento Básico.
 
-No dia 24 de novembro, foram realizadas duas apresentações orais. A primeira abordou o trabalho *“ÁGUAPLAY: gamificação como estratégia extensionista na formação em engenharia ambiental”*, apresentado por Talita Fernanda das Graças Silva, explorando o uso de ferramentas lúdicas como forma de ampliar o engajamento e a formação crítica de estudantes. Ainda no mesmo dia, Maria Júlia Paulino Pereira apresentou o estudo *“Conflito e mobilização na bacia do Lago de Furnas: uma interpretação a partir de conteúdos midiáticos”*, discutindo como narrativas da mídia refletem e influenciam processos sociais e políticos relacionados ao uso da água.
+Foi apresentado, pela aluna de I.C. Maria Júlia Paulino, o trabalho **Conflito e Mobilização na Bacia do Lago de Furnas: Uma Interpretação Midiatica**, visando discutir as consequências da alteração no nível do reservatório e as mobilizações para conquistar a cota 762. 
 
-Complementando as atividades, no dia 25 de novembro foi apresentado o pôster *“Gestão dos recursos hídricos na bacia do entorno do Lago de Furnas, em Minas Gerais: usos da água e a relação com o saneamento básico”*, de autoria de Diego Santos Cunha. O trabalho destacou as interações entre diferentes usos da água e os desafios para uma gestão integrada que considere tanto aspectos ambientais quanto sociais.
+A professora Talita Silva foi responsável pela apresentação **ÁGUAPLAY: gamificação como estratégia extensionista na formação em engenharia ambiental**, explorando o uso de ferramentas lúdicas como forma de ampliar o engajamento e a formação crítica de estudantes.
+
+Diego Cunha, aluno de mestrado do PPG SMARH da UFMG, apresentou o trabalho **Gestão dos Recursos Hídricos na Bacia do Entorno do Lago de Furnas, em Minas Gerais: uso da água e a relação com o Saneamento Básico**. O objetivo do trabalho foi avaliar a demanda de água e os usos múltiplos dos municípios na bacia e correlacionar com a demanda do saneamento básico.
+
+O projeto foi viabilizado com emendas parlamentares dos Deputados Odair Cunha e Professor Cleiton e com apoio das entidades parceiras.
+
+Todos os trabalhos completos podem ser acessados [aqui](https://anais.abrhidro.org.br/jobs.php?Event=248).
 
 ::: {style="width: 100%; margin: 0 auto;"}
-::: {layout-ncol=3}
+::: {layout-ncol=2}
 
 ![Talita Silva](img/2025_sbrh/talita.jpg)
 
 ![Maria Júlia Pereira](img/2025_sbrh/maju.jpg)
+
+![Priscylla Senna](img/2025_sbrh/priscylla.jpg)
 
 ![Diego Cunha](img/2025_sbrh/diego.jpg)
 
@@ -36,3 +44,8 @@ A presença do grupo no simpósio reforça o compromisso com a produção de con
 
 Mais informações sobre o evento podem ser encontradas em:
 <https://eventos.abrhidro.org.br/xxvisbrh/>
+
+
+<iframe src="https://www.instagram.com/p/DR5SZIJD3aD/embed"
+        width="80%" height="580" frameborder="0" scrolling="no"></iframe>
+
