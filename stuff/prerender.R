@@ -45,7 +45,7 @@ timestamp_blog_github = tryCatch({
   
   substr(res, 1, nchar(res) - 1) |>
     `substr<-`(11,11," ") |>
-    as.POSIXct()
+    as.POSIXct(tz = "UTC")
 }, error = function(e) {
   as.POSIXct("1900-01-01", tz = "UTC")
 })
