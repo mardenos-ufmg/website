@@ -46,8 +46,7 @@ div(class = "topbar",
         a("Blog", href = "https://mardenos-ufmg.github.io/website/blog/index.html"),
         a("Dashboards", href = "https://mardenos-ufmg.github.io/website/qmd/dashboards.html"),
         a("Repositório de dados", href = "https://mardenos-ufmg.github.io/website/qmd/repositorio.html"),
-        a("Bibliografia", href = "https://mardenos-ufmg.github.io/website/qmd/bibliografia.html"),
-        a("4devs", href = "https://mardenos-ufmg.github.io/website/4devs/index.html")
+        a("Bibliografia", href = "https://mardenos-ufmg.github.io/website/qmd/bibliografia.html")
     ),
     
     div(class = "right",

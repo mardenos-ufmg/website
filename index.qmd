@@ -58,7 +58,7 @@ Artigos, tutoriais e insights sobre análise de dados e o projeto.
 :::: {.g-col-12 .g-col-md-3}
 ::: {.card .h-100 .text-center .p-3}
 <i class="bi bi-bar-chart-fill fs-1 text-danger"></i>
-<a href="/dashboards/index.qmd" class="text-decoration-none"> Dashboards </a><br>
+<a href="/dashboards.qmd" class="text-decoration-none"> Dashboards </a><br>
 Painéis interativos com análises e indicadores em tempo real.
 :::
 ::::
