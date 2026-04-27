@@ -189,18 +189,11 @@
     "text": "A Análise Exploratória de Dados (EDA) é o ponto de partida de qualquer projeto de ciência de dados. Neste post, vamos explorar como realizar uma EDA completa usando R e o tidyverse."
   },
   {
-    "objectID": "bibliografia.html",
-    "href": "bibliografia.html",
-    "title": "Bibliografia",
-    "section": "",
-    "text": "A produção local do projeto pode ser acessada aqui, onde estão reunidos os conteúdos desenvolvidos internamente pelo grupo."
-  },
-  {
     "objectID": "bibliografia.html#produção-própria",
     "href": "bibliografia.html#produção-própria",
     "title": "Bibliografia",
-    "section": "",
-    "text": "A produção local do projeto pode ser acessada aqui, onde estão reunidos os conteúdos desenvolvidos internamente pelo grupo."
+    "section": "Produção própria",
+    "text": "Produção própria\nA produção local do projeto pode ser acessada aqui, onde estão reunidos os conteúdos desenvolvidos internamente pelo grupo."
   },
   {
     "objectID": "bibliografia.html#legislação",
