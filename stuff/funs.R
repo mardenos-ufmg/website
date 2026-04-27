@@ -77,9 +77,13 @@ toc-location: body
 page-layout: full
 ---
 
-## [Produção própria](autoindex/producao)
+<br>
+
+## [Produção própria](autoindex/producao) {.unlisted}
 
 A produção local do projeto pode ser acessada aqui, onde estão reunidos os conteúdos desenvolvidos internamente pelo grupo.
+
+<br>
 
 \n\n',
 .
