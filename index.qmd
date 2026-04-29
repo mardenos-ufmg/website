@@ -74,6 +74,7 @@ Uma curadoria de dados tratados sobre saneamento básico em Minas e no Brasil.
 :::::::::::
 
 
+<!--style="width:110%; max-width:500px; min-height:500px; aspect-ratio: 5 / 7; border:none;"-->
 ## Destaques
 ::::: grid
 ::: {.g-col-12 .g-col-md-6}
@@ -81,11 +82,11 @@ Uma curadoria de dados tratados sobre saneamento básico em Minas e no Brasil.
 <div style="text-align:center; margin-bottom:10px;">
   <p><strong>Acompanhe nosso projeto no Instagram!</strong></p>
 </div>
-
+<br>
 <div style="display:flex; justify-content:center;">
   <iframe 
     src="https://www.instagram.com/p/DP2HlqCgeRj/embed"
-    style="width:100%; max-width:500px; min-height:500px; aspect-ratio: 5 / 7; border:none;"
+    style="width:110%; max-width:500px; min-height:500px; aspect-ratio: 5 / 7; border:none;"
     scrolling="no">
   </iframe>
 </div>
