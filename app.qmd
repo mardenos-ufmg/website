@@ -12,7 +12,7 @@ page-layout: full
 ::: {.card .h-100 .p-3}
 <i class="bi bi-bar-chart-line-fill fs-2 text-primary"></i>
 
-### [Painel do SNIS](https://dh3kih-carlos-de0moura.shinyapps.io/snis/)
+### [Painel do SNIS](/app/snis/)
 Dados e funções para a leitura e análise de dados do SNIS (Sistema Nacional de Informações sobre Saneamento).
 
 **Atualização:** Anual  
@@ -21,11 +21,13 @@ Dados e funções para a leitura e análise de dados do SNIS (Sistema Nacional d
 :::
 :::
 
+<!--
+
 ::: {.g-col-12 .g-col-md-6}
 ::: {.card .h-100 .p-3}
 <i class="bi bi-globe fs-2 text-success"></i>
 
-### [Censo do IBGE](https://www.shinyapps.io/)
+### [Censo do IBGE](app/snis/)
 Visualização de dados em mapas interativos. Explore distribuições geográficas e padrões regionais.
 
 **Atualização:** Quadrienal  
@@ -38,7 +40,9 @@ Visualização de dados em mapas interativos. Explore distribuições geográfic
 ::: {.card .h-100 .p-3}
 <i class="bi bi-graph-up-arrow fs-2 text-warning"></i>
 
-### [Séries Temporais](https://www.shinyapps.io/)
+-->
+
+### [Séries Temporais](/app/cota/)
 Dados longitudinais sobre o lago da represa de Furnas.
 
 **Atualização:** Mensal

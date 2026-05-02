@@ -14,6 +14,7 @@ ui = tagList(
   topbar$style,
   topbar$ui,
   fluidPage(
+    title = "Árvore de arquivos – Mar de Nós",
     titlePanel(div("Árvore de Arquivos", class = "title-panel")),
     fluidRow(column(12, uiOutput("node_info"))),
     fluidRow(column(12, collapsibleTree::collapsibleTreeOutput("tree", height = "700px")))

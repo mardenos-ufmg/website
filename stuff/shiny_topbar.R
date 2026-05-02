@@ -6,11 +6,16 @@ topbar$style =
       .topbar {
         background-color: #2c3e50;
         color: white;
-        padding: 1.5rem 1.5rem;
+        padding: 2.6rem 1.5rem;
+        
+        font-family: 'Lato', sans-serif;
+        font-size: 2rem;
+        font-weight: 300;
+
         display: flex;
         align-items: center;
         justify-content: space-between;
-        font-family: 'Lato', sans-serif;
+        
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         position: sticky;
         top: 0;
@@ -23,10 +28,12 @@ topbar$style =
         align-items: center;
         gap: 35px;
       }
+      .topbar .right {
+        margin-right: 120px;
+      }
       .topbar a {
         color: white;
         text-decoration: none;
-        font-weight: 300;
       }
       .topbar a:hover {
         text-decoration: underline;
@@ -34,6 +41,7 @@ topbar$style =
       .logo {
         font-weight: bold;
         font-size: 18px;
+        margin-left: 20px;
       }
     "))
 )
@@ -41,12 +49,12 @@ topbar$style =
 topbar$ui =
 div(class = "topbar",
     div(class = "left",
-        a(class = "logo", href = "https://mardenos-ufmg.github.io/website/index.html", img(src = "https://mardenos-ufmg.github.io/website/stuff/favicon.png", height = "20px", style = "margin-right: 10px;"), "Mar de Nós"),
-        a("Sobre nós", href = "https://mardenos-ufmg.github.io/website/qmd/dashboards.html"),
-        a("Blog", href = "https://mardenos-ufmg.github.io/website/blog/index.html"),
-        a("Dashboards", href = "https://mardenos-ufmg.github.io/website/qmd/dashboards.html"),
-        a("Repositório de dados", href = "https://mardenos-ufmg.github.io/website/qmd/repositorio.html"),
-        a("Bibliografia", href = "https://mardenos-ufmg.github.io/website/qmd/bibliografia.html")
+        a(class = "logo", href = "/index.html", img(src = "stuff/favicon.png", height = "20px", style = "margin-right: 10px;"), "Mar de Nós"),
+        a("Sobre nós", href = "sobre/index.html"),
+        a("Blog", href = "/blog/index.html"),
+        a("Apps", href = "/app.html"),
+        a("Dados", href = "/dados.html"),
+        a("Bibliografia", href = "/bibliografia.html")
     ),
     
     div(class = "right",
