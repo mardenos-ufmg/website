@@ -2,6 +2,7 @@ topbar = list()
 
 topbar$style =
   tags$head(
+  tags$link(rel = "shortcut icon", href = here::here("/stuff/favicon.ico")),
   tags$style(HTML("
       .topbar {
         background-color: #2c3e50;
@@ -9,7 +10,7 @@ topbar$style =
         padding: 2.6rem 1.5rem;
         
         font-family: 'Lato', sans-serif;
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-weight: 300;
 
         display: flex;
