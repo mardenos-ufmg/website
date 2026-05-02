@@ -5,7 +5,9 @@ source /etc/os-release
 
 HOME_DIR=$(eval echo "~$SUDO_USER")
 
-quarto render "$HOME_DIR/website"
+if [ "$1" != "q" ]; then
+    quarto render "$HOME_DIR/website"
+fi
 
 rm -rf /var/www/html/*
 cp -r "$HOME_DIR/website/_site/." /var/www/html

@@ -58,7 +58,7 @@ Artigos, tutoriais e insights sobre análise de dados e o projeto.
 :::: {.g-col-12 .g-col-md-3}
 ::: {.card .h-100 .text-center .p-3}
 <i class="bi bi-bar-chart-fill fs-1 text-danger"></i>
-<a href="/apps.qmd" class="text-decoration-none"> Dashboards </a><br>
+<a href="/app.qmd" class="text-decoration-none"> Dashboards </a><br>
 Painéis interativos com análises e indicadores em tempo real.
 :::
 ::::
@@ -78,11 +78,11 @@ Uma curadoria de dados tratados sobre saneamento básico em Minas e no Brasil.
 ## Destaques
 ::::: grid
 ::: {.g-col-12 .g-col-md-6}
-
+<!--
 <div style="text-align:center; margin-bottom:10px;">
   <p><strong>Acompanhe nosso projeto no Instagram!</strong></p>
 </div>
-<br>
+-->
 <div style="display:flex; justify-content:center;">
   <iframe 
     src="https://www.instagram.com/p/DP2HlqCgeRj/embed"
