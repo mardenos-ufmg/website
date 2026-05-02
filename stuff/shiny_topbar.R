@@ -2,7 +2,7 @@ topbar = list()
 
 topbar$style =
   tags$head(
-  tags$link(rel = "shortcut icon", href = here::here("/stuff/favicon.ico")),
+  tags$link(rel = "shortcut icon", href = "/stuff/favicon.ico"),
   tags$style(HTML("
       .topbar {
         background-color: #2c3e50;
@@ -30,7 +30,7 @@ topbar$style =
         gap: 35px;
       }
       .topbar .right {
-        margin-right: 120px;
+        margin-right: 130px;
       }
       .topbar a {
         color: white;
@@ -50,7 +50,7 @@ topbar$style =
 topbar$ui =
 div(class = "topbar",
     div(class = "left",
-        a(class = "logo", href = "/index.html", img(src = "stuff/favicon.png", height = "20px", style = "margin-right: 10px;"), "Mar de Nós"),
+        a(class = "logo", href = "/index.html", img(src = "/stuff/favicon.png", height = "20px", style = "margin-right: 10px;"), "Mar de Nós"),
         a("Sobre nós", href = "sobre/index.html"),
         a("Blog", href = "/blog/index.html"),
         a("Apps", href = "/app.html"),
