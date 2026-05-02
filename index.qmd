@@ -58,7 +58,7 @@ Artigos, tutoriais e insights sobre análise de dados e o projeto.
 :::: {.g-col-12 .g-col-md-3}
 ::: {.card .h-100 .text-center .p-3}
 <i class="bi bi-bar-chart-fill fs-1 text-danger"></i>
-<a href="/dashboards.qmd" class="text-decoration-none"> Dashboards </a><br>
+<a href="/apps.qmd" class="text-decoration-none"> Dashboards </a><br>
 Painéis interativos com análises e indicadores em tempo real.
 :::
 ::::
@@ -66,7 +66,7 @@ Painéis interativos com análises e indicadores em tempo real.
 :::: {.g-col-12 .g-col-md-3}
 ::: {.card .h-100 .text-center .p-3}
 <i class="bi bi-box-seam-fill fs-1 text-primary"></i>
-<a href="index.qmd" class="text-decoration-none">Repositório de dados</a><br>
+<a href="dados.qmd" class="text-decoration-none">Repositório de dados</a><br>
 Uma curadoria de dados tratados sobre saneamento básico em Minas e no Brasil. 
 :::
 ::::
@@ -109,11 +109,13 @@ df_ultimo_post = readRDS("stuff/df_ultimo_post.rds")
 > *`r df_ultimo_post$author`, `r df_ultimo_post$date`*  
 > `r df_ultimo_post$subtitle`.
 
+<!--
 #### Dashboard em destaque
 
 > [**Painel SNIS**](https://dh3kih-carlos-de0moura.shinyapps.io/snis/)  
 > *Análise fatorial com dados do SNIS*  
 > Veja a construção e análise de indicadores sobre o saneamento em Minas Gerais.
+-->
 
 #### Documentos
 
