@@ -58,6 +58,13 @@ Também é possível rodar o shiny server em segundo plano via `shiny-server &`,
 
 Para contornar isso, podemos especificar um `site_dir` numa pasta em `~`, no nosso caso optamos por `~/website`. Parte do problema da ausência de um gerenciador é solucionada pelo argumento `log_dir`, pasta na qual serão armazenados os logs do shiny server. O arquivo com a configuração do sistema pode ser visto [aqui](https://raw.githubusercontent.com/mardenos-ufmg/website/refs/heads/main/conf/shiny-server.conf). Um servidor personalizado pode ser executado via `shiny-server caminho/para/shiny-server.conf &`, o que não pode ser feito diretamente via  `service` ou `systemctl`.
 
+
+### Acesso do shiny-server via nginx
+
+É comum que em algumas instituições, a política de rede libere apenas uma porta para conexão http(s). Aqui - a princípio - precisamos de uma outra porta para a conexão do shiny-server (que atua no backend executando os shiny apps). A solução que achamos foi manter a porta 3838 padrão ativa no localhost e fazer um proxy via a porta usual.
+
+Seundo o [claude.ai](https:\\claude.ai), o comando `setsebool -P httpd_can_network_connect 1` ativa uma política do SELinux que permite que processos do tipo httpd (como o nginx) façam conexões de rede de saída. O SELinux é um sistema de controle de acesso obrigatório do Linux que, por padrão, restringe o que cada processo pode fazer além das permissões normais do sistema — e por padrão ele não permite que o nginx se conecte a portas arbitrárias, mesmo que sejam locais. No nosso caso, o nginx precisava se conectar à porta 3838 (onde o Shiny Server escuta) para funcionar como proxy reverso, mas o SELinux estava bloqueando essa conexão com Permission denied, causando o erro 502. A flag -P torna a permissão permanente, sobrevivendo a reinicializações do sistema.
+
 ## nginx
 
 [nginx](https://nginx.org) é um servidor web amplamente usado na internet que aqui é usado para gerenciar as páginas estáticas do projeto.
