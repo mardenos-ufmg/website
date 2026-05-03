@@ -47,6 +47,7 @@ topbar$style =
       }
       .topbar a:hover {
         text-decoration: underline;
+        color: white;
       }
       .logo {
         font-weight: bold;
@@ -132,6 +133,12 @@ sidebar$style = tags$head(
       z-index: 999;
     }
     
+    .sidebar a:hover {
+      text-decoration: underline;
+      color: white;
+      background-color: rgba(255,255,255,0.1);
+    }
+    
     .sidebar .title {
       font-size: 1.8rem;
       font-weight: bold;
@@ -144,10 +151,6 @@ sidebar$style = tags$head(
       padding: 8px 10px;
       border-radius: 6px;
       transition: background 0.2s;
-    }
-
-    .sidebar a:hover {
-      background-color: rgba(255,255,255,0.1);
     }
 
     .sidebar .section {

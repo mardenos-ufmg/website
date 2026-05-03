@@ -35,12 +35,12 @@ Visualização de dados em mapas interativos. Explore distribuições geográfic
 
 :::
 :::
+-->
 
 ::: {.g-col-12 .g-col-md-6}
 ::: {.card .h-100 .p-3}
 <i class="bi bi-graph-up-arrow fs-2 text-warning"></i>
 
--->
 
 ### [Séries Temporais](/app/cota/)
 Dados longitudinais sobre o lago da represa de Furnas.

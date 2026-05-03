@@ -81,6 +81,10 @@
   padding-right: 20px;
 }
 
+.nav-link:hover, .navbar-brand-container:hover {
+  text-decoration: underline;
+}
+
 /* === TIPOGRAFIA === */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
