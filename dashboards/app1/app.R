@@ -11,15 +11,16 @@ for (file in list.files("dashboards/app1/apps", full.names = T)) {
   source(file, local = env[[nome]])
   apps[[nome]] = as.list.environment(env[[nome]])
 }
-app_names = names(apps)
+#app_names = names(apps)
+app_names = c("Sobre", setdiff(names(apps), "Sobre"))
 
 
 ui = tagList(
-  topbar$style,
-  sidebar$style,
-  
-  topbar$ui,
-  sidebar$ui(app_names),
+  styles$topbar$style,
+  styles$sidebar$style,
+  styles$styles,
+  styles$topbar$ui,
+  styles$sidebar$ui(app_names),
   
   div(
     class = "content",
@@ -28,6 +29,7 @@ ui = tagList(
 )
 
 server = function(input, output, session) {
+  addResourcePath("assets", here::here("stuff"))
   current_app = reactiveVal(app_names[1])
   
   # Navegação pela sidebar
