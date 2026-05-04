@@ -1,3 +1,5 @@
+library(htmltools)
+
 styles = list(topbar = list(), sidebar = list())
 
 styles$topbar$style =
@@ -69,26 +71,12 @@ div(class = "topbar",
     ),
     
     div(class = "right",
-        a(icon("github"), href = "https://github.com/mardenos-ufmg"),
-        a(icon("instagram"), href = "https://instagram.com/mar.de.nos_ufmg"),
-        a(icon("envelope"), href = "mailto:mardenos.ufmg@gmail.com")
+        a(shiny::icon("github"), href = "https://github.com/mardenos-ufmg"),
+        a(shiny::icon("instagram"), href = "https://instagram.com/mar.de.nos_ufmg"),
+        a(shiny::icon("envelope"), href = "mailto:mardenos.ufmg@gmail.com")
     )
 )
 
-
-
-# sidebar$ui = div(
-#   class = "sidebar",
-#   div(class = "title", "Apps"),
-#   div(class = "section-header", "Aplicativos"),
-#   div(
-#     class = "section",
-#     lapply(as.list(list.files("dashboards")), function(name) {
-#       a(name, href = paste0("app/", name))
-#     })
-#   ),
-#   div(class = "sidebar-footer", "Mar de Nós - UFMG")
-# )
 
 styles$sidebar$ui = function(app_names) {
   div(
@@ -207,8 +195,7 @@ styles$styles = tags$head(tags$style(HTML(paste0("
     overflow: hidden;
   }
   
-  .mdn-section p,
-  .mdn-section li {
+  .mdn-section p, .mdn-section li {
     font-size: 1rem;
     line-height: 1.6;
     color: #444;
@@ -263,9 +250,6 @@ styles$styles = tags$head(tags$style(HTML(paste0("
     margin-bottom: 10px;
     color: #2c3e50;
   }
-  
-  
-  
   
   details summary {
     cursor: pointer;
