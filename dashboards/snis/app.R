@@ -1,169 +1,204 @@
-here::set_here("~/website")
-source(here::here("stuff/shiny_topbar.R"))
-load(here::here("autoindex/snis/data/dados_snis.rda"))
-load(here::here("autoindex/snis/data/mapa_MG.rda"))
-source(here::here("autoindex/snis/R/plots.R"))
-source(here::here("autoindex/snis/R/utils.R"))
+library(shiny)
+source(here::here("stuff/shiny-styles.R"))
 
-tmap::tmap_mode("view")
-library(tidyverse)
-
-
-shiny = function() {
-  header_col = function(title, color, height, width = 12) {
-    column(width,
-           div(
-             style = paste0(
-               "background-color:", color, ";",
-               "color: #3e3e3e;
-             font-size: 35px;
-             height: calc(",height,"vh - 10px);",
-               "line-height: calc(", height,"vh - 10px);",
-               "text-align: center;
-             margin: 5px 2.5px;
-             border-radius: 10px;
-             "),
-             title
-           )
+ui = fluidPage(
+  tagList(
+    styles$topbar$style,
+    styles$styles,
+    styles$topbar$ui
+  ),
+  tagList(div(class = "mdn-container",
+              
+  div(class = "mdn-header", "Análise fatorial com dados do SNIS"),
+  fluidRow(
+    div(
+      style = "display: inline-block; width: 200px; margin-right: 20px;",
+      selectInput("geral-ano", "Ano", choices = as.character(2010:2021))
+    ),
+    div(
+      style = "display: inline-block; width: 200px; margin-right: 20px;",
+      selectInput("fa-scores-var", "Variável", choices = NULL)
+    ),
+    div(
+      style = "display: inline-block; margin-top: 25px;",
+      checkboxInput("fa-scores-quart", "Quartis", value = TRUE)
     )
-  }
-
-  #######################
-  #####  Painel FA  #####
-  #######################
-  PainelFA = 
-    tagList(topbar$style, topbar$ui, fluidPage(
-    fluidPage(
-
-    fluidRow(header_col("Análise Fatorial com dados do SNIS", "#a8f2fe", 8)),
-    fluidRow(header_col("Scores", "#a8f2fe", 8)),
-
+  ),
+  
+  fluidRow(style = "height: 500px;",
+    column(8, tmap::tmapOutput("fa-scores-mapa")),
+    column(4, plotOutput("fa-scores-summary-plot"))
+  ),
+  fluidRow(column(12, DT::dataTableOutput("fa-scores-summary"))),
+    
+  section("Loadings (EEE e SU)",
     fluidRow(
-      div(
-        style = "display: inline-block; width: 200px; margin-right: 20px;",
-        selectInput("geral-ano", label = "Ano", choices = as.character(2010:2021))
-      ),
-      div(
-        style = "display: inline-block; width: 200px; margin-right: 20px;",
-        selectInput("fa-scores-var", label = "Variável", choices = "")
-      ),
-      div(
-        style = "display: inline-block; margin-top: 25px;",
-        checkboxInput("fa-scores-quart", "Quartis", value = TRUE)
-      )
+      column(7, plotOutput("fa-loadings-eee")),
+      column(5, plotOutput("fa-loadings-su"))
     ),
-
-    fluidRow(
-      column(8,
-        tmap::tmapOutput("fa-scores-mapa")
-      ),
-      column(4,
-        fluidRow(tableOutput("fa-scores-summary")),
-        fluidRow(verbatimTextOutput("fa-scores-summary2"))
-
-      )
-    ),
-
-    fluidRow(header_col("Loadings", "#a8f2fe", 8)),
-
-    fluidRow(
-      column(7,
-        fluidRow(header_col("EEE", "#a8f2fe", 8)),
-        plotOutput("fa-loadings-eee")
-      ),
-      column(5,
-        fluidRow(header_col("SU", "#a8f2fe", 8)),
-        plotOutput("fa-loadings-su")
-      )
-    ))
+    collapse = T
+  )
+  
   ))
+)
 
 
-  ####################
-  #####  Server  #####
-  ####################
-  shiny_server = function(input, output, session) {
-
-    ###  Reactive  ###
-    ano   = reactive({ input$"geral-ano" })
-    #var   = reactive({ input$"fa-scores-var" })
-    #quart = reactive({ input$"fa-scores-quart" })
-    df    = reactive({ dados_snis[[ano()]]$df })
-    geo_df = reactive({
-      df() %>%
-        select(
-          name = all_of("município"),
-          Score = all_of(input$"fa-scores-var"),
-          Grupo = all_of("região intermediária")
-        ) %>%
-        mutate(Score = round(Score, 4)) %>%
-        distinct(name, .keep_all = TRUE) %>%
-        left_join(x = mapa_MG, by = "name")
-    })
-
-    ###  PainelFA  ###
-    output$"fa-scores-mapa" = tmap::renderTmap({
-      req(df(), input$"fa-scores-var")
-      mapa_interativo(df(), var = input$"fa-scores-var", quart = input$"fa-scores-quart") |> suppressMessages()
-      # plot_map(df(), var = input$"fa-scores-var", quart = input$"fa-scores-quart") |>
-      #   plotly::ggplotly()
-    })
-
-    observeEvent(df(), {
-      updateSelectInput(session, "fa-scores-var",
-        #choices = colnames(df())
-        choices = c("score médio eee", "score efetividade", "score eficácia", "score eficiência", "score médio su", "score sustentabilidade", "score universalidade")
+server = function(input, output, session) {
+  # ---- dados ----
+  devtools::load_all(here::here("autoindex/snis"))
+  # load(here::here("autoindex/snis/data/dados_snis.rda"))
+  # load(here::here("autoindex/snis/data/mapa_MG.rda"))
+  # source(here::here("autoindex/snis/R/plots.R"))
+  # source(here::here("autoindex/snis/R/utils.R"))
+  library(dplyr)
+  
+  plot_hist = function(var) {
+    ggplot(df(), aes(x = .data[[var]])) +
+      geom_histogram(aes(y = after_stat(count / sum(count))),
+                     bins = 10,
+                     fill = "lightblue",
+                     color = "white") +
+      labs(
+        title = paste0(var, " em MG, ", ano()),
+        y = "Frequência relativa",
+        x = var
+      ) +
+      xlim(0,1) +
+      theme_minimal() +
+      theme(panel.grid.major = element_blank())
+  }
+  
+  # ---- reactives ----
+  ano = reactive({
+    req(input$`geral-ano`)
+    input$`geral-ano`
+  })
+  
+  df = reactive({
+    req(ano())
+    dados_snis[[ano()]]$df
+  })
+  
+  geo_df = reactive({
+    df() %>%
+      select(
+        name = all_of("município"),
+        `código do município` = "código do município",
+        Score = all_of(input$`fa-scores-var`),
+        Grupo = all_of("região intermediária")
+      ) %>%
+      mutate(Score = round(Score, 4)) %>%
+      distinct(name, .keep_all = TRUE) %>%
+      left_join(x = mapa_MG, by = "name") |>
+      rename(municipio = "name", score = "Score")
+  })
+  
+  
+  # ---- atualizar variável ----
+  observeEvent(df(), {
+    updateSelectInput(
+      session,
+      "fa-scores-var",
+      choices = c(
+        "score médio eee",
+        "score efetividade",
+        "score eficácia",
+        "score eficiência",
+        "score médio su",
+        "score sustentabilidade",
+        "score universalidade"
       )
+    )
+  }, ignoreInit = TRUE)
+  
+  observeEvent(input$`fa-scores-var`, {
+    output$"fa-scores-summary-plot" = renderPlot({
+      plot_hist(input$`fa-scores-var`)
     })
+  })
+  
+  # ---- mapa ----
+  output$`fa-scores-mapa` = tmap::renderTmap({
+    suppressWarnings(suppressMessages(
+      
+    tmap::tm_shape(geo_df(), bbox = sf::st_bbox( filter(geo_df(), !is.na(score)) )) +
+      tmap::tm_fill(
+        col = "score",
+        title = "Legenda",
+        style = "cont",
+        palette = viridis::turbo(100, direction = -1),
+        popup.vars = c("municipio", "score")
+      ) +
+      tmap::tm_borders(col = "gray50", lwd = 0.5) +
+      tmap::tm_basemap(server = "OpenStreetMap") +
+      tmap::tm_layout(
+        main.title = paste0("Mapa Interativo de ", input$`fa-scores-var`, " em MG, ", ano()),
+        main.title.position = "center",
+        legend.outside = TRUE
+      )
+    
+    ))
+  })
+  
+  # ---- loadings ----
+  output$`fa-loadings-eee` = renderPlot({
+    req(ano())
+    plot_loading(dados_snis[[ano()]]$fa$eee)
+  })
+  
+  output$`fa-loadings-su` = renderPlot({
+    req(ano())
+    plot_loading(dados_snis[[ano()]]$fa$su)
+  })
+  
+  # ---- clique no mapa ----
+  observeEvent(input$`fa-scores-mapa_shape_click`, {
+    click = input$`fa-scores-mapa_shape_click`
+    idx = suppressWarnings(as.integer(gsub("[^0-9]", "", click$id)))
+    municipio = geo_df()[idx,] |> pull("código do município")
+    
+    # req(click$id)
+    # req(!is.na(idx))
+    # print(click$id)
+    # print(idx)
+    # print(municipio)
+    
+    output$`fa-scores-summary` = DT::renderDataTable({
+      df() %>%
+        filter(`código do município` == municipio) %>%
+        select(
+          `município`,
+          `natureza jurídica`,
+          `tipo de serviço`,
+          prestador,
+          starts_with("score ")
+        ) |>
+        dplyr::mutate(
+          dplyr::across(where(is.numeric), ~ round(.x, 4))
+        )
+    }, rownames = FALSE, options = list(dom = "t", paging = FALSE, scrollX = TRUE, ordering = FALSE))
+    
+    output$"fa-scores-summary-plot" = renderPlot({
+      x = df() |> filter(`código do município` == municipio) |> pull(input$`fa-scores-var`)
+      municipio_nome = df() |> filter(`código do município` == municipio) |> pull("município")
 
-    output$"fa-scores-summary" = renderTable({
-      req(df())
-      df()[[ input$"fa-scores-var" ]] |>
-        summary() |>
-        as.matrix() |>
-        t() |>
-        as.data.frame()
-    })
-
-    output$"fa-loadings-eee" = renderPlot({
-      req(ano())
-      #FA_EEE = fa(df(), features = readODS::read_ods("data/features.ods", sheet = "EEE"))
-      plot_loading(dados_snis[[ano()]]$fa$eee)
-    })
-
-    output$"fa-loadings-su" = renderPlot({
-      req(ano())
-      #FA_SU = fa(df(), features = readODS::read_ods("data/features.ods", sheet = "SU"))
-      plot_loading(dados_snis[[ano()]]$fa$su)
+      p =
+        plot_hist(input$`fa-scores-var`) +
+        geom_vline(xintercept = x, color = "red")
+      
+      ymax = ggplot_build(p)$data[[1]]$y |> max()
+      
+      p +
+        annotate("text",
+                 x = x + 0.02,
+                 y = ymax,
+                 label = municipio_nome,
+                 hjust = 0,
+                 vjust = -0.5,
+                 color = "red")
     })
     
-    observeEvent(input$"fa-scores-mapa_shape_click", {
-      click = input$"fa-scores-mapa_shape_click"
-
-      click_municipio =
-        geo_df() |>
-        slice(as.integer(substring(click$id,2))) |>
-        as_tibble() |>
-        pull("id") |>
-        as.integer()
-
-      output$"fa-scores-summary2" = renderPrint({
-        df() |>
-          filter(`código do município` == click_municipio) |>
-          select(all_of(c(
-            "município", "código do município", "natureza jurídica", "tipo de serviço", "abrangência", "código do prestador", "prestador"
-            )))
-      })
-
-    })
-
-  }
-
-  ####################
-  #####  shinyApp ####
-  ####################
-  shinyApp(ui = PainelFA, server = shiny_server)
+  })
 }
 
-
-shiny()
+shinyApp(ui, server)

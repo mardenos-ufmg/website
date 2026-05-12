@@ -1,7 +1,13 @@
-#library(shiny)
+library(shiny)
+source(here::here("stuff/shiny-styles.R"))
 
-cota_ui <- fluidPage(
-  titlePanel("Meu primeiro app Shiny"),
+ui = fluidPage(
+  tagList(
+    styles$topbar$style,
+    styles$styles,
+    styles$topbar$ui
+  ),
+  titlePanel("Cota do Lago de Furnas"),
   
   sidebarLayout(
     sidebarPanel(
@@ -15,7 +21,7 @@ cota_ui <- fluidPage(
   )
 )
 
-cota_server <- function(input, output, session) {
+server = function(input, output, session) {
   
   contador <- reactiveVal(0)
   
@@ -28,3 +34,4 @@ cota_server <- function(input, output, session) {
   })
 }
 
+shinyApp(ui, server)

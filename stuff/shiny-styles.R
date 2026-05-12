@@ -4,7 +4,7 @@ styles = list(topbar = list(), sidebar = list())
 
 styles$topbar$style =
   tags$head(
-  tags$link(rel = "shortcut icon", href = "/stuff/favicon.ico"),
+  tags$link(rel = "shortcut icon", href = here::here("stuff/favicon.ico")),
   tags$style(HTML("
       .topbar {
         background-color: #2c3e50;

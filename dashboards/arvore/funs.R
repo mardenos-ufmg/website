@@ -25,6 +25,8 @@ arvore_gerar_df = function() {
     "|",
     "^autoindex/snis/man/.+",
     "|",
+    "^dashboards/.+",
+    "|",
     "^blog/posts/img/.+",
     "|",
     "\\.Rproj$",
